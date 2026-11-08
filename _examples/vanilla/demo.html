@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Universal Player — Subtitles, Quality & Embed Demo</title>
+    <style>
+      :root {
+        color-scheme: dark;
+        font-family: system-ui, sans-serif;
+      }
+
+      body {
+        margin: 0;
+        padding: 2rem;
+        color: #e2e8f0;
+        background: #0f172a;
+      }
+
+      main {
+        max-width: 980px;
+        margin: 0 auto;
+      }
+
+      h1 {
+        font-size: 1.5rem;
+      }
+
+      p,
+      li {
+        color: #cbd5e1;
+        line-height: 1.6;
+      }
+
+      .panel {
+        padding: 1rem;
+        margin-block: 1rem;
+        background: #111c33;
+        border: 1px solid #24324d;
+        border-radius: 0.75rem;
+      }
+
+      .actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+
+      button {
+        padding: 0.55rem 0.8rem;
+        color: #0b0b0b;
+        font: inherit;
+        font-size: 0.85rem;
+        background: #e2e8f0;
+        border: 0;
+        border-radius: 0.45rem;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background: #fff;
+      }
+
+      pre {
+        max-height: 9rem;
+        padding: 0.75rem;
+        overflow: auto;
+        color: #cbd5e1;
+        font-size: 0.78rem;
+        white-space: pre-wrap;
+        word-break: break-all;
+        background: #0b1222;
+        border: 1px solid #24324d;
+        border-radius: 0.5rem;
+      }
+
+      .status {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        font-size: 0.82rem;
+        color: #94a3b8;
+      }
+
+      .status strong {
+        color: #e2e8f0;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Universal Player — subtitle, quality and embed demo</h1>
+      <p>
+        This demo uses an adaptive HLS stream (so the quality ladder is
+        available) plus an external WebVTT subtitle track.
+        <a href="/audio.html">Open the audio-only demo →</a>
+      </p>
+
+      <universal-player
+        id="player"
+        src="https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
+        controls="custom"
+        theme="dark"
+        locale="en"
+        poster="/poster.svg"
+        captions='{"tracks":[{"id":"en","src":"/demo.vtt","label":"English","language":"en"}]}'
+        thumbnails='{"cues":[{"startTime":0,"endTime":660,"url":"/poster.svg"}]}'
+        ui='{"settings":{"stats":true,"shortcuts":true},"share":{"embed":{"mode":"player","poster":"/poster.svg"}}}'
+      ></universal-player>
+
+      <div class="panel">
+        <div class="status">
+          <span>Status: <strong id="status">idle</strong></span>
+          <span>Subtitles: <strong id="captions">off</strong></span>
+          <span>Quality: <strong id="quality">auto</strong></span>
+        </div>
+      </div>
+
+      <div class="panel">
+        <p><strong>Try it:</strong></p>
+        <ul>
+          <li>Click the <strong>CC</strong> button in the lower-right controls.</li>
+          <li>Open <strong>Settings → Quality</strong>, then use <strong>−</strong> / <strong>+</strong>.</li>
+          <li>Use keyboard shortcuts: <code>S</code>, <code>Q</code>, <code>[</code>, <code>]</code>, <code>C</code>.</li>
+          <li>Open <strong>Share</strong> to see the thumbnail preview and <strong>Copy embed code</strong>.</li>
+          <li>Hover the progress bar to see the seek thumbnail.</li>
+        </ul>
+        <div class="actions">
+          <button type="button" id="embed">Show embed code</button>
+          <button type="button" id="open-quality">Open quality in Settings</button>
+          <button type="button" id="toggle-captions">Toggle subtitles</button>
+        </div>
+        <pre id="embed-code" hidden></pre>
+      </div>
+    </main>
+
+    <script type="module" src="/src/demo.ts"></script>
+  </body>
+</html>

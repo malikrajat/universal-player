@@ -1,0 +1,168 @@
+{
+  "name": "@codewithrajat/universal-player",
+  "version": "0.0.1",
+  "description": "Framework-agnostic universal media player for video, audio, images and embeds.",
+  "keywords": [
+    "audio-player",
+    "dash",
+    "framework-agnostic",
+    "hls",
+    "media-player",
+    "streaming",
+    "typescript",
+    "universal-player",
+    "video-player",
+    "web-component"
+  ],
+  "homepage": "https://github.com/malikrajat/universal-player#readme",
+  "bugs": {
+    "url": "https://github.com/malikrajat/universal-player/issues"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Rajat Malik",
+    "url": "https://github.com/malikrajat"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/malikrajat/universal-player.git"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md"
+  ],
+  "type": "module",
+  "sideEffects": [
+    "**/*.css",
+    "./dist/entries/index.js",
+    "./dist/entries/ui.js"
+  ],
+  "main": "./dist/entries/index.js",
+  "module": "./dist/entries/index.js",
+  "types": "./dist/entries/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/entries/index.d.ts",
+      "import": "./dist/entries/index.js"
+    },
+    "./core": {
+      "types": "./dist/entries/core.d.ts",
+      "import": "./dist/entries/core.js"
+    },
+    "./ui": {
+      "types": "./dist/entries/ui.d.ts",
+      "import": "./dist/entries/ui.js"
+    },
+    "./vanilla": {
+      "types": "./dist/entries/vanilla.d.ts",
+      "import": "./dist/entries/vanilla.js"
+    },
+    "./react": {
+      "types": "./dist/entries/react.d.ts",
+      "import": "./dist/entries/react.js"
+    },
+    "./vue": {
+      "types": "./dist/entries/vue.d.ts",
+      "import": "./dist/entries/vue.js"
+    },
+    "./angular": {
+      "types": "./dist/entries/angular.d.ts",
+      "import": "./dist/entries/angular.js"
+    },
+    "./svelte4": {
+      "types": "./dist/frameworks/svelte4/UniversalPlayer.svelte.d.ts",
+      "svelte": "./dist/frameworks/svelte4/UniversalPlayer.svelte",
+      "default": "./dist/frameworks/svelte4/UniversalPlayer.svelte"
+    },
+    "./svelte5": {
+      "types": "./dist/frameworks/svelte5/UniversalPlayer.svelte.d.ts",
+      "svelte": "./dist/frameworks/svelte5/UniversalPlayer.svelte",
+      "default": "./dist/frameworks/svelte5/UniversalPlayer.svelte"
+    },
+    "./styles.css": "./dist/ui/styles.css",
+    "./package.json": "./package.json"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "vp pack",
+    "build:repo": "pnpm run build && node scripts/create-repo-folder.mjs",
+    "repo": "node scripts/create-repo-folder.mjs",
+    "check": "vp check",
+    "typecheck": "tsc --noEmit",
+    "test": "vp test",
+    "test:watch": "vp test watch",
+    "test:coverage": "vp test --coverage",
+    "test:browser": "vp test --config vitest.browser.config.ts",
+    "docs": "typedoc",
+    "check:pack": "node scripts/check-pack-contents.mjs",
+    "check:imports": "node scripts/check-browser-imports.mjs",
+    "check:exports": "publint --strict",
+    "check:types": "attw --pack . --profile esm-only --exclude-entrypoints ./styles.css ./svelte4 ./svelte5",
+    "validate": "pnpm run check && pnpm run typecheck && pnpm run test && pnpm run build && pnpm run check:pack && pnpm run check:imports && pnpm run check:exports && pnpm run check:types",
+    "changeset": "changeset",
+    "version": "changeset version",
+    "release": "changeset publish",
+    "sbom": "pnpm sbom --sbom-format cyclonedx --sbom-type library --sbom-authors \"Rajat Malik\" > sbom.json"
+  },
+  "devDependencies": {
+    "@angular/core": "^22.2.4",
+    "@arethetypeswrong/cli": "^0.18.2",
+    "@changesets/cli": "^2.29.0",
+    "@types/node": "^24.10.1",
+    "@types/react": "^19.3.0",
+    "@vitest/browser-playwright": "5.1.0",
+    "@vitest/coverage-v8": "5.1.0",
+    "dashjs": "^5.3.0",
+    "hls.js": "^1.5.0",
+    "jsdom": "^30.0.0",
+    "playwright": "^1.63.0",
+    "publint": "^0.3.15",
+    "react": "^19.3.1",
+    "rxjs": "^7.8.2",
+    "svelte": "^5.0.0",
+    "typedoc": "^0.28.0",
+    "typescript": "^5.9.3",
+    "vite-plus": "^1.4.0",
+    "vue": "^3.5.44"
+  },
+  "peerDependencies": {
+    "@angular/core": ">=17.0.0",
+    "dashjs": "^5.0.0",
+    "hls.js": "^1.5.0",
+    "react": ">=18.0.0",
+    "rxjs": "^7.8.0",
+    "svelte": "^4.0.0 || ^5.0.0",
+    "vue": "^2.7.0 || ^3.0.0"
+  },
+  "peerDependenciesMeta": {
+    "@angular/core": {
+      "optional": true
+    },
+    "dashjs": {
+      "optional": true
+    },
+    "hls.js": {
+      "optional": true
+    },
+    "react": {
+      "optional": true
+    },
+    "rxjs": {
+      "optional": true
+    },
+    "svelte": {
+      "optional": true
+    },
+    "vue": {
+      "optional": true
+    }
+  },
+  "engines": {
+    "node": ">=24.0.0"
+  },
+  "packageManager": "pnpm@11.5.1"
+}

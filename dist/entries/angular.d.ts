@@ -1,0 +1,2 @@
+import { AngularUniversalPlayer, AngularUniversalPlayerInputs, AngularUniversalPlayerOptions, AngularUniversalPlayerOutputs } from "../frameworks/angular/universal-player.js";
+export { AngularUniversalPlayer, type AngularUniversalPlayerInputs, type AngularUniversalPlayerOptions, type AngularUniversalPlayerOutputs };

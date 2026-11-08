@@ -1,0 +1,746 @@
+<!DOCTYPE html><html class="default" lang="en" data-base="./"><head><meta charset="utf-8"/><meta http-equiv="x-ua-compatible" content="IE=edge"/><title>@codewithrajat/universal-player - v0.0.1</title><meta name="description" content="Documentation for @codewithrajat/universal-player"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="assets/style.css"/><link rel="stylesheet" href="assets/highlight.css"/><script defer src="assets/main.js"></script><script async src="assets/icons.js" id="tsd-icons-script"></script><script async src="assets/search.js" id="tsd-search-script"></script><script async src="assets/navigation.js" id="tsd-nav-script"></script><script async src="assets/hierarchy.js" id="tsd-hierarchy-script"></script></head><body><script>document.documentElement.dataset.theme = localStorage.getItem("tsd-theme") || "os";document.body.style.display="none";setTimeout(() => window.app?app.showPage():document.body.style.removeProperty("display"),500)</script><header class="tsd-page-toolbar">
+<div class="tsd-toolbar-contents container"><a href="index.html" class="title">@codewithrajat/universal-player - v0.0.1</a>
+<div id="tsd-toolbar-links"></div><button id="tsd-search-trigger" class="tsd-widget" aria-label="Search"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><use href="assets/icons.svg#icon-search"></use></svg></button><dialog id="tsd-search" aria-label="Search"><input role="combobox" id="tsd-search-input" aria-controls="tsd-search-results" aria-autocomplete="list" aria-expanded="true" autocapitalize="off" autocomplete="off" placeholder="Search the docs" maxLength="100"/>
+<ul role="listbox" id="tsd-search-results"></ul>
+<div id="tsd-search-status" aria-live="polite" aria-atomic="true">
+<div>Preparing search index...</div></div></dialog><a href="#" class="tsd-widget menu" id="tsd-toolbar-menu-trigger" data-toggle="menu" aria-label="Menu"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><use href="assets/icons.svg#icon-menu"></use></svg></a></div></header>
+<div class="container container-main">
+<div class="col-content">
+<div class="tsd-page-title">
+<h1>@codewithrajat/universal-player - v0.0.1</h1></div>
+<div class="tsd-panel tsd-typography"><h1 id="codewithrajatuniversal-player" class="tsd-anchor-link">@codewithrajat/universal-player<a href="#codewithrajatuniversal-player" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h1>
+<p><a href="https://www.npmjs.com/package/@codewithrajat/universal-player"><img src="https://img.shields.io/npm/v/@codewithrajat/universal-player.svg" alt="npm version"></a>
+<a href="./LICENSE"><img src="https://img.shields.io/npm/l/@codewithrajat/universal-player.svg" alt="license"></a>
+<a href="./package.json"><img src="https://img.shields.io/node/v/@codewithrajat/universal-player.svg" alt="node"></a></p>
+<p>Framework-agnostic universal media player for <strong>video, audio, images and embeds</strong>.</p>
+<p>One headless TypeScript core, one <code>&lt;universal-player&gt;</code> web component, and thin
+adapters for React, Vue, Angular, Svelte 4 and Svelte 5. ESM-only, tree-shakeable,
+browser-first and dependency-free at the core.</p>
+<blockquote>
+<p><strong>Status: experience release.</strong> Native playback, images, HLS, DASH,
+YouTube/Vimeo time sync, adaptive controls, chapters, playlists, thumbnails,
+caption menus, in-player surveys and a YouTube-style control surface are
+implemented. Cast, ads and VR remain contract-only. See
+<a href="media/features.md">docs/features.md</a>.</p>
+</blockquote>
+<hr>
+<h2 id="why-universal" class="tsd-anchor-link">Why &quot;universal&quot;<a href="#why-universal" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<p>The player is not tied to <code>&lt;video&gt;</code>. It resolves a source into one of seven
+internal engines:</p>
+<table>
+<thead>
+<tr>
+<th>Source</th>
+<th>Engine</th>
+<th>Runtime dependency</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>.mp4</code>, <code>.webm</code>, <code>.mov</code>, ...</td>
+<td>native</td>
+<td>none</td>
+</tr>
+<tr>
+<td><code>.mp3</code>, <code>.wav</code>, <code>.m4a</code>, ...</td>
+<td>native</td>
+<td>none</td>
+</tr>
+<tr>
+<td><code>.jpg</code>, <code>.png</code>, <code>.avif</code>, ...</td>
+<td>image</td>
+<td>none</td>
+</tr>
+<tr>
+<td><code>.m3u8</code></td>
+<td>HLS</td>
+<td>optional <code>hls.js</code></td>
+</tr>
+<tr>
+<td><code>.mpd</code></td>
+<td>DASH</td>
+<td>optional <code>dashjs</code></td>
+</tr>
+<tr>
+<td>YouTube URLs</td>
+<td>iframe embed</td>
+<td>none</td>
+</tr>
+<tr>
+<td>Vimeo URLs</td>
+<td>iframe embed</td>
+<td>none</td>
+</tr>
+<tr>
+<td>Other iframe URLs</td>
+<td>generic embed</td>
+<td>none</td>
+</tr>
+<tr>
+<td>Chunked <code>Blob</code>/stream input</td>
+<td>chunked</td>
+<td>none</td>
+</tr>
+<tr>
+<td><code>data:</code> URLs</td>
+<td>native/image</td>
+<td>none</td>
+</tr>
+</tbody>
+</table>
+<p>Engine selection is internal. The public API deliberately does <strong>not</strong> expose a
+plugin registry (see <a href="media/decisions.md">docs/decisions.md</a>).</p>
+<hr>
+<h2 id="install" class="tsd-anchor-link">Install<a href="#install" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<pre><code class="bash"><span class="hl-0">pnpm</span><span class="hl-1"> </span><span class="hl-2">add</span><span class="hl-1"> </span><span class="hl-2">@codewithrajat/universal-player</span><br/><span class="hl-3"># npm install @codewithrajat/universal-player</span><br/><span class="hl-3"># yarn add @codewithrajat/universal-player</span><br/><span class="hl-3"># bun add @codewithrajat/universal-player</span>
+</code><button type="button">Copy</button></pre>
+
+<p>Optional peers, installed only when you need them:</p>
+<pre><code class="bash"><span class="hl-0">pnpm</span><span class="hl-1"> </span><span class="hl-2">add</span><span class="hl-1"> </span><span class="hl-2">hls.js</span><span class="hl-1">     </span><span class="hl-3"># HLS streams</span><br/><span class="hl-0">pnpm</span><span class="hl-1"> </span><span class="hl-2">add</span><span class="hl-1"> </span><span class="hl-2">dashjs</span><span class="hl-1">    </span><span class="hl-3"># MPEG-DASH streams</span><br/><span class="hl-0">pnpm</span><span class="hl-1"> </span><span class="hl-2">add</span><span class="hl-1"> </span><span class="hl-2">rxjs</span><span class="hl-1">       </span><span class="hl-3"># optional RxJS interop via toRxjsObservable()</span><br/><span class="hl-0">pnpm</span><span class="hl-1"> </span><span class="hl-2">add</span><span class="hl-1"> </span><span class="hl-2">react</span><span class="hl-1">      </span><span class="hl-3"># React adapter</span><br/><span class="hl-0">pnpm</span><span class="hl-1"> </span><span class="hl-2">add</span><span class="hl-1"> </span><span class="hl-2">vue</span><span class="hl-1">        </span><span class="hl-3"># Vue 2.7 / Vue 3 adapter</span><br/><span class="hl-0">pnpm</span><span class="hl-1"> </span><span class="hl-2">add</span><span class="hl-1"> </span><span class="hl-2">@angular/core</span><span class="hl-1">  </span><span class="hl-3"># Angular adapter</span><br/><span class="hl-0">pnpm</span><span class="hl-1"> </span><span class="hl-2">add</span><span class="hl-1"> </span><span class="hl-2">svelte</span><span class="hl-1">     </span><span class="hl-3"># Svelte 4 / Svelte 5 adapter</span>
+</code><button type="button">Copy</button></pre>
+
+<hr>
+<h2 id="quick-start" class="tsd-anchor-link">Quick start<a href="#quick-start" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<h3 id="1-custom-element-any-framework-any-page" class="tsd-anchor-link">1. Custom element (any framework, any page)<a href="#1-custom-element-any-framework-any-page" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<pre><code class="html"><span class="hl-4">&lt;</span><span class="hl-5">script</span><span class="hl-6"> </span><span class="hl-7">type</span><span class="hl-6">=</span><span class="hl-8">&quot;module&quot;</span><span class="hl-4">&gt;</span><br/><span class="hl-6">  </span><span class="hl-9">import</span><span class="hl-6"> </span><span class="hl-2">&quot;@codewithrajat/universal-player&quot;</span><span class="hl-6">;</span><br/><span class="hl-6">  </span><span class="hl-3">// Shadow DOM is the default and ships its own styles.</span><br/><span class="hl-6">  </span><span class="hl-3">// For light DOM, import the stylesheet and add shadow=&quot;light&quot;.</span><br/><span class="hl-6">  </span><span class="hl-9">import</span><span class="hl-6"> </span><span class="hl-2">&quot;@codewithrajat/universal-player/styles.css&quot;</span><span class="hl-6">;</span><br/><span class="hl-4">&lt;/</span><span class="hl-5">script</span><span class="hl-4">&gt;</span><br/><br/><span class="hl-4">&lt;</span><span class="hl-5">universal-player</span><br/><span class="hl-1">  </span><span class="hl-7">src</span><span class="hl-1">=</span><span class="hl-8">&quot;/media/clip.mp4&quot;</span><br/><span class="hl-1">  </span><span class="hl-7">poster</span><span class="hl-1">=</span><span class="hl-8">&quot;/media/poster.jpg&quot;</span><br/><span class="hl-1">  </span><span class="hl-7">controls</span><span class="hl-1">=</span><span class="hl-8">&quot;custom&quot;</span><br/><span class="hl-1">  </span><span class="hl-7">theme</span><span class="hl-1">=</span><span class="hl-8">&quot;dark&quot;</span><br/><span class="hl-1">  </span><span class="hl-7">locale</span><span class="hl-1">=</span><span class="hl-8">&quot;en&quot;</span><br/><span class="hl-4">&gt;&lt;/</span><span class="hl-5">universal-player</span><span class="hl-4">&gt;</span>
+</code><button type="button">Copy</button></pre>
+
+<p>The element registers a <code>UniversalPlayer</code> instance and exposes it as
+<code>element.player</code>.</p>
+<h3 id="2-vanilla-mount-helper" class="tsd-anchor-link">2. Vanilla mount helper<a href="#2-vanilla-mount-helper" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<pre><code class="ts"><span class="hl-9">import</span><span class="hl-1"> { </span><span class="hl-10">mountUniversalPlayer</span><span class="hl-1"> } </span><span class="hl-9">from</span><span class="hl-1"> </span><span class="hl-2">&quot;@codewithrajat/universal-player/vanilla&quot;</span><span class="hl-1">;</span><br/><span class="hl-9">import</span><span class="hl-1"> </span><span class="hl-2">&quot;@codewithrajat/universal-player/styles.css&quot;</span><span class="hl-1">;</span><br/><br/><span class="hl-11">const</span><span class="hl-1"> </span><span class="hl-12">player</span><span class="hl-1"> = </span><span class="hl-0">mountUniversalPlayer</span><span class="hl-1">(</span><span class="hl-2">&quot;#app&quot;</span><span class="hl-1">, {</span><br/><span class="hl-1">  </span><span class="hl-10">source:</span><span class="hl-1"> </span><span class="hl-2">&quot;/media/clip.mp4&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-10">poster:</span><span class="hl-1"> </span><span class="hl-2">&quot;/media/poster.jpg&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-10">theme:</span><span class="hl-1"> </span><span class="hl-2">&quot;dark&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">});</span><br/><br/><span class="hl-10">player</span><span class="hl-1">.</span><span class="hl-0">on</span><span class="hl-1">(</span><span class="hl-2">&quot;timeupdate&quot;</span><span class="hl-1">, ({ </span><span class="hl-10">currentTime</span><span class="hl-1">, </span><span class="hl-10">duration</span><span class="hl-1"> }) </span><span class="hl-11">=&gt;</span><span class="hl-1"> {</span><br/><span class="hl-1">  </span><span class="hl-10">console</span><span class="hl-1">.</span><span class="hl-0">log</span><span class="hl-1">(</span><span class="hl-10">currentTime</span><span class="hl-1">, </span><span class="hl-10">duration</span><span class="hl-1">);</span><br/><span class="hl-1">});</span>
+</code><button type="button">Copy</button></pre>
+
+<h3 id="3-headless-core" class="tsd-anchor-link">3. Headless core<a href="#3-headless-core" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<pre><code class="ts"><span class="hl-9">import</span><span class="hl-1"> { </span><span class="hl-10">createPlayer</span><span class="hl-1"> } </span><span class="hl-9">from</span><span class="hl-1"> </span><span class="hl-2">&quot;@codewithrajat/universal-player/core&quot;</span><span class="hl-1">;</span><br/><br/><span class="hl-11">const</span><span class="hl-1"> </span><span class="hl-12">player</span><span class="hl-1"> = </span><span class="hl-0">createPlayer</span><span class="hl-1">({</span><br/><span class="hl-1">  </span><span class="hl-10">container:</span><span class="hl-1"> </span><span class="hl-10">document</span><span class="hl-1">.</span><span class="hl-0">querySelector</span><span class="hl-1">(</span><span class="hl-2">&quot;#app&quot;</span><span class="hl-1">)!,</span><br/><span class="hl-1">  </span><span class="hl-10">source:</span><span class="hl-1"> </span><span class="hl-2">&quot;https://example.com/live.m3u8&quot;</span><span class="hl-1">, </span><span class="hl-3">// hls.js loaded lazily</span><br/><span class="hl-1">  </span><span class="hl-10">autoplay:</span><span class="hl-1"> </span><span class="hl-11">false</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-10">muted:</span><span class="hl-1"> </span><span class="hl-11">false</span><span class="hl-1">,</span><br/><span class="hl-1">});</span><br/><br/><span class="hl-9">await</span><span class="hl-1"> </span><span class="hl-10">player</span><span class="hl-1">.</span><span class="hl-0">load</span><span class="hl-1">(</span><span class="hl-2">&quot;https://example.com/live.m3u8&quot;</span><span class="hl-1">);</span><br/><span class="hl-9">await</span><span class="hl-1"> </span><span class="hl-10">player</span><span class="hl-1">.</span><span class="hl-0">play</span><span class="hl-1">();</span><br/><br/><span class="hl-10">player</span><span class="hl-1">.</span><span class="hl-0">observe</span><span class="hl-1">(</span><span class="hl-2">&quot;statechange&quot;</span><span class="hl-1">).</span><span class="hl-0">subscribe</span><span class="hl-1">((</span><span class="hl-10">state</span><span class="hl-1">) </span><span class="hl-11">=&gt;</span><span class="hl-1"> {</span><br/><span class="hl-1">  </span><span class="hl-10">console</span><span class="hl-1">.</span><span class="hl-0">log</span><span class="hl-1">(</span><span class="hl-10">state</span><span class="hl-1">.</span><span class="hl-10">status</span><span class="hl-1">, </span><span class="hl-10">state</span><span class="hl-1">.</span><span class="hl-10">currentTime</span><span class="hl-1">);</span><br/><span class="hl-1">});</span>
+</code><button type="button">Copy</button></pre>
+
+<h3 id="4-react" class="tsd-anchor-link">4. React<a href="#4-react" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<pre><code class="tsx"><span class="hl-9">import</span><span class="hl-1"> { </span><span class="hl-10">UniversalPlayer</span><span class="hl-1"> } </span><span class="hl-9">from</span><span class="hl-1"> </span><span class="hl-2">&quot;@codewithrajat/universal-player/react&quot;</span><span class="hl-1">;</span><br/><span class="hl-9">import</span><span class="hl-1"> </span><span class="hl-2">&quot;@codewithrajat/universal-player/styles.css&quot;</span><span class="hl-1">;</span><br/><br/><span class="hl-9">export</span><span class="hl-1"> </span><span class="hl-11">function</span><span class="hl-1"> </span><span class="hl-0">Demo</span><span class="hl-1">() {</span><br/><span class="hl-1">  </span><span class="hl-9">return</span><span class="hl-1"> (</span><br/><span class="hl-1">    </span><span class="hl-4">&lt;</span><span class="hl-13">UniversalPlayer</span><br/><span class="hl-1">      </span><span class="hl-7">src</span><span class="hl-1">=</span><span class="hl-2">&quot;/media/clip.mp4&quot;</span><br/><span class="hl-1">      </span><span class="hl-7">poster</span><span class="hl-1">=</span><span class="hl-2">&quot;/media/poster.jpg&quot;</span><br/><span class="hl-1">      </span><span class="hl-7">theme</span><span class="hl-1">=</span><span class="hl-2">&quot;dark&quot;</span><br/><span class="hl-1">      </span><span class="hl-7">onEvent</span><span class="hl-1">=</span><span class="hl-11">{</span><span class="hl-6">(</span><span class="hl-10">event</span><span class="hl-6">) </span><span class="hl-11">=&gt;</span><span class="hl-6"> </span><span class="hl-10">console</span><span class="hl-6">.</span><span class="hl-0">log</span><span class="hl-6">(</span><span class="hl-10">event</span><span class="hl-6">.</span><span class="hl-10">type</span><span class="hl-6">)</span><span class="hl-11">}</span><br/><span class="hl-1">    </span><span class="hl-4">/&gt;</span><br/><span class="hl-1">  );</span><br/><span class="hl-1">}</span>
+</code><button type="button">Copy</button></pre>
+
+<p>A <code>useUniversalPlayer()</code> hook and an imperative <code>UniversalPlayerHandle</code> are also
+exported.</p>
+<h3 id="5-vue-27-and-3" class="tsd-anchor-link">5. Vue (2.7 and 3)<a href="#5-vue-27-and-3" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<pre><code class="vue"><span class="hl-4">&lt;</span><span class="hl-5">script</span><span class="hl-1"> </span><span class="hl-7">setup</span><span class="hl-1"> </span><span class="hl-7">lang</span><span class="hl-1">=</span><span class="hl-8">&quot;ts&quot;</span><span class="hl-4">&gt;</span><br/><span class="hl-9">import</span><span class="hl-1"> { </span><span class="hl-10">UniversalPlayer</span><span class="hl-1"> } </span><span class="hl-9">from</span><span class="hl-1"> </span><span class="hl-2">&quot;@codewithrajat/universal-player/vue&quot;</span><span class="hl-1">;</span><br/><span class="hl-9">import</span><span class="hl-1"> </span><span class="hl-2">&quot;@codewithrajat/universal-player/styles.css&quot;</span><span class="hl-1">;</span><br/><span class="hl-4">&lt;/</span><span class="hl-5">script</span><span class="hl-4">&gt;</span><br/><br/><span class="hl-4">&lt;</span><span class="hl-5">template</span><span class="hl-4">&gt;</span><br/><span class="hl-1">  </span><span class="hl-4">&lt;</span><span class="hl-5">UniversalPlayer</span><span class="hl-1"> </span><span class="hl-7">src</span><span class="hl-1">=</span><span class="hl-8">&quot;/media/clip.mp4&quot;</span><span class="hl-1"> </span><span class="hl-7">theme</span><span class="hl-1">=</span><span class="hl-8">&quot;dark&quot;</span><span class="hl-4"> /&gt;</span><br/><span class="hl-4">&lt;/</span><span class="hl-5">template</span><span class="hl-4">&gt;</span>
+</code><button type="button">Copy</button></pre>
+
+<h3 id="6-angular" class="tsd-anchor-link">6. Angular<a href="#6-angular" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p>Angular libraries built by a generic bundler cannot safely ship a precompiled
+<code>@Component</code>, so this package ships a decorator-free controller. A standalone
+component you own forwards lifecycle calls to it:</p>
+<pre><code class="ts"><span class="hl-9">import</span><span class="hl-1"> { </span><span class="hl-10">Component</span><span class="hl-1">, </span><span class="hl-10">ElementRef</span><span class="hl-1">, </span><span class="hl-10">ViewChild</span><span class="hl-1">, </span><span class="hl-9">type</span><span class="hl-1"> </span><span class="hl-10">AfterViewInit</span><span class="hl-1"> } </span><span class="hl-9">from</span><span class="hl-1"> </span><span class="hl-2">&quot;@angular/core&quot;</span><span class="hl-1">;</span><br/><span class="hl-9">import</span><span class="hl-1"> { </span><span class="hl-10">AngularUniversalPlayer</span><span class="hl-1"> } </span><span class="hl-9">from</span><span class="hl-1"> </span><span class="hl-2">&quot;@codewithrajat/universal-player/angular&quot;</span><span class="hl-1">;</span><br/><br/><span class="hl-1">@</span><span class="hl-0">Component</span><span class="hl-1">({</span><br/><span class="hl-1">  </span><span class="hl-10">selector:</span><span class="hl-1"> </span><span class="hl-2">&quot;app-player&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-10">standalone:</span><span class="hl-1"> </span><span class="hl-11">true</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-10">template:</span><span class="hl-1"> </span><span class="hl-2">`&lt;div #host&gt;&lt;/div&gt;`</span><span class="hl-1">,</span><br/><span class="hl-1">})</span><br/><span class="hl-9">export</span><span class="hl-1"> </span><span class="hl-11">class</span><span class="hl-1"> </span><span class="hl-13">PlayerComponent</span><span class="hl-1"> </span><span class="hl-11">implements</span><span class="hl-1"> </span><span class="hl-13">AfterViewInit</span><span class="hl-1"> {</span><br/><span class="hl-1">  @</span><span class="hl-0">ViewChild</span><span class="hl-1">(</span><span class="hl-2">&quot;host&quot;</span><span class="hl-1">, { </span><span class="hl-10">static:</span><span class="hl-1"> </span><span class="hl-11">true</span><span class="hl-1"> }) </span><span class="hl-10">host</span><span class="hl-1">!: </span><span class="hl-13">ElementRef</span><span class="hl-1">&lt;</span><span class="hl-13">HTMLElement</span><span class="hl-1">&gt;;</span><br/><span class="hl-1">  </span><span class="hl-11">private</span><span class="hl-1"> </span><span class="hl-10">controller</span><span class="hl-1">!: </span><span class="hl-13">AngularUniversalPlayer</span><span class="hl-1">;</span><br/><br/><span class="hl-1">  </span><span class="hl-0">ngAfterViewInit</span><span class="hl-1">(): </span><span class="hl-13">void</span><span class="hl-1"> {</span><br/><span class="hl-1">    </span><span class="hl-11">this</span><span class="hl-1">.</span><span class="hl-10">controller</span><span class="hl-1"> = </span><span class="hl-11">new</span><span class="hl-1"> </span><span class="hl-0">AngularUniversalPlayer</span><span class="hl-1">({</span><br/><span class="hl-1">      </span><span class="hl-10">elementRef:</span><span class="hl-1"> </span><span class="hl-11">this</span><span class="hl-1">.</span><span class="hl-10">host</span><span class="hl-1">,</span><br/><span class="hl-1">      </span><span class="hl-10">inputs:</span><span class="hl-1"> { </span><span class="hl-10">source:</span><span class="hl-1"> </span><span class="hl-2">&quot;/media/clip.mp4&quot;</span><span class="hl-1"> },</span><br/><span class="hl-1">    });</span><br/><span class="hl-1">    </span><span class="hl-11">this</span><span class="hl-1">.</span><span class="hl-10">controller</span><span class="hl-1">.</span><span class="hl-0">ngAfterViewInit</span><span class="hl-1">();</span><br/><span class="hl-1">  }</span><br/><span class="hl-1">}</span>
+</code><button type="button">Copy</button></pre>
+
+<p>A complete standalone example lives in <a href="media/angular.md">the Angular guide</a>.</p>
+<h3 id="7-svelte-4-and-svelte-5" class="tsd-anchor-link">7. Svelte 4 and Svelte 5<a href="#7-svelte-4-and-svelte-5" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p>Svelte tooling expects source components, so the package ships two entries:</p>
+<pre><code class="svelte"><span class="hl-3">&lt;!-- Svelte 5 --&gt;</span><br/><span class="hl-4">&lt;</span><span class="hl-5">script</span><span class="hl-1"> </span><span class="hl-7">lang</span><span class="hl-1">=</span><span class="hl-2">&quot;ts&quot;</span><span class="hl-4">&gt;</span><br/><span class="hl-6">  </span><span class="hl-9">import</span><span class="hl-6"> </span><span class="hl-10">UniversalPlayer</span><span class="hl-6"> </span><span class="hl-9">from</span><span class="hl-6"> </span><span class="hl-2">&quot;@codewithrajat/universal-player/svelte5&quot;</span><span class="hl-6">;</span><br/><span class="hl-4">&lt;/</span><span class="hl-5">script</span><span class="hl-4">&gt;</span><br/><br/><span class="hl-4">&lt;</span><span class="hl-13">UniversalPlayer</span><span class="hl-1"> </span><span class="hl-7">src</span><span class="hl-1">=</span><span class="hl-2">&quot;/media/clip.mp4&quot;</span><span class="hl-1"> </span><span class="hl-7">theme</span><span class="hl-1">=</span><span class="hl-2">&quot;dark&quot;</span><span class="hl-1"> </span><span class="hl-4">/&gt;</span>
+</code><button type="button">Copy</button></pre>
+
+<pre><code class="svelte"><span class="hl-3">&lt;!-- Svelte 4 --&gt;</span><br/><span class="hl-4">&lt;</span><span class="hl-5">script</span><span class="hl-1"> </span><span class="hl-7">lang</span><span class="hl-1">=</span><span class="hl-2">&quot;ts&quot;</span><span class="hl-4">&gt;</span><br/><span class="hl-6">  </span><span class="hl-9">import</span><span class="hl-6"> </span><span class="hl-10">UniversalPlayer</span><span class="hl-6"> </span><span class="hl-9">from</span><span class="hl-6"> </span><span class="hl-2">&quot;@codewithrajat/universal-player/svelte4&quot;</span><span class="hl-6">;</span><br/><span class="hl-4">&lt;/</span><span class="hl-5">script</span><span class="hl-4">&gt;</span><br/><br/><span class="hl-4">&lt;</span><span class="hl-13">UniversalPlayer</span><span class="hl-1"> </span><span class="hl-7">src</span><span class="hl-1">=</span><span class="hl-2">&quot;/media/clip.mp4&quot;</span><span class="hl-1"> </span><span class="hl-7">theme</span><span class="hl-1">=</span><span class="hl-2">&quot;dark&quot;</span><span class="hl-1"> </span><span class="hl-4">/&gt;</span>
+</code><button type="button">Copy</button></pre>
+
+<hr>
+<h2 id="entry-points" class="tsd-anchor-link">Entry points<a href="#entry-points" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<table>
+<thead>
+<tr>
+<th>Import</th>
+<th>Contents</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>@codewithrajat/universal-player</code></td>
+<td>Core + UI + vanilla + all feature helpers</td>
+</tr>
+<tr>
+<td><code>@codewithrajat/universal-player/core</code></td>
+<td>Headless player, types, events, source detection</td>
+</tr>
+<tr>
+<td><code>@codewithrajat/universal-player/ui</code></td>
+<td><code>&lt;universal-player&gt;</code> element, i18n, registration side effect</td>
+</tr>
+<tr>
+<td><code>@codewithrajat/universal-player/vanilla</code></td>
+<td><code>mountUniversalPlayer()</code></td>
+</tr>
+<tr>
+<td><code>@codewithrajat/universal-player/react</code></td>
+<td><code>&lt;UniversalPlayer&gt;</code> and <code>useUniversalPlayer()</code></td>
+</tr>
+<tr>
+<td><code>@codewithrajat/universal-player/vue</code></td>
+<td>Vue 2.7 / Vue 3 component and composable</td>
+</tr>
+<tr>
+<td><code>@codewithrajat/universal-player/angular</code></td>
+<td><code>AngularUniversalPlayer</code> controller</td>
+</tr>
+<tr>
+<td><code>@codewithrajat/universal-player/svelte4</code></td>
+<td>Svelte 4 component</td>
+</tr>
+<tr>
+<td><code>@codewithrajat/universal-player/svelte5</code></td>
+<td>Svelte 5 component</td>
+</tr>
+<tr>
+<td><code>@codewithrajat/universal-player/styles.css</code></td>
+<td>Stylesheet for light-DOM usage</td>
+</tr>
+</tbody>
+</table>
+<p><code>core</code> and the feature modules are SSR-import-safe by construction, but the
+library is <strong>browser-only by decision</strong>: it does not guarantee server rendering
+of the element or framework wrappers.</p>
+<hr>
+<h2 id="core-api" class="tsd-anchor-link">Core API<a href="#core-api" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<pre><code class="ts"><span class="hl-9">import</span><span class="hl-1"> { </span><span class="hl-10">createPlayer</span><span class="hl-1">, </span><span class="hl-9">type</span><span class="hl-1"> </span><span class="hl-10">PlayerState</span><span class="hl-1"> } </span><span class="hl-9">from</span><span class="hl-1"> </span><span class="hl-2">&quot;@codewithrajat/universal-player/core&quot;</span><span class="hl-1">;</span><br/><br/><span class="hl-11">const</span><span class="hl-1"> </span><span class="hl-12">player</span><span class="hl-1"> = </span><span class="hl-0">createPlayer</span><span class="hl-1">({</span><br/><span class="hl-1">  </span><span class="hl-10">container:</span><span class="hl-1"> </span><span class="hl-10">element</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-10">source:</span><span class="hl-1"> </span><span class="hl-2">&quot;/media/clip.mp4&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-10">controls:</span><span class="hl-1"> </span><span class="hl-2">&quot;custom&quot;</span><span class="hl-1">, </span><span class="hl-3">// or &quot;native&quot;</span><br/><span class="hl-1">  </span><span class="hl-10">theme:</span><span class="hl-1"> </span><span class="hl-2">&quot;system&quot;</span><span class="hl-1">, </span><span class="hl-3">// &quot;light&quot; | &quot;dark&quot; | &quot;system&quot;</span><br/><span class="hl-1">  </span><span class="hl-10">locale:</span><span class="hl-1"> </span><span class="hl-2">&quot;en&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-10">resume:</span><span class="hl-1"> { </span><span class="hl-10">enabled:</span><span class="hl-1"> </span><span class="hl-11">true</span><span class="hl-1"> },</span><br/><span class="hl-1">  </span><span class="hl-10">analytics:</span><span class="hl-1"> { </span><span class="hl-0">onEvent</span><span class="hl-10">:</span><span class="hl-1"> (</span><span class="hl-10">event</span><span class="hl-1">) </span><span class="hl-11">=&gt;</span><span class="hl-1"> </span><span class="hl-10">console</span><span class="hl-1">.</span><span class="hl-0">log</span><span class="hl-1">(</span><span class="hl-10">event</span><span class="hl-1">) },</span><br/><span class="hl-1">});</span><br/><br/><span class="hl-9">await</span><span class="hl-1"> </span><span class="hl-10">player</span><span class="hl-1">.</span><span class="hl-0">load</span><span class="hl-1">(</span><span class="hl-2">&quot;/media/clip.mp4&quot;</span><span class="hl-1">);</span><br/><span class="hl-9">await</span><span class="hl-1"> </span><span class="hl-10">player</span><span class="hl-1">.</span><span class="hl-0">play</span><span class="hl-1">();</span><br/><span class="hl-10">player</span><span class="hl-1">.</span><span class="hl-0">pause</span><span class="hl-1">();</span><br/><span class="hl-10">player</span><span class="hl-1">.</span><span class="hl-0">seek</span><span class="hl-1">(</span><span class="hl-14">30</span><span class="hl-1">);</span><br/><span class="hl-10">player</span><span class="hl-1">.</span><span class="hl-0">setVolume</span><span class="hl-1">(</span><span class="hl-14">0.8</span><span class="hl-1">);</span><br/><span class="hl-10">player</span><span class="hl-1">.</span><span class="hl-0">setMuted</span><span class="hl-1">(</span><span class="hl-11">true</span><span class="hl-1">);</span><br/><span class="hl-10">player</span><span class="hl-1">.</span><span class="hl-0">setPlaybackRate</span><span class="hl-1">(</span><span class="hl-14">1.5</span><span class="hl-1">);</span><br/><span class="hl-10">player</span><span class="hl-1">.</span><span class="hl-0">setQuality</span><span class="hl-1">(</span><span class="hl-2">&quot;720p&quot;</span><span class="hl-1">); </span><span class="hl-3">// null = automatic</span><br/><span class="hl-10">player</span><span class="hl-1">.</span><span class="hl-0">setTextTrack</span><span class="hl-1">(</span><span class="hl-2">&quot;en&quot;</span><span class="hl-1">); </span><span class="hl-3">// null = captions off</span><br/><span class="hl-10">player</span><span class="hl-1">.</span><span class="hl-0">setAudioTrack</span><span class="hl-1">(</span><span class="hl-2">&quot;commentary&quot;</span><span class="hl-1">);</span><br/><span class="hl-10">player</span><span class="hl-1">.</span><span class="hl-0">seekToChapter</span><span class="hl-1">(</span><span class="hl-2">&quot;demo&quot;</span><span class="hl-1">);</span><br/><span class="hl-9">await</span><span class="hl-1"> </span><span class="hl-10">player</span><span class="hl-1">.</span><span class="hl-0">next</span><span class="hl-1">();</span><br/><span class="hl-9">await</span><span class="hl-1"> </span><span class="hl-10">player</span><span class="hl-1">.</span><span class="hl-0">openSurvey</span><span class="hl-1">();</span><br/><span class="hl-9">await</span><span class="hl-1"> </span><span class="hl-10">player</span><span class="hl-1">.</span><span class="hl-0">requestFullscreen</span><span class="hl-1">();</span><br/><span class="hl-9">await</span><span class="hl-1"> </span><span class="hl-10">player</span><span class="hl-1">.</span><span class="hl-0">requestPictureInPicture</span><span class="hl-1">();</span><br/><span class="hl-10">player</span><span class="hl-1">.</span><span class="hl-0">destroy</span><span class="hl-1">();</span>
+</code><button type="button">Copy</button></pre>
+
+<h3 id="state" class="tsd-anchor-link">State<a href="#state" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p><code>player.state</code> is an immutable snapshot containing status, source, timing,
+volume, playback rate, quality, text/audio tracks, live/fullscreen/PiP flags and
+the last error.</p>
+<h3 id="three-event-styles" class="tsd-anchor-link">Three event styles<a href="#three-event-styles" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<pre><code class="ts"><span class="hl-3">// 1. Standard DOM events</span><br/><span class="hl-10">player</span><span class="hl-1">.</span><span class="hl-0">addEventListener</span><span class="hl-1">(</span><span class="hl-2">&quot;play&quot;</span><span class="hl-1">, (</span><span class="hl-10">event</span><span class="hl-1">) </span><span class="hl-11">=&gt;</span><span class="hl-1"> {</span><br/><span class="hl-1">  </span><span class="hl-10">console</span><span class="hl-1">.</span><span class="hl-0">log</span><span class="hl-1">((</span><span class="hl-10">event</span><span class="hl-1"> </span><span class="hl-9">as</span><span class="hl-1"> </span><span class="hl-13">CustomEvent</span><span class="hl-1">).</span><span class="hl-10">detail</span><span class="hl-1">);</span><br/><span class="hl-1">});</span><br/><br/><span class="hl-3">// 2. Typed subscriptions</span><br/><span class="hl-11">const</span><span class="hl-1"> </span><span class="hl-12">unsubscribe</span><span class="hl-1"> = </span><span class="hl-10">player</span><span class="hl-1">.</span><span class="hl-0">on</span><span class="hl-1">(</span><span class="hl-2">&quot;timeupdate&quot;</span><span class="hl-1">, ({ </span><span class="hl-10">currentTime</span><span class="hl-1"> }) </span><span class="hl-11">=&gt;</span><span class="hl-1"> {</span><br/><span class="hl-1">  </span><span class="hl-10">console</span><span class="hl-1">.</span><span class="hl-0">log</span><span class="hl-1">(</span><span class="hl-10">currentTime</span><span class="hl-1">);</span><br/><span class="hl-1">});</span><br/><span class="hl-0">unsubscribe</span><span class="hl-1">();</span><br/><br/><span class="hl-3">// 3. Observable streams (RxJS-compatible; no rxjs import required)</span><br/><span class="hl-10">player</span><span class="hl-1">.</span><span class="hl-0">observe</span><span class="hl-1">(</span><span class="hl-2">&quot;statechange&quot;</span><span class="hl-1">).</span><span class="hl-0">subscribe</span><span class="hl-1">((</span><span class="hl-10">state</span><span class="hl-1">) </span><span class="hl-11">=&gt;</span><span class="hl-1"> {</span><br/><span class="hl-1">  </span><span class="hl-10">console</span><span class="hl-1">.</span><span class="hl-0">log</span><span class="hl-1">(</span><span class="hl-10">state</span><span class="hl-1">.</span><span class="hl-10">status</span><span class="hl-1">);</span><br/><span class="hl-1">});</span><br/><br/><span class="hl-3">// Optional lazy RxJS bridge (only if rxjs is installed)</span><br/><span class="hl-9">import</span><span class="hl-1"> { </span><span class="hl-10">toRxjsObservable</span><span class="hl-1"> } </span><span class="hl-9">from</span><span class="hl-1"> </span><span class="hl-2">&quot;@codewithrajat/universal-player/core&quot;</span><span class="hl-1">;</span><br/><span class="hl-11">const</span><span class="hl-1"> </span><span class="hl-12">rx</span><span class="hl-1"> = </span><span class="hl-9">await</span><span class="hl-1"> </span><span class="hl-0">toRxjsObservable</span><span class="hl-1">(</span><span class="hl-10">player</span><span class="hl-1">.</span><span class="hl-0">observe</span><span class="hl-1">(</span><span class="hl-2">&quot;play&quot;</span><span class="hl-1">));</span>
+</code><button type="button">Copy</button></pre>
+
+<p>Errors are plain <code>Error</code> objects with a stable <code>code</code>:</p>
+<pre><code class="ts"><span class="hl-9">import</span><span class="hl-1"> { </span><span class="hl-10">isPlayerError</span><span class="hl-1"> } </span><span class="hl-9">from</span><span class="hl-1"> </span><span class="hl-2">&quot;@codewithrajat/universal-player/core&quot;</span><span class="hl-1">;</span><br/><br/><span class="hl-9">try</span><span class="hl-1"> {</span><br/><span class="hl-1">  </span><span class="hl-9">await</span><span class="hl-1"> </span><span class="hl-10">player</span><span class="hl-1">.</span><span class="hl-0">play</span><span class="hl-1">();</span><br/><span class="hl-1">} </span><span class="hl-9">catch</span><span class="hl-1"> (</span><span class="hl-10">error</span><span class="hl-1">) {</span><br/><span class="hl-1">  </span><span class="hl-9">if</span><span class="hl-1"> (</span><span class="hl-0">isPlayerError</span><span class="hl-1">(</span><span class="hl-10">error</span><span class="hl-1">)) {</span><br/><span class="hl-1">    </span><span class="hl-10">console</span><span class="hl-1">.</span><span class="hl-0">log</span><span class="hl-1">(</span><span class="hl-10">error</span><span class="hl-1">.</span><span class="hl-10">code</span><span class="hl-1">); </span><span class="hl-3">// &quot;invalid-state&quot;, &quot;media-error&quot;, ...</span><br/><span class="hl-1">  }</span><br/><span class="hl-1">}</span>
+</code><button type="button">Copy</button></pre>
+
+<hr>
+<h2 id="theming" class="tsd-anchor-link">Theming<a href="#theming" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<p>The built-in UI is neutral by default: progress fills, slider thumbs, selected
+menu items and focus rings use a white accent on dark themes (and dark ink on
+light themes). Set a brand colour per instance with the <code>accent-color</code>
+attribute:</p>
+<pre><code class="html"><span class="hl-4">&lt;</span><span class="hl-5">universal-player</span><span class="hl-1"> </span><span class="hl-7">src</span><span class="hl-1">=</span><span class="hl-8">&quot;/clip.mp4&quot;</span><span class="hl-1"> </span><span class="hl-7">accent-color</span><span class="hl-1">=</span><span class="hl-8">&quot;#22c55e&quot;</span><span class="hl-4">&gt;&lt;/</span><span class="hl-5">universal-player</span><span class="hl-4">&gt;</span>
+</code><button type="button">Copy</button></pre>
+
+<p>The same value is available through the JS/JSON API:</p>
+<pre><code class="ts"><span class="hl-0">createPlayer</span><span class="hl-1">({</span><br/><span class="hl-1">  </span><span class="hl-10">container</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-10">source:</span><span class="hl-1"> </span><span class="hl-2">&quot;/clip.mp4&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-10">ui:</span><span class="hl-1"> { </span><span class="hl-10">theme:</span><span class="hl-1"> { </span><span class="hl-10">colors:</span><span class="hl-1"> { </span><span class="hl-10">accent:</span><span class="hl-1"> </span><span class="hl-2">&quot;#22c55e&quot;</span><span class="hl-1"> } } },</span><br/><span class="hl-1">});</span>
+</code><button type="button">Copy</button></pre>
+
+<p>All visual tokens are CSS custom properties on <code>.up-root</code>/the host:</p>
+<pre><code class="css"><span class="hl-5">universal-player</span><span class="hl-1"> {</span><br/><span class="hl-1">  </span><span class="hl-7">--up-color-accent</span><span class="hl-1">: </span><span class="hl-15">#22c55e</span><span class="hl-1">;</span><br/><span class="hl-1">  </span><span class="hl-3">/* Text/icons drawn on top of the accent. Auto-derived by `accent-color`. */</span><br/><span class="hl-1">  </span><span class="hl-7">--up-color-accent-contrast</span><span class="hl-1">: </span><span class="hl-15">#06240f</span><span class="hl-1">;</span><br/><span class="hl-1">  </span><span class="hl-7">--up-radius</span><span class="hl-1">: </span><span class="hl-14">1rem</span><span class="hl-1">;</span><br/><span class="hl-1">  </span><span class="hl-7">--up-font-family</span><span class="hl-1">: </span><span class="hl-2">&quot;Inter&quot;</span><span class="hl-1">, </span><span class="hl-15">system-ui</span><span class="hl-1">, </span><span class="hl-15">sans-serif</span><span class="hl-1">;</span><br/><br/><span class="hl-1">  </span><span class="hl-3">/* Survey / feedback actions */</span><br/><span class="hl-1">  </span><span class="hl-7">--up-survey-button-radius</span><span class="hl-1">: </span><span class="hl-14">999px</span><span class="hl-1">;</span><br/><span class="hl-1">  </span><span class="hl-7">--up-survey-submit-bg</span><span class="hl-1">: </span><span class="hl-15">#22c55e</span><span class="hl-1">;</span><br/><span class="hl-1">  </span><span class="hl-7">--up-survey-submit-color</span><span class="hl-1">: </span><span class="hl-15">#06240f</span><span class="hl-1">;</span><br/><span class="hl-1">  </span><span class="hl-7">--up-survey-submit-hover-bg</span><span class="hl-1">: </span><span class="hl-15">#16a34a</span><span class="hl-1">;</span><br/><span class="hl-1">}</span>
+</code><button type="button">Copy</button></pre>
+
+<ul>
+<li><code>theme=&quot;light&quot; | &quot;dark&quot; | &quot;system&quot;</code></li>
+<li>Shadow DOM by default (style isolation and built-in styles).</li>
+<li><code>shadow=&quot;light&quot;</code> for light DOM; import <code>styles.css</code> or add <code>inject-styles</code>.</li>
+<li><code>::part(root|controls|play-button|...)</code> is available for advanced styling.</li>
+<li>Survey actions (<code>Skip</code>, <code>Submit</code>, <code>Retake</code>, <code>Done</code>) use a rounded text-button shape. Tune them with <code>--up-survey-button-radius</code>, <code>--up-survey-submit-bg</code>, <code>--up-survey-submit-color</code>, <code>--up-survey-submit-hover-bg</code> and <code>--up-survey-submit-border</code>.</li>
+</ul>
+<hr>
+<h2 id="internationalization" class="tsd-anchor-link">Internationalization<a href="#internationalization" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<p>Built-in strings are English. Register a locale or override per instance:</p>
+<pre><code class="ts"><span class="hl-9">import</span><span class="hl-1"> { </span><span class="hl-10">registerLocale</span><span class="hl-1"> } </span><span class="hl-9">from</span><span class="hl-1"> </span><span class="hl-2">&quot;@codewithrajat/universal-player/ui&quot;</span><span class="hl-1">;</span><br/><br/><span class="hl-0">registerLocale</span><span class="hl-1">(</span><span class="hl-2">&quot;hi&quot;</span><span class="hl-1">, { </span><span class="hl-10">play:</span><span class="hl-1"> </span><span class="hl-2">&quot;चलाएँ&quot;</span><span class="hl-1">, </span><span class="hl-10">pause:</span><span class="hl-1"> </span><span class="hl-2">&quot;रोकें&quot;</span><span class="hl-1"> });</span>
+</code><button type="button">Copy</button></pre>
+
+<pre><code class="ts"><span class="hl-11">const</span><span class="hl-1"> </span><span class="hl-12">player</span><span class="hl-1"> = </span><span class="hl-0">createPlayer</span><span class="hl-1">({</span><br/><span class="hl-1">  </span><span class="hl-10">container</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-10">locale:</span><span class="hl-1"> </span><span class="hl-2">&quot;hi&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-10">strings:</span><span class="hl-1"> { </span><span class="hl-10">play:</span><span class="hl-1"> </span><span class="hl-2">&quot;Start&quot;</span><span class="hl-1"> },</span><br/><span class="hl-1">});</span>
+</code><button type="button">Copy</button></pre>
+
+<p>The UI uses logical properties and works in RTL layouts.</p>
+<hr>
+<h2 id="url-stored-and-chunked-media" class="tsd-anchor-link">URL, stored and chunked media<a href="#url-stored-and-chunked-media" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<p>Every media type accepts the same source styles:</p>
+<pre><code class="ts"><span class="hl-3">// Remote URL</span><br/><span class="hl-9">await</span><span class="hl-1"> </span><span class="hl-10">player</span><span class="hl-1">.</span><span class="hl-0">load</span><span class="hl-1">(</span><span class="hl-2">&quot;/media/clip.mp4&quot;</span><span class="hl-1">);</span><br/><br/><span class="hl-3">// Stored file / Blob / object URL / data URL</span><br/><span class="hl-9">await</span><span class="hl-1"> </span><span class="hl-10">player</span><span class="hl-1">.</span><span class="hl-0">load</span><span class="hl-1">(</span><span class="hl-10">file</span><span class="hl-1">);</span><br/><span class="hl-9">await</span><span class="hl-1"> </span><span class="hl-10">player</span><span class="hl-1">.</span><span class="hl-0">load</span><span class="hl-1">(</span><span class="hl-2">&quot;data:image/png;base64,...&quot;</span><span class="hl-1">);</span><br/><br/><span class="hl-3">// A list becomes a playlist/gallery (images or clips)</span><br/><span class="hl-9">await</span><span class="hl-1"> </span><span class="hl-10">player</span><span class="hl-1">.</span><span class="hl-0">load</span><span class="hl-1">([</span><span class="hl-2">&quot;/photos/1.jpg&quot;</span><span class="hl-1">, </span><span class="hl-2">&quot;/photos/2.jpg&quot;</span><span class="hl-1">, </span><span class="hl-2">&quot;/photos/3.jpg&quot;</span><span class="hl-1">]);</span><br/><br/><span class="hl-3">// Chunked upload or API response</span><br/><span class="hl-9">await</span><span class="hl-1"> </span><span class="hl-10">player</span><span class="hl-1">.</span><span class="hl-0">load</span><span class="hl-1">({</span><br/><span class="hl-1">  </span><span class="hl-10">kind:</span><span class="hl-1"> </span><span class="hl-2">&quot;video&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-10">type:</span><span class="hl-1"> </span><span class="hl-2">&quot;video/mp4&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-0">chunks</span><span class="hl-10">:</span><span class="hl-1"> </span><span class="hl-11">async</span><span class="hl-1"> </span><span class="hl-11">function*</span><span class="hl-1"> () {</span><br/><span class="hl-1">    </span><span class="hl-11">const</span><span class="hl-1"> </span><span class="hl-12">response</span><span class="hl-1"> = </span><span class="hl-9">await</span><span class="hl-1"> </span><span class="hl-0">fetch</span><span class="hl-1">(</span><span class="hl-2">&quot;/api/video&quot;</span><span class="hl-1">);</span><br/><span class="hl-1">    </span><span class="hl-11">const</span><span class="hl-1"> </span><span class="hl-12">reader</span><span class="hl-1"> = </span><span class="hl-10">response</span><span class="hl-1">.</span><span class="hl-10">body</span><span class="hl-1">!.</span><span class="hl-0">getReader</span><span class="hl-1">();</span><br/><br/><span class="hl-1">    </span><span class="hl-9">while</span><span class="hl-1"> (</span><span class="hl-11">true</span><span class="hl-1">) {</span><br/><span class="hl-1">      </span><span class="hl-11">const</span><span class="hl-1"> { </span><span class="hl-12">done</span><span class="hl-1">, </span><span class="hl-12">value</span><span class="hl-1"> } = </span><span class="hl-9">await</span><span class="hl-1"> </span><span class="hl-10">reader</span><span class="hl-1">.</span><span class="hl-0">read</span><span class="hl-1">();</span><br/><span class="hl-1">      </span><span class="hl-9">if</span><span class="hl-1"> (</span><span class="hl-10">done</span><span class="hl-1">) </span><span class="hl-9">return</span><span class="hl-1">;</span><br/><span class="hl-1">      </span><span class="hl-9">yield</span><span class="hl-1"> </span><span class="hl-10">value</span><span class="hl-1">;</span><br/><span class="hl-1">    }</span><br/><span class="hl-1">  },</span><br/><span class="hl-1">});</span>
+</code><button type="button">Copy</button></pre>
+
+<p>Chunked video/audio stream through MediaSource when the MIME type supports it
+and fall back to buffering into a Blob. Chunked images are assembled into a
+Blob. Pass a function that returns a fresh iterable/stream when the source must
+be replayable or reloadable.</p>
+<pre><code class="ts"><span class="hl-16">source</span><span class="hl-1">: {</span><br/><span class="hl-1">  </span><span class="hl-16">kind</span><span class="hl-1">: </span><span class="hl-2">&quot;video&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-16">type</span><span class="hl-1">: </span><span class="hl-2">&quot;video/mp4&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-16">mode</span><span class="hl-1">: </span><span class="hl-2">&quot;blob&quot;</span><span class="hl-1">, </span><span class="hl-3">// always buffer first</span><br/><span class="hl-1">  </span><span class="hl-16">chunks</span><span class="hl-1">: () </span><span class="hl-11">=&gt;</span><span class="hl-1"> </span><span class="hl-0">fetchChunks</span><span class="hl-1">(), </span><span class="hl-3">// reusable</span><br/><span class="hl-1">}</span>
+</code><button type="button">Copy</button></pre>
+
+<p>Playing a finished video automatically seeks back to <code>0</code> before replaying, so
+the same URL/source can be replayed without reloading it.</p>
+<p>For a photo slideshow, pass an array and set <code>image.slideDuration</code>:</p>
+<pre><code class="ts"><span class="hl-0">createPlayer</span><span class="hl-1">({</span><br/><span class="hl-1">  </span><span class="hl-10">container</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-10">source:</span><span class="hl-1"> [</span><span class="hl-2">&quot;/photos/1.jpg&quot;</span><span class="hl-1">, </span><span class="hl-2">&quot;/photos/2.jpg&quot;</span><span class="hl-1">, </span><span class="hl-2">&quot;/photos/3.jpg&quot;</span><span class="hl-1">],</span><br/><span class="hl-1">  </span><span class="hl-10">image:</span><span class="hl-1"> { </span><span class="hl-10">slideDuration:</span><span class="hl-1"> </span><span class="hl-14">5</span><span class="hl-1">, </span><span class="hl-10">zoom:</span><span class="hl-1"> </span><span class="hl-11">true</span><span class="hl-1">, </span><span class="hl-10">rotate:</span><span class="hl-1"> </span><span class="hl-11">true</span><span class="hl-1"> },</span><br/><span class="hl-1">});</span>
+</code><button type="button">Copy</button></pre>
+
+<h2 id="captions-and-subtitles" class="tsd-anchor-link">Captions and subtitles<a href="#captions-and-subtitles" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<p>External WebVTT tracks can be supplied per source or per player. The CC button
+in the control bar toggles subtitles <strong>on/off</strong> immediately; open
+<strong>Settings → Subtitles/CC</strong> to choose a language, turn them off, or change the
+caption size. The same tracks are also available headlessly. Track choice and
+caption size are remembered per source.</p>
+<pre><code class="ts"><span class="hl-11">const</span><span class="hl-1"> </span><span class="hl-12">player</span><span class="hl-1"> = </span><span class="hl-0">createPlayer</span><span class="hl-1">({</span><br/><span class="hl-1">  </span><span class="hl-10">container</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-10">source:</span><span class="hl-1"> {</span><br/><span class="hl-1">    </span><span class="hl-10">kind:</span><span class="hl-1"> </span><span class="hl-2">&quot;video&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-10">src:</span><span class="hl-1"> </span><span class="hl-2">&quot;/media/lecture.mp4&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-10">captions:</span><span class="hl-1"> [</span><br/><span class="hl-1">      { </span><span class="hl-10">src:</span><span class="hl-1"> </span><span class="hl-2">&quot;/media/en.vtt&quot;</span><span class="hl-1">, </span><span class="hl-10">label:</span><span class="hl-1"> </span><span class="hl-2">&quot;English&quot;</span><span class="hl-1">, </span><span class="hl-10">language:</span><span class="hl-1"> </span><span class="hl-2">&quot;en&quot;</span><span class="hl-1">, </span><span class="hl-10">default:</span><span class="hl-1"> </span><span class="hl-11">true</span><span class="hl-1"> },</span><br/><span class="hl-1">      { </span><span class="hl-10">src:</span><span class="hl-1"> </span><span class="hl-2">&quot;/media/hi.vtt&quot;</span><span class="hl-1">, </span><span class="hl-10">label:</span><span class="hl-1"> </span><span class="hl-2">&quot;हिन्दी&quot;</span><span class="hl-1">, </span><span class="hl-10">language:</span><span class="hl-1"> </span><span class="hl-2">&quot;hi&quot;</span><span class="hl-1"> },</span><br/><span class="hl-1">    ],</span><br/><span class="hl-1">  },</span><br/><span class="hl-1">  </span><span class="hl-10">captions:</span><span class="hl-1"> {</span><br/><span class="hl-1">    </span><span class="hl-10">enabled:</span><span class="hl-1"> </span><span class="hl-11">true</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-10">defaultTrack:</span><span class="hl-1"> </span><span class="hl-2">&quot;en&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-10">style:</span><span class="hl-1"> { </span><span class="hl-10">fontSize:</span><span class="hl-1"> </span><span class="hl-2">&quot;120%&quot;</span><span class="hl-1">, </span><span class="hl-10">color:</span><span class="hl-1"> </span><span class="hl-2">&quot;#fff&quot;</span><span class="hl-1">, </span><span class="hl-10">background:</span><span class="hl-1"> </span><span class="hl-2">&quot;rgba(0,0,0,.7)&quot;</span><span class="hl-1"> },</span><br/><span class="hl-1">  },</span><br/><span class="hl-1">});</span><br/><br/><span class="hl-10">player</span><span class="hl-1">.</span><span class="hl-0">setTextTrack</span><span class="hl-1">(</span><span class="hl-2">&quot;hi&quot;</span><span class="hl-1">);</span><br/><span class="hl-10">player</span><span class="hl-1">.</span><span class="hl-0">setTextTrack</span><span class="hl-1">(</span><span class="hl-11">null</span><span class="hl-1">); </span><span class="hl-3">// off</span><br/><span class="hl-10">player</span><span class="hl-1">.</span><span class="hl-0">toggleCaptions</span><span class="hl-1">(); </span><span class="hl-3">// keyboard: C</span><br/><span class="hl-10">player</span><span class="hl-1">.</span><span class="hl-0">setCaptionStyle</span><span class="hl-1">({ </span><span class="hl-10">fontSize:</span><span class="hl-1"> </span><span class="hl-2">&quot;140%&quot;</span><span class="hl-1"> });</span>
+</code><button type="button">Copy</button></pre>
+
+<h2 id="surveys-feedback-and-reviews" class="tsd-anchor-link">Surveys, feedback and reviews<a href="#surveys-feedback-and-reviews" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<p>Surveys are rendered <strong>inside the player</strong>, not on a separate page. Questions
+can come from the player config, from source metadata, or from an async provider
+(for example an API call when the video ends).</p>
+<pre><code class="ts"><span class="hl-11">const</span><span class="hl-1"> </span><span class="hl-12">player</span><span class="hl-1"> = </span><span class="hl-0">createPlayer</span><span class="hl-1">({</span><br/><span class="hl-1">  </span><span class="hl-10">container</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-10">source:</span><span class="hl-1"> </span><span class="hl-2">&quot;/media/clip.mp4&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-10">survey:</span><span class="hl-1"> {</span><br/><span class="hl-1">    </span><span class="hl-10">id:</span><span class="hl-1"> </span><span class="hl-2">&quot;post-watch&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-10">kind:</span><span class="hl-1"> </span><span class="hl-2">&quot;feedback&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-10">title:</span><span class="hl-1"> </span><span class="hl-2">&quot;How was the video?&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-10">description:</span><span class="hl-1"> </span><span class="hl-2">&quot;This helps us improve the next one.&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-10">trigger:</span><span class="hl-1"> </span><span class="hl-2">&quot;ended&quot;</span><span class="hl-1">, </span><span class="hl-3">// or &quot;manual&quot; / seconds / { at: 120 }</span><br/><span class="hl-1">    </span><span class="hl-10">once:</span><span class="hl-1"> </span><span class="hl-11">true</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-10">allowSkip:</span><span class="hl-1"> </span><span class="hl-11">true</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-10">questions:</span><span class="hl-1"> [</span><br/><span class="hl-1">      {</span><br/><span class="hl-1">        </span><span class="hl-10">id:</span><span class="hl-1"> </span><span class="hl-2">&quot;liked&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">        </span><span class="hl-10">type:</span><span class="hl-1"> </span><span class="hl-2">&quot;radio&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">        </span><span class="hl-10">label:</span><span class="hl-1"> </span><span class="hl-2">&quot;Did you like it?&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">        </span><span class="hl-10">required:</span><span class="hl-1"> </span><span class="hl-11">true</span><span class="hl-1">,</span><br/><span class="hl-1">        </span><span class="hl-10">options:</span><span class="hl-1"> [</span><br/><span class="hl-1">          { </span><span class="hl-10">id:</span><span class="hl-1"> </span><span class="hl-2">&quot;yes&quot;</span><span class="hl-1">, </span><span class="hl-10">label:</span><span class="hl-1"> </span><span class="hl-2">&quot;Yes&quot;</span><span class="hl-1"> },</span><br/><span class="hl-1">          { </span><span class="hl-10">id:</span><span class="hl-1"> </span><span class="hl-2">&quot;no&quot;</span><span class="hl-1">, </span><span class="hl-10">label:</span><span class="hl-1"> </span><span class="hl-2">&quot;No&quot;</span><span class="hl-1"> },</span><br/><span class="hl-1">        ],</span><br/><span class="hl-1">      },</span><br/><span class="hl-1">      {</span><br/><span class="hl-1">        </span><span class="hl-10">id:</span><span class="hl-1"> </span><span class="hl-2">&quot;topics&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">        </span><span class="hl-10">type:</span><span class="hl-1"> </span><span class="hl-2">&quot;checkbox&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">        </span><span class="hl-10">label:</span><span class="hl-1"> </span><span class="hl-2">&quot;What should we cover next?&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">        </span><span class="hl-10">options:</span><span class="hl-1"> [</span><br/><span class="hl-1">          { </span><span class="hl-10">id:</span><span class="hl-1"> </span><span class="hl-2">&quot;api&quot;</span><span class="hl-1">, </span><span class="hl-10">label:</span><span class="hl-1"> </span><span class="hl-2">&quot;API design&quot;</span><span class="hl-1"> },</span><br/><span class="hl-1">          { </span><span class="hl-10">id:</span><span class="hl-1"> </span><span class="hl-2">&quot;ui&quot;</span><span class="hl-1">, </span><span class="hl-10">label:</span><span class="hl-1"> </span><span class="hl-2">&quot;UI patterns&quot;</span><span class="hl-1"> },</span><br/><span class="hl-1">        ],</span><br/><span class="hl-1">      },</span><br/><span class="hl-1">      {</span><br/><span class="hl-1">        </span><span class="hl-10">id:</span><span class="hl-1"> </span><span class="hl-2">&quot;rating&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">        </span><span class="hl-10">type:</span><span class="hl-1"> </span><span class="hl-2">&quot;rating&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">        </span><span class="hl-10">label:</span><span class="hl-1"> </span><span class="hl-2">&quot;Rate this video&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">        </span><span class="hl-10">max:</span><span class="hl-1"> </span><span class="hl-14">5</span><span class="hl-1">,</span><br/><span class="hl-1">      },</span><br/><span class="hl-1">      {</span><br/><span class="hl-1">        </span><span class="hl-10">id:</span><span class="hl-1"> </span><span class="hl-2">&quot;comment&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">        </span><span class="hl-10">type:</span><span class="hl-1"> </span><span class="hl-2">&quot;textarea&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">        </span><span class="hl-10">label:</span><span class="hl-1"> </span><span class="hl-2">&quot;Anything else?&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">        </span><span class="hl-10">maxLength:</span><span class="hl-1"> </span><span class="hl-14">500</span><span class="hl-1">,</span><br/><span class="hl-1">        </span><span class="hl-10">allowOther:</span><span class="hl-1"> </span><span class="hl-11">false</span><span class="hl-1">,</span><br/><span class="hl-1">      },</span><br/><span class="hl-1">    ],</span><br/><span class="hl-1">    </span><span class="hl-0">onSubmit</span><span class="hl-10">:</span><span class="hl-1"> </span><span class="hl-11">async</span><span class="hl-1"> (</span><span class="hl-10">result</span><span class="hl-1">) </span><span class="hl-11">=&gt;</span><span class="hl-1"> {</span><br/><span class="hl-1">      </span><span class="hl-9">await</span><span class="hl-1"> </span><span class="hl-0">fetch</span><span class="hl-1">(</span><span class="hl-2">&quot;/api/feedback&quot;</span><span class="hl-1">, {</span><br/><span class="hl-1">        </span><span class="hl-10">method:</span><span class="hl-1"> </span><span class="hl-2">&quot;POST&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">        </span><span class="hl-10">headers:</span><span class="hl-1"> { </span><span class="hl-2">&quot;content-type&quot;</span><span class="hl-10">:</span><span class="hl-1"> </span><span class="hl-2">&quot;application/json&quot;</span><span class="hl-1"> },</span><br/><span class="hl-1">        </span><span class="hl-10">body:</span><span class="hl-1"> </span><span class="hl-12">JSON</span><span class="hl-1">.</span><span class="hl-0">stringify</span><span class="hl-1">(</span><span class="hl-10">result</span><span class="hl-1">.</span><span class="hl-10">answers</span><span class="hl-1">),</span><br/><span class="hl-1">      });</span><br/><span class="hl-1">    },</span><br/><span class="hl-1">  },</span><br/><span class="hl-1">});</span>
+</code><button type="button">Copy</button></pre>
+
+<p>Supported question types: <code>radio</code>, <code>checkbox</code>, <code>select</code>, <code>text</code>, <code>textarea</code>,
+<code>rating</code> and <code>scale</code>. Choice questions support <code>allowOther</code>, <code>minSelections</code>,
+<code>maxSelections</code>; text questions support <code>minLength</code>/<code>maxLength</code>; numeric
+questions support <code>min</code>/<code>max</code>/<code>step</code>. Required validation is enforced by both
+the UI and the core.</p>
+<p>Submission is configurable:</p>
+<pre><code class="ts"><span class="hl-16">survey</span><span class="hl-1">: {</span><br/><span class="hl-1">  </span><span class="hl-16">submitMode</span><span class="hl-1">: </span><span class="hl-2">&quot;manual&quot;</span><span class="hl-1">,       </span><span class="hl-3">// &quot;manual&quot; | &quot;on-select&quot; | &quot;on-complete&quot;</span><br/><span class="hl-1">  </span><span class="hl-16">autoSubmit</span><span class="hl-1">: </span><span class="hl-11">true</span><span class="hl-1">,           </span><span class="hl-3">// shorthand for submitMode: &quot;on-select&quot;</span><br/><span class="hl-1">  </span><span class="hl-16">autoSubmitDelay</span><span class="hl-1">: </span><span class="hl-14">0</span><span class="hl-1">,         </span><span class="hl-3">// ms before auto-submission</span><br/><span class="hl-1">  </span><span class="hl-16">required</span><span class="hl-1">: </span><span class="hl-11">true</span><span class="hl-1">,             </span><span class="hl-3">// cannot close/skip until submitted</span><br/><span class="hl-1">  </span><span class="hl-16">blocking</span><span class="hl-1">: </span><span class="hl-11">true</span><span class="hl-1">,             </span><span class="hl-3">// alias for required</span><br/><span class="hl-1">  </span><span class="hl-16">allowRetake</span><span class="hl-1">: </span><span class="hl-11">true</span><span class="hl-1">,          </span><span class="hl-3">// show a completion screen with Retake</span><br/><span class="hl-1">  </span><span class="hl-16">maxAttempts</span><span class="hl-1">: </span><span class="hl-14">3</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-16">instantFeedback</span><span class="hl-1">: </span><span class="hl-11">true</span><span class="hl-1">,      </span><span class="hl-3">// quiz-style correct/incorrect feedback</span><br/><span class="hl-1">  </span><span class="hl-16">kind</span><span class="hl-1">: </span><span class="hl-2">&quot;quiz&quot;</span><span class="hl-1">,               </span><span class="hl-3">// feedback/review never show correctness by default</span><br/><span class="hl-1">  </span><span class="hl-16">questions</span><span class="hl-1">: [</span><br/><span class="hl-1">    {</span><br/><span class="hl-1">      </span><span class="hl-10">id:</span><span class="hl-1"> </span><span class="hl-2">&quot;answer&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">      </span><span class="hl-10">type:</span><span class="hl-1"> </span><span class="hl-2">&quot;radio&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">      </span><span class="hl-10">label:</span><span class="hl-1"> </span><span class="hl-2">&quot;2 + 2?&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">      </span><span class="hl-10">required:</span><span class="hl-1"> </span><span class="hl-11">true</span><span class="hl-1">,</span><br/><span class="hl-1">      </span><span class="hl-10">correct:</span><span class="hl-1"> </span><span class="hl-2">&quot;4&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">      </span><span class="hl-10">explanation:</span><span class="hl-1"> </span><span class="hl-2">&quot;Four&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">      </span><span class="hl-10">options:</span><span class="hl-1"> [</span><br/><span class="hl-1">        { </span><span class="hl-10">id:</span><span class="hl-1"> </span><span class="hl-2">&quot;3&quot;</span><span class="hl-1">, </span><span class="hl-10">label:</span><span class="hl-1"> </span><span class="hl-2">&quot;3&quot;</span><span class="hl-1"> },</span><br/><span class="hl-1">        { </span><span class="hl-10">id:</span><span class="hl-1"> </span><span class="hl-2">&quot;4&quot;</span><span class="hl-1">, </span><span class="hl-10">label:</span><span class="hl-1"> </span><span class="hl-2">&quot;4&quot;</span><span class="hl-1"> },</span><br/><span class="hl-1">      ],</span><br/><span class="hl-1">    },</span><br/><span class="hl-1">  ],</span><br/><span class="hl-1">}</span>
+</code><button type="button">Copy</button></pre>
+
+<ul>
+<li><code>on-select</code> submits as soon as the required answers are selected.</li>
+<li><code>on-complete</code> submits when every required question is answered.</li>
+<li><code>instantFeedback</code> shows Correct/Incorrect and an explanation immediately for
+quiz questions.</li>
+<li><code>feedback</code> and <code>review</code> forms stay as a normal single form submission.</li>
+<li><code>required</code>/<code>blocking</code> hides skip/close and prevents the survey from being
+dismissed until it is submitted.</li>
+<li><code>allowRetake</code> (alias <code>allowResubmit</code>) keeps a thank-you screen open with
+<strong>Retake</strong> and <strong>Done</strong> actions. <code>player.retakeSurvey()</code> is also available
+headlessly, with <code>maxAttempts</code> controlling how many times.</li>
+</ul>
+<p>Dynamic or externally loaded questions:</p>
+<pre><code class="ts"><span class="hl-10">player</span><span class="hl-1">.</span><span class="hl-0">setSurvey</span><span class="hl-1">(</span><span class="hl-11">async</span><span class="hl-1"> () </span><span class="hl-11">=&gt;</span><span class="hl-1"> {</span><br/><span class="hl-1">  </span><span class="hl-11">const</span><span class="hl-1"> </span><span class="hl-12">response</span><span class="hl-1"> = </span><span class="hl-9">await</span><span class="hl-1"> </span><span class="hl-0">fetch</span><span class="hl-1">(</span><span class="hl-2">&quot;/api/survey&quot;</span><span class="hl-1">);</span><br/><span class="hl-1">  </span><span class="hl-9">return</span><span class="hl-1"> </span><span class="hl-10">response</span><span class="hl-1">.</span><span class="hl-0">json</span><span class="hl-1">(); </span><span class="hl-3">// SurveyConfig</span><br/><span class="hl-1">});</span><br/><br/><span class="hl-9">await</span><span class="hl-1"> </span><span class="hl-10">player</span><span class="hl-1">.</span><span class="hl-0">openSurvey</span><span class="hl-1">(); </span><span class="hl-3">// manual trigger</span>
+</code><button type="button">Copy</button></pre>
+
+<p>Events and state:</p>
+<pre><code class="ts"><span class="hl-10">player</span><span class="hl-1">.</span><span class="hl-0">on</span><span class="hl-1">(</span><span class="hl-2">&quot;surveyopen&quot;</span><span class="hl-1">, ({ </span><span class="hl-10">survey</span><span class="hl-1"> }) </span><span class="hl-11">=&gt;</span><span class="hl-1"> {});</span><br/><span class="hl-10">player</span><span class="hl-1">.</span><span class="hl-0">on</span><span class="hl-1">(</span><span class="hl-2">&quot;surveysubmit&quot;</span><span class="hl-1">, ({ </span><span class="hl-10">survey</span><span class="hl-1">, </span><span class="hl-10">answers</span><span class="hl-1">, </span><span class="hl-10">result</span><span class="hl-1"> }) </span><span class="hl-11">=&gt;</span><span class="hl-1"> {});</span><br/><span class="hl-10">player</span><span class="hl-1">.</span><span class="hl-0">on</span><span class="hl-1">(</span><span class="hl-2">&quot;surveyskip&quot;</span><span class="hl-1">, ({ </span><span class="hl-10">survey</span><span class="hl-1"> }) </span><span class="hl-11">=&gt;</span><span class="hl-1"> {});</span><br/><span class="hl-10">player</span><span class="hl-1">.</span><span class="hl-0">on</span><span class="hl-1">(</span><span class="hl-2">&quot;surveyclose&quot;</span><span class="hl-1">, ({ </span><span class="hl-10">survey</span><span class="hl-1">, </span><span class="hl-10">reason</span><span class="hl-1"> }) </span><span class="hl-11">=&gt;</span><span class="hl-1"> {});</span><br/><span class="hl-10">console</span><span class="hl-1">.</span><span class="hl-0">log</span><span class="hl-1">(</span><span class="hl-10">player</span><span class="hl-1">.</span><span class="hl-10">state</span><span class="hl-1">.</span><span class="hl-10">survey</span><span class="hl-1">, </span><span class="hl-10">player</span><span class="hl-1">.</span><span class="hl-10">state</span><span class="hl-1">.</span><span class="hl-10">surveyOpen</span><span class="hl-1">);</span>
+</code><button type="button">Copy</button></pre>
+
+<p>Partial/required answers can be validated without opening the UI:</p>
+<pre><code class="ts"><span class="hl-9">import</span><span class="hl-1"> { </span><span class="hl-10">validateSurveyAnswers</span><span class="hl-1"> } </span><span class="hl-9">from</span><span class="hl-1"> </span><span class="hl-2">&quot;@codewithrajat/universal-player&quot;</span><span class="hl-1">;</span>
+</code><button type="button">Copy</button></pre>
+
+<h3 id="ready-made-survey-examples" class="tsd-anchor-link">Ready-made survey examples<a href="#ready-made-survey-examples" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p>The package ships five copy-paste presets. Spread any preset and override only
+what you need:</p>
+<pre><code class="ts"><span class="hl-9">import</span><span class="hl-1"> {</span><br/><span class="hl-1">  </span><span class="hl-10">blockingReview</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-10">contentFeedback</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-10">endOfVideoFeedback</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-10">netPromoterScore</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-10">quizFeedback</span><span class="hl-1">,</span><br/><span class="hl-1">} </span><span class="hl-9">from</span><span class="hl-1"> </span><span class="hl-2">&quot;@codewithrajat/universal-player&quot;</span><span class="hl-1">;</span><br/><br/><span class="hl-11">const</span><span class="hl-1"> </span><span class="hl-12">player</span><span class="hl-1"> = </span><span class="hl-0">createPlayer</span><span class="hl-1">({</span><br/><span class="hl-1">  </span><span class="hl-10">container</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-10">source:</span><span class="hl-1"> </span><span class="hl-2">&quot;/courses/lesson-1.mp4&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-10">survey:</span><span class="hl-1"> </span><span class="hl-0">endOfVideoFeedback</span><span class="hl-1">({</span><br/><span class="hl-1">    </span><span class="hl-10">title:</span><span class="hl-1"> </span><span class="hl-2">&quot;Was lesson one useful?&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-0">onSubmit</span><span class="hl-10">:</span><span class="hl-1"> (</span><span class="hl-10">result</span><span class="hl-1">) </span><span class="hl-11">=&gt;</span><span class="hl-1"> </span><span class="hl-0">saveFeedback</span><span class="hl-1">(</span><span class="hl-10">result</span><span class="hl-1">.</span><span class="hl-10">answers</span><span class="hl-1">),</span><br/><span class="hl-1">  }),</span><br/><span class="hl-1">});</span>
+</code><button type="button">Copy</button></pre>
+
+<table>
+<thead>
+<tr>
+<th>Preset</th>
+<th>Use it for</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>endOfVideoFeedback</code></td>
+<td>CSAT rating + topics + optional comment</td>
+</tr>
+<tr>
+<td><code>netPromoterScore</code></td>
+<td>NPS 0–10 + reason</td>
+</tr>
+<tr>
+<td><code>contentFeedback</code></td>
+<td>“Was this helpful?” with one-select auto-submit</td>
+</tr>
+<tr>
+<td><code>blockingReview</code></td>
+<td>Required review/notes before the viewer can continue</td>
+</tr>
+<tr>
+<td><code>quizFeedback</code></td>
+<td>Instant correct/incorrect quiz feedback</td>
+</tr>
+</tbody>
+</table>
+<p>The presets are plain <code>SurveyConfig</code> objects, so they also work from source
+metadata, <code>player.setSurvey()</code>, or the <code>survey</code> JSON attribute.</p>
+<h3 id="survey-implementation-checklist" class="tsd-anchor-link">Survey implementation checklist<a href="#survey-implementation-checklist" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<ol>
+<li>Pick a trigger: <code>&quot;ended&quot;</code>, <code>&quot;manual&quot;</code>, a number, or <code>{ at: 120 }</code>.</li>
+<li>Decide whether the form is optional (<code>allowSkip: true</code>) or blocking
+(<code>blocking: true</code>, which also hides skip/close).</li>
+<li>Choose submission: <code>manual</code>, <code>on-select</code>, or <code>on-complete</code>.</li>
+<li>Persist once-per-source with <code>once: true</code> and a stable <code>id</code>.</li>
+<li>Submit to your API in <code>onSubmit</code>; listen to <code>surveysubmit</code> for analytics.</li>
+<li>Use <code>maxAttempts</code> + <code>allowRetake</code> for training/assessment flows.</li>
+</ol>
+<h2 id="adaptive-controls" class="tsd-anchor-link">Adaptive controls<a href="#adaptive-controls" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<p>The built-in UI reads <code>state.kind</code> and <code>state.capabilities</code> and only renders
+controls that make sense:</p>
+<table>
+<thead>
+<tr>
+<th>Media</th>
+<th>Controls</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>video</td>
+<td>Play, seek, time, volume, CC, settings, chapters, playlist, PiP, fullscreen</td>
+</tr>
+<tr>
+<td>audio</td>
+<td>Play, seek, time, volume, settings, playlist, loop, autoplay, fullscreen</td>
+</tr>
+<tr>
+<td>image</td>
+<td>Zoom in/out, rotate, download, share, fullscreen (no timeline or volume)</td>
+</tr>
+<tr>
+<td>embed</td>
+<td>Play, seek, time, volume, settings, fullscreen</td>
+</tr>
+</tbody>
+</table>
+<p>You can also drive the same surface headlessly; <code>player.capabilities</code> and
+<code>player.state.capabilities</code> are always in sync with the active engine.</p>
+<p>When the engine advertises more than one quality level (HLS/DASH, or an embed
+with configured <code>qualities</code>), <strong>Settings → Quality</strong> has <code>−</code>/<code>+</code> steps plus Auto
+and every level. Single-file native media has one quality, so the option is not
+shown there. <strong>Stats for nerds</strong> also lives in Settings.</p>
+<h3 id="advanced-control-surface-configuration" class="tsd-anchor-link">Advanced control surface configuration<a href="#advanced-control-surface-configuration" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p>Every control, menu section, gesture and colour can be configured. Use an
+allow-list when you want a minimal surface, or an object to hide individual
+controls. Every field is optional: omitted values keep the built-in defaults,
+and partial objects (for example <code>settings: { stats: false }</code>) only override the
+keys you provide.</p>
+<pre><code class="ts"><span class="hl-11">const</span><span class="hl-1"> </span><span class="hl-12">player</span><span class="hl-1"> = </span><span class="hl-0">createPlayer</span><span class="hl-1">({</span><br/><span class="hl-1">  </span><span class="hl-10">container</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-10">source:</span><span class="hl-1"> </span><span class="hl-2">&quot;/media/clip.mp4&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-10">playlist:</span><span class="hl-1"> {</span><br/><span class="hl-1">    </span><span class="hl-10">items:</span><span class="hl-1"> [</span><br/><span class="hl-1">      { </span><span class="hl-10">source:</span><span class="hl-1"> </span><span class="hl-2">&quot;/media/lesson-1.mp4&quot;</span><span class="hl-1">, </span><span class="hl-10">title:</span><span class="hl-1"> </span><span class="hl-2">&quot;Lesson 1&quot;</span><span class="hl-1"> },</span><br/><span class="hl-1">      { </span><span class="hl-10">source:</span><span class="hl-1"> </span><span class="hl-2">&quot;/media/lesson-2.mp4&quot;</span><span class="hl-1">, </span><span class="hl-10">title:</span><span class="hl-1"> </span><span class="hl-2">&quot;Lesson 2&quot;</span><span class="hl-1"> },</span><br/><span class="hl-1">    ],</span><br/><span class="hl-1">    </span><span class="hl-3">// The viewer must finish lesson 1 before Next becomes actionable.</span><br/><span class="hl-1">    </span><span class="hl-10">requireCompletion:</span><span class="hl-1"> </span><span class="hl-11">true</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-3">// Or remove forward/backward navigation entirely:</span><br/><span class="hl-1">    </span><span class="hl-3">// allowNext: false,</span><br/><span class="hl-1">    </span><span class="hl-3">// allowPrevious: false,</span><br/><span class="hl-1">  },</span><br/><span class="hl-1">  </span><span class="hl-10">ui:</span><span class="hl-1"> {</span><br/><span class="hl-1">    </span><span class="hl-3">// Allow-list: only these controls render.</span><br/><span class="hl-1">    </span><span class="hl-10">controls:</span><span class="hl-1"> [</span><span class="hl-2">&quot;play&quot;</span><span class="hl-1">, </span><span class="hl-2">&quot;seek&quot;</span><span class="hl-1">, </span><span class="hl-2">&quot;time&quot;</span><span class="hl-1">, </span><span class="hl-2">&quot;volume&quot;</span><span class="hl-1">, </span><span class="hl-2">&quot;captions&quot;</span><span class="hl-1">, </span><span class="hl-2">&quot;settings&quot;</span><span class="hl-1">, </span><span class="hl-2">&quot;fullscreen&quot;</span><span class="hl-1">],</span><br/><span class="hl-1">    </span><span class="hl-3">// Preferred order; omitted controls keep their default position.</span><br/><span class="hl-1">    </span><span class="hl-10">order:</span><span class="hl-1"> [</span><span class="hl-2">&quot;play&quot;</span><span class="hl-1">, </span><span class="hl-2">&quot;volume&quot;</span><span class="hl-1">, </span><span class="hl-2">&quot;time&quot;</span><span class="hl-1">, </span><span class="hl-2">&quot;captions&quot;</span><span class="hl-1">, </span><span class="hl-2">&quot;settings&quot;</span><span class="hl-1">, </span><span class="hl-2">&quot;fullscreen&quot;</span><span class="hl-1">],</span><br/><span class="hl-1">    </span><span class="hl-10">settings:</span><span class="hl-1"> {</span><br/><span class="hl-1">      </span><span class="hl-10">speed:</span><span class="hl-1"> </span><span class="hl-11">true</span><span class="hl-1">,</span><br/><span class="hl-1">      </span><span class="hl-10">quality:</span><span class="hl-1"> </span><span class="hl-11">true</span><span class="hl-1">,</span><br/><span class="hl-1">      </span><span class="hl-10">captions:</span><span class="hl-1"> </span><span class="hl-11">true</span><span class="hl-1">,</span><br/><span class="hl-1">      </span><span class="hl-10">captionStyle:</span><span class="hl-1"> </span><span class="hl-11">true</span><span class="hl-1">,</span><br/><span class="hl-1">      </span><span class="hl-10">audio:</span><span class="hl-1"> </span><span class="hl-11">true</span><span class="hl-1">,</span><br/><span class="hl-1">      </span><span class="hl-10">loop:</span><span class="hl-1"> </span><span class="hl-11">false</span><span class="hl-1">,</span><br/><span class="hl-1">      </span><span class="hl-10">autoplay:</span><span class="hl-1"> </span><span class="hl-11">true</span><span class="hl-1">,</span><br/><span class="hl-1">      </span><span class="hl-10">autoplayNext:</span><span class="hl-1"> </span><span class="hl-11">true</span><span class="hl-1">,</span><br/><span class="hl-1">      </span><span class="hl-10">sleepTimer:</span><span class="hl-1"> </span><span class="hl-11">true</span><span class="hl-1">,</span><br/><span class="hl-1">      </span><span class="hl-10">stats:</span><span class="hl-1"> </span><span class="hl-11">false</span><span class="hl-1">,</span><br/><span class="hl-1">      </span><span class="hl-10">shortcuts:</span><span class="hl-1"> </span><span class="hl-11">false</span><span class="hl-1">,</span><br/><span class="hl-1">    },</span><br/><span class="hl-1">    </span><span class="hl-10">speed:</span><span class="hl-1"> {</span><br/><span class="hl-1">      </span><span class="hl-10">enabled:</span><span class="hl-1"> </span><span class="hl-11">true</span><span class="hl-1">,</span><br/><span class="hl-1">      </span><span class="hl-10">rates:</span><span class="hl-1"> [</span><span class="hl-14">0.5</span><span class="hl-1">, </span><span class="hl-14">0.75</span><span class="hl-1">, </span><span class="hl-14">1</span><span class="hl-1">, </span><span class="hl-14">1.25</span><span class="hl-1">, </span><span class="hl-14">1.5</span><span class="hl-1">, </span><span class="hl-14">2</span><span class="hl-1">],</span><br/><span class="hl-1">      </span><span class="hl-10">keyboard:</span><span class="hl-1"> </span><span class="hl-11">false</span><span class="hl-1">,</span><br/><span class="hl-1">    },</span><br/><span class="hl-1">    </span><span class="hl-3">// Timestamp defaults to elapsed time; clicking it shows the remaining time.</span><br/><span class="hl-1">    </span><span class="hl-10">time:</span><span class="hl-1"> {</span><br/><span class="hl-1">      </span><span class="hl-10">mode:</span><span class="hl-1"> </span><span class="hl-2">&quot;elapsed&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">      </span><span class="hl-10">toggle:</span><span class="hl-1"> </span><span class="hl-11">true</span><span class="hl-1">,</span><br/><span class="hl-1">      </span><span class="hl-10">showTotal:</span><span class="hl-1"> </span><span class="hl-11">true</span><span class="hl-1">,</span><br/><span class="hl-1">    },</span><br/><span class="hl-1">    </span><span class="hl-3">// Do not offer downloads at all.</span><br/><span class="hl-1">    </span><span class="hl-10">download:</span><span class="hl-1"> </span><span class="hl-11">false</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-3">// Gestures are opt-in. Disable swipe-up, or disable all gestures.</span><br/><span class="hl-1">    </span><span class="hl-10">gestures:</span><span class="hl-1"> {</span><br/><span class="hl-1">      </span><span class="hl-10">enabled:</span><span class="hl-1"> </span><span class="hl-11">true</span><span class="hl-1">,</span><br/><span class="hl-1">      </span><span class="hl-10">swipeSeek:</span><span class="hl-1"> </span><span class="hl-11">true</span><span class="hl-1">,</span><br/><span class="hl-1">      </span><span class="hl-10">swipeFullscreen:</span><span class="hl-1"> </span><span class="hl-11">true</span><span class="hl-1">,</span><br/><span class="hl-1">      </span><span class="hl-10">swipeUp:</span><span class="hl-1"> </span><span class="hl-11">false</span><span class="hl-1">,</span><br/><span class="hl-1">      </span><span class="hl-10">swipeDown:</span><span class="hl-1"> </span><span class="hl-11">true</span><span class="hl-1">,</span><br/><span class="hl-1">    },</span><br/><span class="hl-1">    </span><span class="hl-10">theme:</span><span class="hl-1"> {</span><br/><span class="hl-1">      </span><span class="hl-10">colors:</span><span class="hl-1"> { </span><span class="hl-10">accent:</span><span class="hl-1"> </span><span class="hl-2">&quot;#ff0033&quot;</span><span class="hl-1"> },</span><br/><span class="hl-1">      </span><span class="hl-10">radius:</span><span class="hl-1"> </span><span class="hl-2">&quot;0.9rem&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">      </span><span class="hl-10">menuBackground:</span><span class="hl-1"> </span><span class="hl-2">&quot;rgba(24, 24, 24, 0.82)&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">      </span><span class="hl-10">menuBlur:</span><span class="hl-1"> </span><span class="hl-2">&quot;16px&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">      </span><span class="hl-10">variables:</span><span class="hl-1"> { </span><span class="hl-2">&quot;--up-control-size&quot;</span><span class="hl-10">:</span><span class="hl-1"> </span><span class="hl-2">&quot;2.75rem&quot;</span><span class="hl-1"> },</span><br/><span class="hl-1">    },</span><br/><span class="hl-1">    </span><span class="hl-10">showTitle:</span><span class="hl-1"> </span><span class="hl-11">true</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-10">showChapterLabel:</span><span class="hl-1"> </span><span class="hl-11">true</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-10">showTime:</span><span class="hl-1"> </span><span class="hl-11">true</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-10">showBuffered:</span><span class="hl-1"> </span><span class="hl-11">true</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-10">showPreview:</span><span class="hl-1"> </span><span class="hl-11">true</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-10">showBigPlay:</span><span class="hl-1"> </span><span class="hl-11">true</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-10">autoHideControls:</span><span class="hl-1"> </span><span class="hl-11">true</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-10">idleDelay:</span><span class="hl-1"> </span><span class="hl-14">2500</span><span class="hl-1">,</span><br/><span class="hl-1">  },</span><br/><span class="hl-1">});</span>
+</code><button type="button">Copy</button></pre>
+
+<p>Useful combinations:</p>
+<table>
+<thead>
+<tr>
+<th>Goal</th>
+<th>Configuration</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Kiosk / no-forward course player</td>
+<td><code>playlist.requireCompletion: true</code>, <code>ui.controls</code> allow-list</td>
+</tr>
+<tr>
+<td>No downloads</td>
+<td><code>ui.download: false</code></td>
+</tr>
+<tr>
+<td>No speed changes</td>
+<td><code>ui.speed: false</code></td>
+</tr>
+<tr>
+<td>No swipe-up fullscreen</td>
+<td><code>ui.gestures: { enabled: true, swipeUp: false }</code></td>
+</tr>
+<tr>
+<td>Disable all touch gestures</td>
+<td><code>ui.gestures: false</code></td>
+</tr>
+<tr>
+<td>Hide share/cast/PiP/previous/next</td>
+<td><code>ui.controls: { share: false, cast: false, ... }</code></td>
+</tr>
+<tr>
+<td>Brand colours without forking CSS</td>
+<td><code>ui.theme.colors</code> + <code>ui.theme.variables</code></td>
+</tr>
+<tr>
+<td>Start with remaining time</td>
+<td><code>ui.time.mode: &quot;remaining&quot;</code></td>
+</tr>
+<tr>
+<td>Keep the elapsed-only timestamp</td>
+<td><code>ui.time.toggle: false</code></td>
+</tr>
+</tbody>
+</table>
+<p>The timestamp is self-sizing: <code>1:02:03</code> for hour-long media, <code>2:03</code> for
+minute-long media, and <code>9s</code> for clips shorter than a minute. Clicking it swaps
+the elapsed value for the remaining value (<code>-7s</code> / <code>-1:51:03</code>) while the tooltip
+keeps elapsed, remaining and total together. Open menus also close when the user
+clicks anywhere on the surrounding page, matching YouTube.</p>
+<p>The same options can be passed declaratively through a JSON <code>ui</code> attribute.</p>
+<h2 id="chapters-playlists-and-time-sync" class="tsd-anchor-link">Chapters, playlists and time sync<a href="#chapters-playlists-and-time-sync" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<pre><code class="ts"><span class="hl-11">const</span><span class="hl-1"> </span><span class="hl-12">player</span><span class="hl-1"> = </span><span class="hl-0">createPlayer</span><span class="hl-1">({</span><br/><span class="hl-1">  </span><span class="hl-10">container</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-10">chapters:</span><span class="hl-1"> [</span><br/><span class="hl-1">    { </span><span class="hl-10">id:</span><span class="hl-1"> </span><span class="hl-2">&quot;intro&quot;</span><span class="hl-1">, </span><span class="hl-10">title:</span><span class="hl-1"> </span><span class="hl-2">&quot;Introduction&quot;</span><span class="hl-1">, </span><span class="hl-10">startTime:</span><span class="hl-1"> </span><span class="hl-14">0</span><span class="hl-1"> },</span><br/><span class="hl-1">    { </span><span class="hl-10">id:</span><span class="hl-1"> </span><span class="hl-2">&quot;demo&quot;</span><span class="hl-1">, </span><span class="hl-10">title:</span><span class="hl-1"> </span><span class="hl-2">&quot;Demo&quot;</span><span class="hl-1">, </span><span class="hl-10">startTime:</span><span class="hl-1"> </span><span class="hl-14">90</span><span class="hl-1"> },</span><br/><span class="hl-1">  ],</span><br/><span class="hl-1">  </span><span class="hl-10">playlist:</span><span class="hl-1"> {</span><br/><span class="hl-1">    </span><span class="hl-10">items:</span><span class="hl-1"> [</span><br/><span class="hl-1">      { </span><span class="hl-10">source:</span><span class="hl-1"> </span><span class="hl-2">&quot;/media/one.mp4&quot;</span><span class="hl-1">, </span><span class="hl-10">title:</span><span class="hl-1"> </span><span class="hl-2">&quot;One&quot;</span><span class="hl-1"> },</span><br/><span class="hl-1">      { </span><span class="hl-10">source:</span><span class="hl-1"> </span><span class="hl-2">&quot;/media/two.mp4&quot;</span><span class="hl-1">, </span><span class="hl-10">title:</span><span class="hl-1"> </span><span class="hl-2">&quot;Two&quot;</span><span class="hl-1"> },</span><br/><span class="hl-1">    ],</span><br/><span class="hl-1">    </span><span class="hl-10">autoAdvance:</span><span class="hl-1"> </span><span class="hl-11">true</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-10">autoAdvanceDelay:</span><span class="hl-1"> </span><span class="hl-14">3</span><span class="hl-1">,</span><br/><span class="hl-1">  },</span><br/><span class="hl-1">  </span><span class="hl-10">thumbnails:</span><span class="hl-1"> {</span><br/><span class="hl-1">    </span><span class="hl-10">cues:</span><span class="hl-1"> [{ </span><span class="hl-10">startTime:</span><span class="hl-1"> </span><span class="hl-14">0</span><span class="hl-1">, </span><span class="hl-10">endTime:</span><span class="hl-1"> </span><span class="hl-14">10</span><span class="hl-1">, </span><span class="hl-10">url:</span><span class="hl-1"> </span><span class="hl-2">&quot;/media/thumb-0.jpg&quot;</span><span class="hl-1"> }],</span><br/><span class="hl-1">  },</span><br/><span class="hl-1">});</span><br/><br/><span class="hl-9">await</span><span class="hl-1"> </span><span class="hl-10">player</span><span class="hl-1">.</span><span class="hl-0">next</span><span class="hl-1">();</span><br/><span class="hl-9">await</span><span class="hl-1"> </span><span class="hl-10">player</span><span class="hl-1">.</span><span class="hl-0">previous</span><span class="hl-1">();</span><br/><span class="hl-10">player</span><span class="hl-1">.</span><span class="hl-0">seekToChapter</span><span class="hl-1">(</span><span class="hl-2">&quot;demo&quot;</span><span class="hl-1">);</span>
+</code><button type="button">Copy</button></pre>
+
+<p>YouTube and Vimeo embeds mirror <code>currentTime</code>, <code>duration</code>, buffered progress and
+play/pause/ended state over <code>postMessage</code>. Call <code>player.syncTime()</code> for an
+immediate refresh.</p>
+<h2 id="keyboard-shortcuts" class="tsd-anchor-link">Keyboard shortcuts<a href="#keyboard-shortcuts" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<p><code>Space</code>/<code>K</code> play-pause, <code>M</code> mute, <code>F</code> fullscreen, <code>C</code> subtitles on/off,
+<code>S</code> open Settings, <code>Q</code> open the quality sheet, <code>[</code>/<code>]</code> lower or raise quality,
+<code>A</code> open audio tracks, <code>T</code> open the sleep timer, <code>R</code> toggle loop, arrows seek
+and change volume, <code>J</code>/<code>L</code> seek 10s, <code>0</code>–<code>9</code> seek to a percentage, <code>Home</code>/<code>End</code>
+jump to start/end, <code>&lt;</code>/<code>&gt;</code> change speed, <code>N</code>/<code>P</code> next/previous, <code>I</code> stats for
+nerds, <code>?</code> shortcut help and <code>Esc</code> closes overlays. Shortcut hints are also
+shown beside the matching rows in the Settings sheet.</p>
+<h2 id="share-and-embed" class="tsd-anchor-link">Share and embed<a href="#share-and-embed" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<p>The share sheet includes native share, copy link, social targets and an
+<strong>Embed</strong> action that copies a ready-to-paste iframe snippet. The embed action
+is enabled by default and can be customised or disabled with <code>ui.share</code>:</p>
+<pre><code class="ts"><span class="hl-16">ui</span><span class="hl-1">: {</span><br/><span class="hl-1">  </span><span class="hl-16">share</span><span class="hl-1">: {</span><br/><span class="hl-1">    </span><span class="hl-16">url</span><span class="hl-1">: </span><span class="hl-2">&quot;https://example.com/watch/clip&quot;</span><span class="hl-1">, </span><span class="hl-3">// optional share/embed URL</span><br/><span class="hl-1">    </span><span class="hl-16">title</span><span class="hl-1">: </span><span class="hl-2">&quot;Lesson one&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-16">thumbnail</span><span class="hl-1">: </span><span class="hl-2">&quot;/media/thumb.jpg&quot;</span><span class="hl-1">,          </span><span class="hl-3">// shown in the share sheet</span><br/><span class="hl-1">    </span><span class="hl-16">embed</span><span class="hl-1">: {</span><br/><span class="hl-1">      </span><span class="hl-16">mode</span><span class="hl-1">: </span><span class="hl-2">&quot;player&quot;</span><span class="hl-1">,                       </span><span class="hl-3">// &quot;player&quot; or &quot;iframe&quot;</span><br/><span class="hl-1">      </span><span class="hl-16">poster</span><span class="hl-1">: </span><span class="hl-2">&quot;/media/thumb.jpg&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">      </span><span class="hl-16">width</span><span class="hl-1">: </span><span class="hl-14">960</span><span class="hl-1">,</span><br/><span class="hl-1">      </span><span class="hl-16">height</span><span class="hl-1">: </span><span class="hl-14">540</span><span class="hl-1">,</span><br/><span class="hl-1">    },                                      </span><span class="hl-3">// or embed: false</span><br/><span class="hl-1">  },</span><br/><span class="hl-1">}</span>
+</code><button type="button">Copy</button></pre>
+
+<h3 id="thumbnail-images" class="tsd-anchor-link">Thumbnail images<a href="#thumbnail-images" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p>Thumbnails can be used in four places:</p>
+<ul>
+<li><strong>Poster before playback</strong> — set <code>poster=&quot;/poster.jpg&quot;</code> (or the
+<code>thumbnail</code> alias) on <code>&lt;universal-player&gt;</code> / <code>PlayerOptions.poster</code>.</li>
+<li><strong>Seek-bar hover previews</strong> — pass <code>thumbnails: { cues: [...] }</code> or the
+<code>thumbnails</code> JSON attribute.</li>
+<li><strong>Share/embed preview</strong> — set <code>ui.share.thumbnail</code> and
+<code>ui.share.embed.poster</code>. When a poster is present the embed snippet uses the
+<code>player</code> mode automatically, or set <code>mode: &quot;iframe&quot;</code> to force an iframe.</li>
+<li><strong>Playlist/chapter thumbnails</strong> — set <code>poster</code> on playlist items or
+<code>thumbnail</code> on chapters; they render beside the item in the menu.</li>
+</ul>
+<h3 id="audio-presentation" class="tsd-anchor-link">Audio presentation<a href="#audio-presentation" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p>Audio-only sources show an animated gradient and equalizer surface by default so
+the player still has a focused, eye-catching visual. If the audio source or
+playlist item supplies <code>poster</code>/<code>thumbnail</code>, that image is shown instead.
+Settings also exposes <strong>Autoplay</strong> and, for playlists, <strong>Autoplay next</strong> so the
+viewer can control automatic playback.</p>
+<h2 id="declarative-configuration" class="tsd-anchor-link">Declarative configuration<a href="#declarative-configuration" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<p>Complex options can be passed as JSON attributes:</p>
+<pre><code class="html"><span class="hl-4">&lt;</span><span class="hl-5">universal-player</span><br/><span class="hl-1">  </span><span class="hl-7">src</span><span class="hl-1">=</span><span class="hl-8">&quot;/media/clip.mp4&quot;</span><br/><span class="hl-1">  </span><span class="hl-7">chapters</span><span class="hl-1">=</span><span class="hl-8">&#39;[{&quot;id&quot;:&quot;a&quot;,&quot;title&quot;:&quot;Intro&quot;,&quot;startTime&quot;:0}]&#39;</span><br/><span class="hl-1">  </span><span class="hl-7">survey</span><span class="hl-1">=</span><span class="hl-8">&#39;{&quot;title&quot;:&quot;How was it?&quot;,&quot;questions&quot;:[{&quot;id&quot;:&quot;liked&quot;,&quot;type&quot;:&quot;radio&quot;,&quot;label&quot;:&quot;Liked?&quot;,&quot;options&quot;:[{&quot;id&quot;:&quot;yes&quot;,&quot;label&quot;:&quot;Yes&quot;},{&quot;id&quot;:&quot;no&quot;,&quot;label&quot;:&quot;No&quot;}]}]}&#39;</span><br/><span class="hl-1">  </span><span class="hl-7">captions</span><span class="hl-1">=</span><span class="hl-8">&#39;{&quot;tracks&quot;:[{&quot;src&quot;:&quot;/en.vtt&quot;,&quot;label&quot;:&quot;English&quot;,&quot;language&quot;:&quot;en&quot;}]}&#39;</span><br/><span class="hl-1">  </span><span class="hl-7">ui</span><span class="hl-1">=</span><span class="hl-8">&#39;{&quot;speed&quot;:false,&quot;download&quot;:false,&quot;controls&quot;:{&quot;share&quot;:false,&quot;cast&quot;:false},&quot;gestures&quot;:{&quot;enabled&quot;:true,&quot;swipeUp&quot;:false}}&#39;</span><br/><span class="hl-4">&gt;&lt;/</span><span class="hl-5">universal-player</span><span class="hl-4">&gt;</span>
+</code><button type="button">Copy</button></pre>
+
+<h2 id="accessibility" class="tsd-anchor-link">Accessibility<a href="#accessibility" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<p>Target: <strong>WCAG 2.2 AA</strong>.</p>
+<ul>
+<li>Every control is a native <code>&lt;button&gt;</code>/<code>&lt;input&gt;</code>/<code>&lt;select&gt;</code>.</li>
+<li>Visible focus rings and keyboard operation.</li>
+<li>Shortcuts: <code>Space</code>/<code>K</code> play-pause, <code>M</code> mute, <code>F</code> fullscreen, <code>C</code> subtitles,
+<code>S</code> settings, <code>[</code>/<code>]</code> quality and arrows seek/change volume.</li>
+<li><code>aria-label</code>, <code>aria-pressed</code>, <code>aria-valuetext</code>, <code>aria-busy</code> and <code>role=&quot;alert&quot;</code>.</li>
+<li>Reduced-motion and forced-colors media queries.</li>
+</ul>
+<p>A formal axe/Playwright audit is on the roadmap; see
+<a href="media/features.md">docs/features.md</a>.</p>
+<hr>
+<h2 id="browser-support" class="tsd-anchor-link">Browser support<a href="#browser-support" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<p>Evergreen browsers, compiled to ES2023:</p>
+<ul>
+<li>Chrome/Edge 125+</li>
+<li>Firefox 128+</li>
+<li>Safari 18+</li>
+</ul>
+<p>The package ships ESM only. CommonJS consumers must use dynamic <code>import()</code>.</p>
+<hr>
+<h2 id="feature-status" class="tsd-anchor-link">Feature status<a href="#feature-status" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<table>
+<thead>
+<tr>
+<th>Area</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Native video/audio</td>
+<td>Implemented</td>
+</tr>
+<tr>
+<td>Stored/chunked</td>
+<td>Blob/File/data URL + chunk streams via MediaSource/Blob</td>
+</tr>
+<tr>
+<td>Images</td>
+<td>Implemented + zoom/rotate/download controls</td>
+</tr>
+<tr>
+<td>HLS / DASH</td>
+<td>Implemented via optional peers</td>
+</tr>
+<tr>
+<td>YouTube / Vimeo</td>
+<td>Commands, play state, duration and time sync via postMessage</td>
+</tr>
+<tr>
+<td>Captions</td>
+<td>External WebVTT, Off + language menu, sizing, persistence</td>
+</tr>
+<tr>
+<td>Multiple audio</td>
+<td>Native audio-track switching + settings menu</td>
+</tr>
+<tr>
+<td>Quality selection</td>
+<td>HLS/DASH level lists + settings menu</td>
+</tr>
+<tr>
+<td>Playback speed</td>
+<td>Implemented, 0.25×–4×</td>
+</tr>
+<tr>
+<td>PiP / fullscreen</td>
+<td>Implemented</td>
+</tr>
+<tr>
+<td>AirPlay / Cast</td>
+<td>Remote Playback prompt button</td>
+</tr>
+<tr>
+<td>Thumbnails/preview</td>
+<td>Seek-bar hover previews</td>
+</tr>
+<tr>
+<td>Chapters</td>
+<td>Timeline markers, chapter list, next/previous seek</td>
+</tr>
+<tr>
+<td>Playlist/queue</td>
+<td>Auto-advance, next/previous, looping, queue menu</td>
+</tr>
+<tr>
+<td>Surveys/feedback</td>
+<td>In-player forms, auto-submit, instant feedback, retakes</td>
+</tr>
+<tr>
+<td>Adaptive controls</td>
+<td>Per-kind/capability control visibility</td>
+</tr>
+<tr>
+<td>Resume</td>
+<td>Implemented</td>
+</tr>
+<tr>
+<td>Live/DVR</td>
+<td>Live label + seekable helpers</td>
+</tr>
+<tr>
+<td>Ads</td>
+<td>Typed contract/stub</td>
+</tr>
+<tr>
+<td>Analytics</td>
+<td>Player hooks + safe sink</td>
+</tr>
+<tr>
+<td>Mini-player</td>
+<td>PiP helper</td>
+</tr>
+<tr>
+<td>Stats for nerds</td>
+<td>Implemented</td>
+</tr>
+<tr>
+<td>Keyboard shortcuts</td>
+<td>Full YouTube-style set + help overlay</td>
+</tr>
+<tr>
+<td>360/VR</td>
+<td>Contract/marker only</td>
+</tr>
+<tr>
+<td>DRM</td>
+<td>Out of scope</td>
+</tr>
+</tbody>
+</table>
+<p>See <a href="media/features.md">docs/features.md</a> for details.</p>
+<hr>
+<h2 id="repository-scripts" class="tsd-anchor-link">Repository scripts<a href="#repository-scripts" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<pre><code class="bash"><span class="hl-0">pnpm</span><span class="hl-1"> </span><span class="hl-2">install</span><br/><span class="hl-0">pnpm</span><span class="hl-1"> </span><span class="hl-2">run</span><span class="hl-1"> </span><span class="hl-2">check</span><span class="hl-1">        </span><span class="hl-3"># oxlint + formatting via Vite+</span><br/><span class="hl-0">pnpm</span><span class="hl-1"> </span><span class="hl-2">run</span><span class="hl-1"> </span><span class="hl-2">typecheck</span><span class="hl-1">    </span><span class="hl-3"># tsc --noEmit</span><br/><span class="hl-0">pnpm</span><span class="hl-1"> </span><span class="hl-2">run</span><span class="hl-1"> </span><span class="hl-2">test</span><span class="hl-1">         </span><span class="hl-3"># Vitest unit tests (jsdom)</span><br/><span class="hl-0">pnpm</span><span class="hl-1"> </span><span class="hl-2">run</span><span class="hl-1"> </span><span class="hl-2">test:coverage</span><br/><span class="hl-0">pnpm</span><span class="hl-1"> </span><span class="hl-2">run</span><span class="hl-1"> </span><span class="hl-2">test:browser</span><span class="hl-1"> </span><span class="hl-3"># Vitest browser mode via Playwright</span><br/><span class="hl-0">pnpm</span><span class="hl-1"> </span><span class="hl-2">run</span><span class="hl-1"> </span><span class="hl-2">build</span><span class="hl-1">        </span><span class="hl-3"># Vite+ pack: ESM + d.ts + publint + attw</span><br/><span class="hl-0">pnpm</span><span class="hl-1"> </span><span class="hl-2">run</span><span class="hl-1"> </span><span class="hl-2">check:pack</span><span class="hl-1">   </span><span class="hl-3"># tarball allowlist + export-target check</span><br/><span class="hl-0">pnpm</span><span class="hl-1"> </span><span class="hl-2">run</span><span class="hl-1"> </span><span class="hl-2">check:imports#</span><span class="hl-1"> </span><span class="hl-2">fail</span><span class="hl-1"> </span><span class="hl-2">on</span><span class="hl-1"> </span><span class="hl-2">Node</span><span class="hl-1"> </span><span class="hl-2">built-ins/globals</span><br/><span class="hl-0">pnpm</span><span class="hl-1"> </span><span class="hl-2">run</span><span class="hl-1"> </span><span class="hl-2">check:exports#</span><span class="hl-1"> </span><span class="hl-2">publint</span><span class="hl-1"> </span><span class="hl-11">--strict</span><br/><span class="hl-0">pnpm</span><span class="hl-1"> </span><span class="hl-2">run</span><span class="hl-1"> </span><span class="hl-2">check:types</span><span class="hl-1">  </span><span class="hl-3"># attw --profile esm-only</span><br/><span class="hl-0">pnpm</span><span class="hl-1"> </span><span class="hl-2">run</span><span class="hl-1"> </span><span class="hl-2">docs</span><span class="hl-1">         </span><span class="hl-3"># TypeDoc</span><br/><span class="hl-0">pnpm</span><span class="hl-1"> </span><span class="hl-2">run</span><span class="hl-1"> </span><span class="hl-2">sbom</span><span class="hl-1">         </span><span class="hl-3"># CycloneDX SBOM (sbom.json)</span><br/><span class="hl-0">pnpm</span><span class="hl-1"> </span><span class="hl-2">run</span><span class="hl-1"> </span><span class="hl-2">validate</span><span class="hl-1">     </span><span class="hl-3"># full local gate</span>
+</code><button type="button">Copy</button></pre>
+
+<hr>
+<h2 id="architecture" class="tsd-anchor-link">Architecture<a href="#architecture" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<pre><code><span class="hl-10">src</span><span class="hl-1">/</span><br/><span class="hl-1">├── </span><span class="hl-10">core</span><span class="hl-1">/          </span><span class="hl-10">headless</span><span class="hl-1"> </span><span class="hl-10">player</span><span class="hl-1">, </span><span class="hl-10">state</span><span class="hl-1">, </span><span class="hl-10">events</span><span class="hl-1">, </span><span class="hl-10">source</span><span class="hl-1"> </span><span class="hl-10">detection</span><br/><span class="hl-1">├── </span><span class="hl-10">adapters</span><span class="hl-1">/      </span><span class="hl-10">native</span><span class="hl-1">, </span><span class="hl-10">image</span><span class="hl-1">, </span><span class="hl-10">hls</span><span class="hl-1">, </span><span class="hl-10">dash</span><span class="hl-1">, </span><span class="hl-10">youtube</span><span class="hl-1">, </span><span class="hl-10">vimeo</span><span class="hl-1">, </span><span class="hl-10">embed</span><br/><span class="hl-1">├── </span><span class="hl-10">features</span><span class="hl-1">/      </span><span class="hl-10">quality</span><span class="hl-1">, </span><span class="hl-10">speed</span><span class="hl-1">, </span><span class="hl-10">chapters</span><span class="hl-1">, </span><span class="hl-10">captions</span><span class="hl-1">, </span><span class="hl-10">resume</span><span class="hl-1">, </span><span class="hl-10">ads</span><span class="hl-1">, ...</span><br/><span class="hl-1">├── </span><span class="hl-10">ui</span><span class="hl-1">/            &lt;</span><span class="hl-10">universal</span><span class="hl-1">-</span><span class="hl-10">player</span><span class="hl-1">&gt;, </span><span class="hl-10">styles</span><span class="hl-1">, </span><span class="hl-10">i18n</span><br/><span class="hl-1">├── </span><span class="hl-10">vanilla</span><span class="hl-1">/       </span><span class="hl-12">DOM</span><span class="hl-1"> </span><span class="hl-10">mount</span><span class="hl-1"> </span><span class="hl-10">helper</span><br/><span class="hl-1">├── </span><span class="hl-10">frameworks</span><span class="hl-1">/    </span><span class="hl-10">react</span><span class="hl-1">, </span><span class="hl-10">vue</span><span class="hl-1">, </span><span class="hl-10">angular</span><span class="hl-1">, </span><span class="hl-10">svelte4</span><span class="hl-1">, </span><span class="hl-10">svelte5</span><br/><span class="hl-1">└── </span><span class="hl-10">entries</span><span class="hl-1">/       </span><span class="hl-10">public</span><span class="hl-1"> </span><span class="hl-10">subpath</span><span class="hl-1"> </span><span class="hl-10">entry</span><span class="hl-1"> </span><span class="hl-10">points</span>
+</code><button>Copy</button></pre>
+
+<p>Read <a href="media/architecture.md">docs/architecture.md</a> for the data flow and
+<a href="media/decisions.md">docs/decisions.md</a> for every decision made during the
+initial design interview.</p>
+<hr>
+<h2 id="release" class="tsd-anchor-link">Release<a href="#release" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<ul>
+<li>Versioning and changelogs: <a href="https://github.com/changesets/changesets">Changesets</a>.</li>
+<li>Publishing: GitHub Actions on <code>main</code>, with npm provenance.</li>
+<li>Branch model: <code>main</code> (releases) and <code>develop</code> (integration).</li>
+<li>Public API policy: strict SemVer with a documented deprecation window.</li>
+</ul>
+<p>To add a change:</p>
+<pre><code class="bash"><span class="hl-0">pnpm</span><span class="hl-1"> </span><span class="hl-2">changeset</span><br/><span class="hl-0">git</span><span class="hl-1"> </span><span class="hl-2">add</span><span class="hl-1"> </span><span class="hl-2">.changeset</span>
+</code><button type="button">Copy</button></pre>
+
+<hr>
+<h2 id="contributing-support-and-security" class="tsd-anchor-link">Contributing, support and security<a href="#contributing-support-and-security" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<ul>
+<li><a href="media/CONTRIBUTING.md">CONTRIBUTING.md</a></li>
+<li><a href="media/CODE_OF_CONDUCT.md">CODE_OF_CONDUCT.md</a></li>
+<li><a href="media/SECURITY.md">SECURITY.md</a></li>
+<li><a href="media/SUPPORT.md">SUPPORT.md</a></li>
+</ul>
+<h2 id="license" class="tsd-anchor-link">License<a href="#license" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<p>MIT © 2026 Rajat Malik.</p>
+</div></div>
+<div class="col-sidebar">
+<div class="page-menu">
+<div class="tsd-navigation settings">
+<details class="tsd-accordion"><summary class="tsd-accordion-summary"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="assets/icons.svg#icon-chevronDown"></use></svg>
+<h3>Settings</h3></summary>
+<div class="tsd-accordion-details">
+<div class="tsd-filter-visibility"><span class="settings-label">Member Visibility</span>
+<ul id="tsd-filter-options">
+<li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-protected" name="protected"/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Protected</span></label></li>
+<li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-inherited" name="inherited" checked/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Inherited</span></label></li></ul></div>
+<div class="tsd-theme-toggle"><label class="settings-label" for="tsd-theme">Theme</label><select id="tsd-theme"><option value="os">OS</option><option value="light">Light</option><option value="dark">Dark</option></select></div></div></details></div>
+<details open class="tsd-accordion tsd-page-navigation"><summary class="tsd-accordion-summary"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="assets/icons.svg#icon-chevronDown"></use></svg>
+<h3>On This Page</h3></summary>
+<div class="tsd-accordion-details"><a href="#codewithrajatuniversal-player"><span>@codewithrajat/universal-<wbr/>player</span></a>
+<ul>
+<li><a href="#why-universal"><span>Why &quot;universal&quot;</span></a></li>
+<li><a href="#install"><span>Install</span></a></li>
+<li><a href="#quick-start"><span>Quick start</span></a></li>
+<li>
+<ul>
+<li><a href="#1-custom-element-any-framework-any-page"><span>1. <wbr/>Custom element (any framework, any page)</span></a></li>
+<li><a href="#2-vanilla-mount-helper"><span>2. <wbr/>Vanilla mount helper</span></a></li>
+<li><a href="#3-headless-core"><span>3. <wbr/>Headless core</span></a></li>
+<li><a href="#4-react"><span>4. <wbr/>React</span></a></li>
+<li><a href="#5-vue-27-and-3"><span>5. <wbr/>Vue (2.7 and 3)</span></a></li>
+<li><a href="#6-angular"><span>6. <wbr/>Angular</span></a></li>
+<li><a href="#7-svelte-4-and-svelte-5"><span>7. <wbr/>Svelte 4 and <wbr/>Svelte 5</span></a></li></ul></li>
+<li><a href="#entry-points"><span>Entry points</span></a></li>
+<li><a href="#core-api"><span>Core <wbr/>API</span></a></li>
+<li>
+<ul>
+<li><a href="#state"><span>State</span></a></li>
+<li><a href="#three-event-styles"><span>Three event styles</span></a></li></ul></li>
+<li><a href="#theming"><span>Theming</span></a></li>
+<li><a href="#internationalization"><span>Internationalization</span></a></li>
+<li><a href="#url-stored-and-chunked-media"><span>URL, stored and chunked media</span></a></li>
+<li><a href="#captions-and-subtitles"><span>Captions and subtitles</span></a></li>
+<li><a href="#surveys-feedback-and-reviews"><span>Surveys, feedback and reviews</span></a></li>
+<li>
+<ul>
+<li><a href="#ready-made-survey-examples"><span>Ready-<wbr/>made survey examples</span></a></li>
+<li><a href="#survey-implementation-checklist"><span>Survey implementation checklist</span></a></li></ul></li>
+<li><a href="#adaptive-controls"><span>Adaptive controls</span></a></li>
+<li>
+<ul>
+<li><a href="#advanced-control-surface-configuration"><span>Advanced control surface configuration</span></a></li></ul></li>
+<li><a href="#chapters-playlists-and-time-sync"><span>Chapters, playlists and time sync</span></a></li>
+<li><a href="#keyboard-shortcuts"><span>Keyboard shortcuts</span></a></li>
+<li><a href="#share-and-embed"><span>Share and embed</span></a></li>
+<li>
+<ul>
+<li><a href="#thumbnail-images"><span>Thumbnail images</span></a></li>
+<li><a href="#audio-presentation"><span>Audio presentation</span></a></li></ul></li>
+<li><a href="#declarative-configuration"><span>Declarative configuration</span></a></li>
+<li><a href="#accessibility"><span>Accessibility</span></a></li>
+<li><a href="#browser-support"><span>Browser support</span></a></li>
+<li><a href="#feature-status"><span>Feature status</span></a></li>
+<li><a href="#repository-scripts"><span>Repository scripts</span></a></li>
+<li><a href="#architecture"><span>Architecture</span></a></li>
+<li><a href="#release"><span>Release</span></a></li>
+<li><a href="#contributing-support-and-security"><span>Contributing, support and security</span></a></li>
+<li><a href="#license"><span>License</span></a></li></ul></div></details></div>
+<div class="site-menu">
+<nav class="tsd-navigation"><a href="modules.html">@codewithrajat/universal-player - v0.0.1</a>
+<ul class="tsd-small-nested-navigation" id="tsd-nav-container">
+<li>Loading...</li></ul></nav></div></div></div><footer>
+<p class="tsd-generator">Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p></footer>
+<div class="overlay"></div></body></html>

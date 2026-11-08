@@ -1,0 +1,18 @@
+{
+  "name": "universal-player-example-vanilla",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@codewithrajat/universal-player": "file:..\\..",
+    "hls.js": "^1.6.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.0",
+    "vite": "^7.0.0"
+  }
+}

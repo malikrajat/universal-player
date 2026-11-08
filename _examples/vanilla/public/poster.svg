@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0f172a" />
+      <stop offset="0.55" stop-color="#1e3a8a" />
+      <stop offset="1" stop-color="#0ea5e9" />
+    </linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.5" r="0.6">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.34" />
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+  <rect width="1280" height="720" fill="url(#bg)" />
+  <circle cx="950" cy="160" r="320" fill="url(#glow)" />
+  <circle cx="250" cy="620" r="260" fill="url(#glow)" />
+  <g fill="#ffffff" font-family="system-ui, sans-serif">
+    <text x="72" y="242" font-size="62" font-weight="700">Universal Player</text>
+    <text x="74" y="300" font-size="28" opacity="0.82">Thumbnail / poster preview</text>
+    <text x="74" y="368" font-size="21" opacity="0.64">Press play or click the video to start</text>
+  </g>
+</svg>

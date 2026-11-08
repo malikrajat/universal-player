@@ -1,0 +1,2 @@
+import { MaybeRef, PlayerOptionKey, UniversalPlayer, UseUniversalPlayerOptions, UseUniversalPlayerResult, useUniversalPlayer } from "../frameworks/vue/universal-player.js";
+export { type MaybeRef, type PlayerOptionKey, UniversalPlayer, type UseUniversalPlayerOptions, type UseUniversalPlayerResult, useUniversalPlayer };

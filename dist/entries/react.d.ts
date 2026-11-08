@@ -1,0 +1,2 @@
+import { UniversalPlayer, UniversalPlayerHandle, UniversalPlayerProps, UseUniversalPlayerOptions, UseUniversalPlayerResult, useUniversalPlayer } from "../frameworks/react/universal-player.js";
+export { UniversalPlayer, type UniversalPlayerHandle, type UniversalPlayerProps, type UseUniversalPlayerOptions, type UseUniversalPlayerResult, useUniversalPlayer };

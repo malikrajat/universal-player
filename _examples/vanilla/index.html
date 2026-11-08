@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Universal Player — Vanilla</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 2rem;
+        color: #e2e8f0;
+        font-family: system-ui, sans-serif;
+        background: #0f172a;
+      }
+
+      main {
+        max-width: 960px;
+        margin: 0 auto;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Universal Player — Vanilla</h1>
+      <universal-player
+        src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4"
+        controls="custom"
+        theme="dark"
+        locale="en"
+      ></universal-player>
+
+      <p id="status">Status: idle</p>
+    </main>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
