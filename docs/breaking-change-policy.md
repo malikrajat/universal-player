@@ -1,6 +1,6 @@
 # Breaking change policy
 
-> [Docs home](./README.md) � Breaking change policy
+> [Docs home](./README.md) › Breaking change policy
 
 [← Docs](./README.md) · [Versioning](./versioning-and-breaking-changes.md) · [Changelog](./changelog.md)
 
@@ -175,4 +175,4 @@ Unintentional breaks are treated as bugs and fixed in a patch when possible.
 
 ---
 
-**Docs home** � [Documentation index](./README.md) � [Summary](./SUMMARY.md)
+**Docs home** · [Documentation index](./README.md) · [Summary](./SUMMARY.md)

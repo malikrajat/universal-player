@@ -6,6 +6,12 @@
 
 Run independent players on one page.
 
+## Setup
+
+```ts
+import { createPlayer } from "@codewithrajat/universal-player/core";
+```
+
 ## Copy-paste code
 
 ```ts

@@ -55,9 +55,11 @@ import { FullPlayerComponent } from "./full-player.component";
   selector: "app-root",
   standalone: true,
   imports: [FullPlayerComponent],
-  template: `<app-full-player [source]=""/media/sample.mp4""></app-full-player>`,
+  template: `<app-full-player [source]="source"></app-full-player>`,
 })
-export class AppComponent {}
+export class AppComponent {
+  readonly source = "/media/sample.mp4";
+}
 ```
 
 ```ts
@@ -104,9 +106,11 @@ import { FullPlayerComponent } from "./full-player.component";
   selector: "app-root",
   standalone: true,
   imports: [FullPlayerComponent],
-  template: `<app-full-player [source]=""/media/sample.webm""></app-full-player>`,
+  template: `<app-full-player [source]="source"></app-full-player>`,
 })
-export class AppComponent {}
+export class AppComponent {
+  readonly source = "/media/sample.webm";
+}
 ```
 
 ```ts
@@ -153,9 +157,11 @@ import { FullPlayerComponent } from "./full-player.component";
   selector: "app-root",
   standalone: true,
   imports: [FullPlayerComponent],
-  template: `<app-full-player [source]=""/media/sample.mov""></app-full-player>`,
+  template: `<app-full-player [source]="source"></app-full-player>`,
 })
-export class AppComponent {}
+export class AppComponent {
+  readonly source = "/media/sample.mov";
+}
 ```
 
 ```ts
@@ -202,9 +208,11 @@ import { FullPlayerComponent } from "./full-player.component";
   selector: "app-root",
   standalone: true,
   imports: [FullPlayerComponent],
-  template: `<app-full-player [source]=""/media/sample.mkv""></app-full-player>`,
+  template: `<app-full-player [source]="source"></app-full-player>`,
 })
-export class AppComponent {}
+export class AppComponent {
+  readonly source = "/media/sample.mkv";
+}
 ```
 
 ```ts
@@ -251,9 +259,11 @@ import { FullPlayerComponent } from "./full-player.component";
   selector: "app-root",
   standalone: true,
   imports: [FullPlayerComponent],
-  template: `<app-full-player [source]=""/media/master.m3u8""></app-full-player>`,
+  template: `<app-full-player [source]="source"></app-full-player>`,
 })
-export class AppComponent {}
+export class AppComponent {
+  readonly source = "/media/master.m3u8";
+}
 ```
 
 ```ts
@@ -300,9 +310,11 @@ import { FullPlayerComponent } from "./full-player.component";
   selector: "app-root",
   standalone: true,
   imports: [FullPlayerComponent],
-  template: `<app-full-player [source]=""/media/manifest.mpd""></app-full-player>`,
+  template: `<app-full-player [source]="source"></app-full-player>`,
 })
-export class AppComponent {}
+export class AppComponent {
+  readonly source = "/media/manifest.mpd";
+}
 ```
 
 ```ts
@@ -349,9 +361,11 @@ import { FullPlayerComponent } from "./full-player.component";
   selector: "app-root",
   standalone: true,
   imports: [FullPlayerComponent],
-  template: `<app-full-player [source]=""/media/sample.mp3""></app-full-player>`,
+  template: `<app-full-player [source]="source"></app-full-player>`,
 })
-export class AppComponent {}
+export class AppComponent {
+  readonly source = "/media/sample.mp3";
+}
 ```
 
 ```ts
@@ -398,9 +412,11 @@ import { FullPlayerComponent } from "./full-player.component";
   selector: "app-root",
   standalone: true,
   imports: [FullPlayerComponent],
-  template: `<app-full-player [source]=""/media/sample.m4a""></app-full-player>`,
+  template: `<app-full-player [source]="source"></app-full-player>`,
 })
-export class AppComponent {}
+export class AppComponent {
+  readonly source = "/media/sample.m4a";
+}
 ```
 
 ```ts
@@ -447,9 +463,11 @@ import { FullPlayerComponent } from "./full-player.component";
   selector: "app-root",
   standalone: true,
   imports: [FullPlayerComponent],
-  template: `<app-full-player [source]=""/media/sample.wav""></app-full-player>`,
+  template: `<app-full-player [source]="source"></app-full-player>`,
 })
-export class AppComponent {}
+export class AppComponent {
+  readonly source = "/media/sample.wav";
+}
 ```
 
 ```ts
@@ -496,9 +514,11 @@ import { FullPlayerComponent } from "./full-player.component";
   selector: "app-root",
   standalone: true,
   imports: [FullPlayerComponent],
-  template: `<app-full-player [source]=""/media/sample.flac""></app-full-player>`,
+  template: `<app-full-player [source]="source"></app-full-player>`,
 })
-export class AppComponent {}
+export class AppComponent {
+  readonly source = "/media/sample.flac";
+}
 ```
 
 ```ts
@@ -545,9 +565,11 @@ import { FullPlayerComponent } from "./full-player.component";
   selector: "app-root",
   standalone: true,
   imports: [FullPlayerComponent],
-  template: `<app-full-player [source]="{ kind: "audio", src: "/media/sample.oga" }"></app-full-player>`,
+  template: `<app-full-player [source]="source"></app-full-player>`,
 })
-export class AppComponent {}
+export class AppComponent {
+  readonly source = { kind: "audio", src: "/media/sample.oga" };
+}
 ```
 
 ```ts
@@ -594,9 +616,11 @@ import { FullPlayerComponent } from "./full-player.component";
   selector: "app-root",
   standalone: true,
   imports: [FullPlayerComponent],
-  template: `<app-full-player [source]=""/media/sample.aac""></app-full-player>`,
+  template: `<app-full-player [source]="source"></app-full-player>`,
 })
-export class AppComponent {}
+export class AppComponent {
+  readonly source = "/media/sample.aac";
+}
 ```
 
 ```ts
@@ -643,9 +667,11 @@ import { FullPlayerComponent } from "./full-player.component";
   selector: "app-root",
   standalone: true,
   imports: [FullPlayerComponent],
-  template: `<app-full-player [source]=""/media/sample.jpg""></app-full-player>`,
+  template: `<app-full-player [source]="source"></app-full-player>`,
 })
-export class AppComponent {}
+export class AppComponent {
+  readonly source = "/media/sample.jpg";
+}
 ```
 
 ```ts
@@ -692,9 +718,11 @@ import { FullPlayerComponent } from "./full-player.component";
   selector: "app-root",
   standalone: true,
   imports: [FullPlayerComponent],
-  template: `<app-full-player [source]=""/media/sample.gif""></app-full-player>`,
+  template: `<app-full-player [source]="source"></app-full-player>`,
 })
-export class AppComponent {}
+export class AppComponent {
+  readonly source = "/media/sample.gif";
+}
 ```
 
 ```ts
@@ -741,9 +769,11 @@ import { FullPlayerComponent } from "./full-player.component";
   selector: "app-root",
   standalone: true,
   imports: [FullPlayerComponent],
-  template: `<app-full-player [source]=""/media/sample.png""></app-full-player>`,
+  template: `<app-full-player [source]="source"></app-full-player>`,
 })
-export class AppComponent {}
+export class AppComponent {
+  readonly source = "/media/sample.png";
+}
 ```
 
 ```ts
@@ -790,9 +820,11 @@ import { FullPlayerComponent } from "./full-player.component";
   selector: "app-root",
   standalone: true,
   imports: [FullPlayerComponent],
-  template: `<app-full-player [source]=""/media/sample.webp""></app-full-player>`,
+  template: `<app-full-player [source]="source"></app-full-player>`,
 })
-export class AppComponent {}
+export class AppComponent {
+  readonly source = "/media/sample.webp";
+}
 ```
 
 ```ts
@@ -839,9 +871,11 @@ import { FullPlayerComponent } from "./full-player.component";
   selector: "app-root",
   standalone: true,
   imports: [FullPlayerComponent],
-  template: `<app-full-player [source]=""/media/sample.svg""></app-full-player>`,
+  template: `<app-full-player [source]="source"></app-full-player>`,
 })
-export class AppComponent {}
+export class AppComponent {
+  readonly source = "/media/sample.svg";
+}
 ```
 
 ```ts
@@ -888,9 +922,11 @@ import { FullPlayerComponent } from "./full-player.component";
   selector: "app-root",
   standalone: true,
   imports: [FullPlayerComponent],
-  template: `<app-full-player [source]=""/media/sample.avif""></app-full-player>`,
+  template: `<app-full-player [source]="source"></app-full-player>`,
 })
-export class AppComponent {}
+export class AppComponent {
+  readonly source = "/media/sample.avif";
+}
 ```
 
 ```ts
@@ -937,9 +973,11 @@ import { FullPlayerComponent } from "./full-player.component";
   selector: "app-root",
   standalone: true,
   imports: [FullPlayerComponent],
-  template: `<app-full-player [source]="{ kind: "embed", provider: "youtube", src: "https://www.youtube.com/watch?v=VIDEO_ID" }"></app-full-player>`,
+  template: `<app-full-player [source]="source"></app-full-player>`,
 })
-export class AppComponent {}
+export class AppComponent {
+  readonly source = { kind: "embed", provider: "youtube", src: "https://www.youtube.com/watch?v=VIDEO_ID" };
+}
 ```
 
 ```ts
@@ -986,9 +1024,11 @@ import { FullPlayerComponent } from "./full-player.component";
   selector: "app-root",
   standalone: true,
   imports: [FullPlayerComponent],
-  template: `<app-full-player [source]="{ kind: "embed", provider: "vimeo", src: "https://vimeo.com/123456789" }"></app-full-player>`,
+  template: `<app-full-player [source]="source"></app-full-player>`,
 })
-export class AppComponent {}
+export class AppComponent {
+  readonly source = { kind: "embed", provider: "vimeo", src: "https://vimeo.com/123456789" };
+}
 ```
 
 ```ts
@@ -1035,9 +1075,11 @@ import { FullPlayerComponent } from "./full-player.component";
   selector: "app-root",
   standalone: true,
   imports: [FullPlayerComponent],
-  template: `<app-full-player [source]="{ kind: "embed", provider: "generic", src: "https://example.com/embed/player" }"></app-full-player>`,
+  template: `<app-full-player [source]="source"></app-full-player>`,
 })
-export class AppComponent {}
+export class AppComponent {
+  readonly source = { kind: "embed", provider: "generic", src: "https://example.com/embed/player" };
+}
 ```
 
 ```ts
@@ -1084,9 +1126,11 @@ import { FullPlayerComponent } from "./full-player.component";
   selector: "app-root",
   standalone: true,
   imports: [FullPlayerComponent],
-  template: `<app-full-player [source]="{ kind: "video", type: "video/mp4", chunks: () => iterable }"></app-full-player>`,
+  template: `<app-full-player [source]="source"></app-full-player>`,
 })
-export class AppComponent {}
+export class AppComponent {
+  readonly source = { kind: "video", type: "video/mp4", chunks: () => iterable };
+}
 ```
 
 ```ts
@@ -1133,9 +1177,11 @@ import { FullPlayerComponent } from "./full-player.component";
   selector: "app-root",
   standalone: true,
   imports: [FullPlayerComponent],
-  template: `<app-full-player [source]="file"></app-full-player>`,
+  template: `<app-full-player [source]="source"></app-full-player>`,
 })
-export class AppComponent {}
+export class AppComponent {
+  readonly source = file;
+}
 ```
 
 ```ts

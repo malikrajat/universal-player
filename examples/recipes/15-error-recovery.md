@@ -6,6 +6,12 @@
 
 Retry once and then show a fallback.
 
+## Setup
+
+```ts
+import { isPlayerError } from "@codewithrajat/universal-player/core";
+```
+
 ## Copy-paste code
 
 ```ts

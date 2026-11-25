@@ -1,6 +1,6 @@
 # Migration
 
-> [Docs home](./README.md) � Migration
+> [Docs home](./README.md) › Migration
 
 [← Docs](./README.md) · [Versioning](./versioning-and-breaking-changes.md) · [Breaking change policy](./breaking-change-policy.md)
 
@@ -243,4 +243,4 @@ Open an issue with the “migration” label and include:
 
 ---
 
-**Docs home** � [Documentation index](./README.md) � [Summary](./SUMMARY.md)
+**Docs home** · [Documentation index](./README.md) · [Summary](./SUMMARY.md)

@@ -1,6 +1,6 @@
 # Analytics
 
-> [Docs home](./README.md) � Analytics
+> [Docs home](./README.md) › Analytics
 
 [← Docs](./README.md) · [REST contract](./rest-contract.md) · [Privacy](./privacy-gdpr.md)
 
@@ -147,4 +147,4 @@ idempotency and retries.
 
 ---
 
-**Docs home** � [Documentation index](./README.md) � [Summary](./SUMMARY.md)
+**Docs home** · [Documentation index](./README.md) · [Summary](./SUMMARY.md)

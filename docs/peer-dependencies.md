@@ -1,6 +1,6 @@
 # Peer dependencies
 
-> [Docs home](./README.md) � Peer dependencies
+> [Docs home](./README.md) › Peer dependencies
 
 > **Publication status:** this package is unreleased at `0.0.1` and is not on the public npm registry. Registry install commands on this page are **intended-only**; use the folder or tarball path in [Installation](./installation.md).
 
@@ -174,4 +174,4 @@ The following are **not** dependencies and are not needed:
 **Next:** [Versioning](./versioning-and-breaking-changes.md) ·
 [Browser support](./browser-support.md)
 
-**Docs home** � [Documentation index](./README.md) � [Summary](./SUMMARY.md)
+**Docs home** · [Documentation index](./README.md) · [Summary](./SUMMARY.md)

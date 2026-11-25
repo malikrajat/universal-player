@@ -1,6 +1,6 @@
 # Privacy & GDPR
 
-> [Docs home](./README.md) � Privacy & GDPR
+> [Docs home](./README.md) › Privacy & GDPR
 
 [← Docs](./README.md) · [Security](./security.md) · [Errors vs logs](./errors-vs-logs.md)
 
@@ -229,4 +229,4 @@ The player has no built-in subject-access export; your app owns the records.
 
 ---
 
-**Docs home** � [Documentation index](./README.md) � [Summary](./SUMMARY.md)
+**Docs home** · [Documentation index](./README.md) · [Summary](./SUMMARY.md)

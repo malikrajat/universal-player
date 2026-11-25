@@ -1,6 +1,6 @@
 # Live
 
-> [Docs home](./README.md) › Live
+> [Docs home](./README.md) â€º Live
 
 [â† Docs](./README.md) Â· [Browser support](./browser-support.md)
 
@@ -114,4 +114,4 @@ CORS on the manifest and segments is required.
 
 ---
 
-**Docs home** · [Documentation index](./README.md) · [Summary](./SUMMARY.md)
+**Docs home** Â· [Documentation index](./README.md) Â· [Summary](./SUMMARY.md)

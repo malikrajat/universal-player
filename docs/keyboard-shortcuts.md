@@ -1,6 +1,6 @@
 # Keyboard shortcuts
 
-> [Docs home](./README.md) � Keyboard shortcuts
+> [Docs home](./README.md) › Keyboard shortcuts
 
 [← Docs](./README.md) · [Accessibility](./accessibility.md) · [Usage](./usage.md)
 
@@ -179,4 +179,4 @@ window.addEventListener("keydown", (event) => {
 
 ---
 
-**Docs home** � [Documentation index](./README.md) � [Summary](./SUMMARY.md)
+**Docs home** · [Documentation index](./README.md) · [Summary](./SUMMARY.md)

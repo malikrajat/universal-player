@@ -1,6 +1,6 @@
 # API source reference
 
-> [Docs home](./README.md) � API source reference
+> [Docs home](./README.md) › API source reference
 
 [← Docs](./README.md) · [_API facts](./_api-facts.md) · [API reference](./api-reference.md)
 
@@ -174,4 +174,4 @@ When a symbol is added, removed or renamed:
 
 ---
 
-**Docs home** � [Documentation index](./README.md) � [Summary](./SUMMARY.md)
+**Docs home** · [Documentation index](./README.md) · [Summary](./SUMMARY.md)

@@ -6,6 +6,12 @@
 
 Play a signed or cookie-protected URL and understand CORS failures.
 
+## Setup
+
+```ts
+import { createPlayer } from "@codewithrajat/universal-player/core";
+```
+
 ## Copy-paste code
 
 ```ts

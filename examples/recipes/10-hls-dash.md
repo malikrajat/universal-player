@@ -6,6 +6,12 @@
 
 Install the SDKs and load manifests.
 
+## Setup
+
+```ts
+// `player` is an existing UniversalPlayer instance. Install hls.js/dashjs first.
+```
+
 ## Copy-paste code
 
 ```ts

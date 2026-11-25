@@ -6,6 +6,12 @@
 
 Open a feedback form at the end and submit to your API.
 
+## Setup
+
+```ts
+// `player` is an existing UniversalPlayer instance.
+```
+
 ## Copy-paste code
 
 ```ts

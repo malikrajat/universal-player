@@ -1,6 +1,6 @@
 # Why this library
 
-> [Docs home](./README.md) � Why this library
+> [Docs home](./README.md) › Why this library
 
 [← Docs](./README.md) · [Features](./features.md) · [Architecture](./architecture.md)
 
@@ -134,4 +134,4 @@ them.
 
 ---
 
-**Docs home** � [Documentation index](./README.md) � [Summary](./SUMMARY.md)
+**Docs home** · [Documentation index](./README.md) · [Summary](./SUMMARY.md)

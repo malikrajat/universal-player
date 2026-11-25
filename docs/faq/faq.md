@@ -1,6 +1,6 @@
 # FAQ (nested index)
 
-> [Docs home](../README.md) › [FAQ](./README.md) › FAQ (nested index)
+> [Docs home](../README.md) › [FAQ](../faq.md) › FAQ (nested index)
 
 The canonical FAQ is [`../faq.md`](../faq.md) and the project FAQ is [`../project/faq.md`](../project/faq.md). This nested page answers the questions that most often come from the other documentation sets.
 

@@ -48,7 +48,7 @@ return () => player.destroy();
 
 ## Related
 
-[docs/guides/ssr.md](../../docs/guides/ssr.md) · [SSR issues](../troubleshooting/ssr-issues.md)
+[docs/guides/ssr.md](../../docs/guides/ssr.md) · [SSR issues](../../docs/troubleshooting/ssr-issues.md)
 
 ---
 

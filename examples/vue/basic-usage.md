@@ -51,20 +51,22 @@ MP4 is the default native path. A URL string ending in `.mp4` or `.m4v`, a struc
 ```vue
 <script setup lang="ts">
 import PlayerElement from "./PlayerElement.vue";
+const source = "/media/sample.mp4";
 </script>
 
 <template>
-  <PlayerElement :source=""/media/sample.mp4"" />
+  <PlayerElement :source="source" />
 </template>
 ```
 
 ```vue
 <script setup lang="ts">
 import { UniversalPlayer } from "@codewithrajat/universal-player/vue";
+const source = "/media/sample.mp4";
 </script>
 
 <template>
-  <UniversalPlayer :src=""/media/sample.mp4"" controls="native" />
+  <UniversalPlayer :src="source" controls="native" />
 </template>
 ```
 
@@ -79,20 +81,22 @@ WebM resolves to the native video engine and is a good fit for open-codec delive
 ```vue
 <script setup lang="ts">
 import PlayerElement from "./PlayerElement.vue";
+const source = "/media/sample.webm";
 </script>
 
 <template>
-  <PlayerElement :source=""/media/sample.webm"" />
+  <PlayerElement :source="source" />
 </template>
 ```
 
 ```vue
 <script setup lang="ts">
 import { UniversalPlayer } from "@codewithrajat/universal-player/vue";
+const source = "/media/sample.webm";
 </script>
 
 <template>
-  <UniversalPlayer :src=""/media/sample.webm"" controls="native" />
+  <UniversalPlayer :src="source" controls="native" />
 </template>
 ```
 
@@ -107,20 +111,22 @@ MOV is recognised by the extension/MIME table and routed to the native engine. T
 ```vue
 <script setup lang="ts">
 import PlayerElement from "./PlayerElement.vue";
+const source = "/media/sample.mov";
 </script>
 
 <template>
-  <PlayerElement :source=""/media/sample.mov"" />
+  <PlayerElement :source="source" />
 </template>
 ```
 
 ```vue
 <script setup lang="ts">
 import { UniversalPlayer } from "@codewithrajat/universal-player/vue";
+const source = "/media/sample.mov";
 </script>
 
 <template>
-  <UniversalPlayer :src=""/media/sample.mov"" controls="native" />
+  <UniversalPlayer :src="source" controls="native" />
 </template>
 ```
 
@@ -135,20 +141,22 @@ MKV is in the extension table so a `.mkv` URL is classified as video. That is de
 ```vue
 <script setup lang="ts">
 import PlayerElement from "./PlayerElement.vue";
+const source = "/media/sample.mkv";
 </script>
 
 <template>
-  <PlayerElement :source=""/media/sample.mkv"" />
+  <PlayerElement :source="source" />
 </template>
 ```
 
 ```vue
 <script setup lang="ts">
 import { UniversalPlayer } from "@codewithrajat/universal-player/vue";
+const source = "/media/sample.mkv";
 </script>
 
 <template>
-  <UniversalPlayer :src=""/media/sample.mkv"" controls="native" />
+  <UniversalPlayer :src="source" controls="native" />
 </template>
 ```
 
@@ -163,20 +171,22 @@ HLS is selected by the `.m3u8` extension. The engine imports `hls.js` lazily, ex
 ```vue
 <script setup lang="ts">
 import PlayerElement from "./PlayerElement.vue";
+const source = "/media/master.m3u8";
 </script>
 
 <template>
-  <PlayerElement :source=""/media/master.m3u8"" />
+  <PlayerElement :source="source" />
 </template>
 ```
 
 ```vue
 <script setup lang="ts">
 import { UniversalPlayer } from "@codewithrajat/universal-player/vue";
+const source = "/media/master.m3u8";
 </script>
 
 <template>
-  <UniversalPlayer :src=""/media/master.m3u8"" controls="native" />
+  <UniversalPlayer :src="source" controls="native" />
 </template>
 ```
 
@@ -191,20 +201,22 @@ MPEG-DASH is selected by the `.mpd` extension. The engine lazily imports `dashjs
 ```vue
 <script setup lang="ts">
 import PlayerElement from "./PlayerElement.vue";
+const source = "/media/manifest.mpd";
 </script>
 
 <template>
-  <PlayerElement :source=""/media/manifest.mpd"" />
+  <PlayerElement :source="source" />
 </template>
 ```
 
 ```vue
 <script setup lang="ts">
 import { UniversalPlayer } from "@codewithrajat/universal-player/vue";
+const source = "/media/manifest.mpd";
 </script>
 
 <template>
-  <UniversalPlayer :src=""/media/manifest.mpd"" controls="native" />
+  <UniversalPlayer :src="source" controls="native" />
 </template>
 ```
 
@@ -219,20 +231,22 @@ MP3 resolves to the native audio engine. The player renders an `<audio>` element
 ```vue
 <script setup lang="ts">
 import PlayerElement from "./PlayerElement.vue";
+const source = "/media/sample.mp3";
 </script>
 
 <template>
-  <PlayerElement :source=""/media/sample.mp3"" />
+  <PlayerElement :source="source" />
 </template>
 ```
 
 ```vue
 <script setup lang="ts">
 import { UniversalPlayer } from "@codewithrajat/universal-player/vue";
+const source = "/media/sample.mp3";
 </script>
 
 <template>
-  <UniversalPlayer :src=""/media/sample.mp3"" controls="native" />
+  <UniversalPlayer :src="source" controls="native" />
 </template>
 ```
 
@@ -247,20 +261,22 @@ M4A is classified as audio by extension and MIME. It plays through the native au
 ```vue
 <script setup lang="ts">
 import PlayerElement from "./PlayerElement.vue";
+const source = "/media/sample.m4a";
 </script>
 
 <template>
-  <PlayerElement :source=""/media/sample.m4a"" />
+  <PlayerElement :source="source" />
 </template>
 ```
 
 ```vue
 <script setup lang="ts">
 import { UniversalPlayer } from "@codewithrajat/universal-player/vue";
+const source = "/media/sample.m4a";
 </script>
 
 <template>
-  <UniversalPlayer :src=""/media/sample.m4a"" controls="native" />
+  <UniversalPlayer :src="source" controls="native" />
 </template>
 ```
 
@@ -275,20 +291,22 @@ WAV is classified as audio and routed to the native engine. It is useful for sho
 ```vue
 <script setup lang="ts">
 import PlayerElement from "./PlayerElement.vue";
+const source = "/media/sample.wav";
 </script>
 
 <template>
-  <PlayerElement :source=""/media/sample.wav"" />
+  <PlayerElement :source="source" />
 </template>
 ```
 
 ```vue
 <script setup lang="ts">
 import { UniversalPlayer } from "@codewithrajat/universal-player/vue";
+const source = "/media/sample.wav";
 </script>
 
 <template>
-  <UniversalPlayer :src=""/media/sample.wav"" controls="native" />
+  <UniversalPlayer :src="source" controls="native" />
 </template>
 ```
 
@@ -303,20 +321,22 @@ FLAC is in the audio extension table and plays through the native engine when th
 ```vue
 <script setup lang="ts">
 import PlayerElement from "./PlayerElement.vue";
+const source = "/media/sample.flac";
 </script>
 
 <template>
-  <PlayerElement :source=""/media/sample.flac"" />
+  <PlayerElement :source="source" />
 </template>
 ```
 
 ```vue
 <script setup lang="ts">
 import { UniversalPlayer } from "@codewithrajat/universal-player/vue";
+const source = "/media/sample.flac";
 </script>
 
 <template>
-  <UniversalPlayer :src=""/media/sample.flac"" controls="native" />
+  <UniversalPlayer :src="source" controls="native" />
 </template>
 ```
 
@@ -331,20 +351,22 @@ Ogg support is real but the kind detection is extension-led. `.ogg` and `.ogv` a
 ```vue
 <script setup lang="ts">
 import PlayerElement from "./PlayerElement.vue";
+const source = { kind: "audio", src: "/media/sample.oga" };
 </script>
 
 <template>
-  <PlayerElement :source="{ kind: "audio", src: "/media/sample.oga" }" />
+  <PlayerElement :source="source" />
 </template>
 ```
 
 ```vue
 <script setup lang="ts">
 import { UniversalPlayer } from "@codewithrajat/universal-player/vue";
+const source = { kind: "audio", src: "/media/sample.oga" };
 </script>
 
 <template>
-  <UniversalPlayer :src="{ kind: "audio", src: "/media/sample.oga" }" controls="native" />
+  <UniversalPlayer :src="source" controls="native" />
 </template>
 ```
 
@@ -359,20 +381,22 @@ AAC is classified as audio. Browser support for raw ADTS streams is narrower tha
 ```vue
 <script setup lang="ts">
 import PlayerElement from "./PlayerElement.vue";
+const source = "/media/sample.aac";
 </script>
 
 <template>
-  <PlayerElement :source=""/media/sample.aac"" />
+  <PlayerElement :source="source" />
 </template>
 ```
 
 ```vue
 <script setup lang="ts">
 import { UniversalPlayer } from "@codewithrajat/universal-player/vue";
+const source = "/media/sample.aac";
 </script>
 
 <template>
-  <UniversalPlayer :src=""/media/sample.aac"" controls="native" />
+  <UniversalPlayer :src="source" controls="native" />
 </template>
 ```
 
@@ -387,20 +411,22 @@ JPEG resolves to the still-image engine. The player renders an `<img>` with `dec
 ```vue
 <script setup lang="ts">
 import PlayerElement from "./PlayerElement.vue";
+const source = "/media/sample.jpg";
 </script>
 
 <template>
-  <PlayerElement :source=""/media/sample.jpg"" />
+  <PlayerElement :source="source" />
 </template>
 ```
 
 ```vue
 <script setup lang="ts">
 import { UniversalPlayer } from "@codewithrajat/universal-player/vue";
+const source = "/media/sample.jpg";
 </script>
 
 <template>
-  <UniversalPlayer :src=""/media/sample.jpg"" controls="native" />
+  <UniversalPlayer :src="source" controls="native" />
 </template>
 ```
 
@@ -415,20 +441,22 @@ GIF is a still-image source to the player even when the file is animated. The en
 ```vue
 <script setup lang="ts">
 import PlayerElement from "./PlayerElement.vue";
+const source = "/media/sample.gif";
 </script>
 
 <template>
-  <PlayerElement :source=""/media/sample.gif"" />
+  <PlayerElement :source="source" />
 </template>
 ```
 
 ```vue
 <script setup lang="ts">
 import { UniversalPlayer } from "@codewithrajat/universal-player/vue";
+const source = "/media/sample.gif";
 </script>
 
 <template>
-  <UniversalPlayer :src=""/media/sample.gif"" controls="native" />
+  <UniversalPlayer :src="source" controls="native" />
 </template>
 ```
 
@@ -443,20 +471,22 @@ PNG is a still-image source and uses the same image engine as JPEG.
 ```vue
 <script setup lang="ts">
 import PlayerElement from "./PlayerElement.vue";
+const source = "/media/sample.png";
 </script>
 
 <template>
-  <PlayerElement :source=""/media/sample.png"" />
+  <PlayerElement :source="source" />
 </template>
 ```
 
 ```vue
 <script setup lang="ts">
 import { UniversalPlayer } from "@codewithrajat/universal-player/vue";
+const source = "/media/sample.png";
 </script>
 
 <template>
-  <UniversalPlayer :src=""/media/sample.png"" controls="native" />
+  <UniversalPlayer :src="source" controls="native" />
 </template>
 ```
 
@@ -471,20 +501,22 @@ WebP uses the image engine and inherits its zoom/rotate/download controls in the
 ```vue
 <script setup lang="ts">
 import PlayerElement from "./PlayerElement.vue";
+const source = "/media/sample.webp";
 </script>
 
 <template>
-  <PlayerElement :source=""/media/sample.webp"" />
+  <PlayerElement :source="source" />
 </template>
 ```
 
 ```vue
 <script setup lang="ts">
 import { UniversalPlayer } from "@codewithrajat/universal-player/vue";
+const source = "/media/sample.webp";
 </script>
 
 <template>
-  <UniversalPlayer :src=""/media/sample.webp"" controls="native" />
+  <UniversalPlayer :src="source" controls="native" />
 </template>
 ```
 
@@ -499,20 +531,22 @@ SVG is an image source. The engine creates an `<img>` element; it never injects 
 ```vue
 <script setup lang="ts">
 import PlayerElement from "./PlayerElement.vue";
+const source = "/media/sample.svg";
 </script>
 
 <template>
-  <PlayerElement :source=""/media/sample.svg"" />
+  <PlayerElement :source="source" />
 </template>
 ```
 
 ```vue
 <script setup lang="ts">
 import { UniversalPlayer } from "@codewithrajat/universal-player/vue";
+const source = "/media/sample.svg";
 </script>
 
 <template>
-  <UniversalPlayer :src=""/media/sample.svg"" controls="native" />
+  <UniversalPlayer :src="source" controls="native" />
 </template>
 ```
 
@@ -527,20 +561,22 @@ AVIF uses the image engine. The player supplies no format negotiation; use `<pic
 ```vue
 <script setup lang="ts">
 import PlayerElement from "./PlayerElement.vue";
+const source = "/media/sample.avif";
 </script>
 
 <template>
-  <PlayerElement :source=""/media/sample.avif"" />
+  <PlayerElement :source="source" />
 </template>
 ```
 
 ```vue
 <script setup lang="ts">
 import { UniversalPlayer } from "@codewithrajat/universal-player/vue";
+const source = "/media/sample.avif";
 </script>
 
 <template>
-  <UniversalPlayer :src=""/media/sample.avif"" controls="native" />
+  <UniversalPlayer :src="source" controls="native" />
 </template>
 ```
 
@@ -555,20 +591,22 @@ YouTube URLs are detected by host (`youtube.com`, `*.youtube.com`, `youtu.be`) a
 ```vue
 <script setup lang="ts">
 import PlayerElement from "./PlayerElement.vue";
+const source = { kind: "embed", provider: "youtube", src: "https://www.youtube.com/watch?v=VIDEO_ID" };
 </script>
 
 <template>
-  <PlayerElement :source="{ kind: "embed", provider: "youtube", src: "https://www.youtube.com/watch?v=VIDEO_ID" }" />
+  <PlayerElement :source="source" />
 </template>
 ```
 
 ```vue
 <script setup lang="ts">
 import { UniversalPlayer } from "@codewithrajat/universal-player/vue";
+const source = { kind: "embed", provider: "youtube", src: "https://www.youtube.com/watch?v=VIDEO_ID" };
 </script>
 
 <template>
-  <UniversalPlayer :src="{ kind: "embed", provider: "youtube", src: "https://www.youtube.com/watch?v=VIDEO_ID" }" controls="native" />
+  <UniversalPlayer :src="source" controls="native" />
 </template>
 ```
 
@@ -583,20 +621,22 @@ Vimeo URLs are detected by host and loaded through the Vimeo player iframe messa
 ```vue
 <script setup lang="ts">
 import PlayerElement from "./PlayerElement.vue";
+const source = { kind: "embed", provider: "vimeo", src: "https://vimeo.com/123456789" };
 </script>
 
 <template>
-  <PlayerElement :source="{ kind: "embed", provider: "vimeo", src: "https://vimeo.com/123456789" }" />
+  <PlayerElement :source="source" />
 </template>
 ```
 
 ```vue
 <script setup lang="ts">
 import { UniversalPlayer } from "@codewithrajat/universal-player/vue";
+const source = { kind: "embed", provider: "vimeo", src: "https://vimeo.com/123456789" };
 </script>
 
 <template>
-  <UniversalPlayer :src="{ kind: "embed", provider: "vimeo", src: "https://vimeo.com/123456789" }" controls="native" />
+  <UniversalPlayer :src="source" controls="native" />
 </template>
 ```
 
@@ -611,20 +651,22 @@ A generic embed renders the URL in a sandboxed-by-permissions iframe (`allow="au
 ```vue
 <script setup lang="ts">
 import PlayerElement from "./PlayerElement.vue";
+const source = { kind: "embed", provider: "generic", src: "https://example.com/embed/player" };
 </script>
 
 <template>
-  <PlayerElement :source="{ kind: "embed", provider: "generic", src: "https://example.com/embed/player" }" />
+  <PlayerElement :source="source" />
 </template>
 ```
 
 ```vue
 <script setup lang="ts">
 import { UniversalPlayer } from "@codewithrajat/universal-player/vue";
+const source = { kind: "embed", provider: "generic", src: "https://example.com/embed/player" };
 </script>
 
 <template>
-  <UniversalPlayer :src="{ kind: "embed", provider: "generic", src: "https://example.com/embed/player" }" controls="native" />
+  <UniversalPlayer :src="source" controls="native" />
 </template>
 ```
 
@@ -639,20 +681,22 @@ A `ChunkedSource` carries an ordered `Iterable`, `AsyncIterable`, or `ReadableSt
 ```vue
 <script setup lang="ts">
 import PlayerElement from "./PlayerElement.vue";
+const source = { kind: "video", type: "video/mp4", chunks: () => iterable };
 </script>
 
 <template>
-  <PlayerElement :source="{ kind: "video", type: "video/mp4", chunks: () => iterable }" />
+  <PlayerElement :source="source" />
 </template>
 ```
 
 ```vue
 <script setup lang="ts">
 import { UniversalPlayer } from "@codewithrajat/universal-player/vue";
+const source = { kind: "video", type: "video/mp4", chunks: () => iterable };
 </script>
 
 <template>
-  <UniversalPlayer :src="{ kind: "video", type: "video/mp4", chunks: () => iterable }" controls="native" />
+  <UniversalPlayer :src="source" controls="native" />
 </template>
 ```
 
@@ -667,20 +711,22 @@ import { UniversalPlayer } from "@codewithrajat/universal-player/vue";
 ```vue
 <script setup lang="ts">
 import PlayerElement from "./PlayerElement.vue";
+const source = file;
 </script>
 
 <template>
-  <PlayerElement :source="file" />
+  <PlayerElement :source="source" />
 </template>
 ```
 
 ```vue
 <script setup lang="ts">
 import { UniversalPlayer } from "@codewithrajat/universal-player/vue";
+const source = file;
 </script>
 
 <template>
-  <UniversalPlayer :src="file" controls="native" />
+  <UniversalPlayer :src="source" controls="native" />
 </template>
 ```
 

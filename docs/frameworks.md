@@ -1,6 +1,6 @@
 # Frameworks
 
-> [Docs home](./README.md) � Frameworks
+> [Docs home](./README.md) › Frameworks
 
 [← Docs](./README.md) · [Usage](./usage.md) · [API reference](./api-reference.md)
 
@@ -368,4 +368,4 @@ container and browser APIs.
 
 ---
 
-**Docs home** � [Documentation index](./README.md) � [Summary](./SUMMARY.md)
+**Docs home** · [Documentation index](./README.md) · [Summary](./SUMMARY.md)

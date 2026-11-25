@@ -56,9 +56,11 @@ import { FullPlayerComponent } from "./full-player.component";
   selector: "app-root",
   standalone: true,
   imports: [FullPlayerComponent],
-  template: `<app-full-player [source]=""/media/sample.mp4""></app-full-player>`,
+  template: `<app-full-player [source]="source"></app-full-player>`,
 })
-export class AppComponent {}
+export class AppComponent {
+  readonly source = "/media/sample.mp4";
+}
 ```
 
 ## Quick start — headless

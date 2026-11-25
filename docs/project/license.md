@@ -4,7 +4,7 @@
 
 MIT © Rajat Malik.
 
-The full text is in [`../LICENSE`](../LICENSE). In summary, the license permits use, copy, modification, merge, publish, distribute, sublicense and sale, provided the copyright notice and permission notice are included. The software is provided **as is**, without warranty.
+The full text is in [`../../LICENSE`](../../LICENSE). In summary, the license permits use, copy, modification, merge, publish, distribute, sublicense and sale, provided the copyright notice and permission notice are included. The software is provided **as is**, without warranty.
 
 ## What this means for your product
 

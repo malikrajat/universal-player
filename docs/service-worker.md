@@ -1,6 +1,6 @@
 # Service worker
 
-> [Docs home](./README.md) � Service worker
+> [Docs home](./README.md) › Service worker
 
 [← Docs](./README.md) · [Browser support](./browser-support.md) · [Security](./security.md)
 
@@ -157,4 +157,4 @@ It does not implement offline detection or retries.
 
 ---
 
-**Docs home** � [Documentation index](./README.md) � [Summary](./SUMMARY.md)
+**Docs home** · [Documentation index](./README.md) · [Summary](./SUMMARY.md)

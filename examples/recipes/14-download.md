@@ -6,6 +6,12 @@
 
 Offer a download action only when allowed.
 
+## Setup
+
+```ts
+import { createPlayer } from "@codewithrajat/universal-player/core";
+```
+
 ## Copy-paste code
 
 ```ts

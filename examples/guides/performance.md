@@ -49,7 +49,7 @@ Use PerformanceObserver/Long Tasks and the network panel for the rest.
 
 ## Related
 
-[Concepts: performance model](../../docs/concepts/performance-model.md) · [Performance issues](../troubleshooting/performance-issues.md)
+[Concepts: performance model](../../docs/concepts/performance-model.md) · [Performance issues](../../docs/troubleshooting/performance-issues.md)
 
 ---
 

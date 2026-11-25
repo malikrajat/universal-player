@@ -1,6 +1,6 @@
 # Architecture
 
-> [Docs home](./README.md) � Architecture
+> [Docs home](./README.md) › Architecture
 
 [← Docs](./README.md) · [Core concepts](./core-concepts.md) · [Project structure](./project-structure.md)
 
@@ -301,4 +301,4 @@ and no framework wrapper owns playback.
 
 ---
 
-**Docs home** � [Documentation index](./README.md) � [Summary](./SUMMARY.md)
+**Docs home** · [Documentation index](./README.md) · [Summary](./SUMMARY.md)

@@ -17,4 +17,4 @@ Features do not change the format engine. A survey still plays the same media; q
 
 ---
 
-**Docs home** · [Documentation index](../../docs/README.md) · [Summary](../../docs/SUMMARY.md)
+**Docs home** · [Documentation index](../../../../docs/README.md) · [Summary](../../../../docs/SUMMARY.md)

@@ -1,6 +1,6 @@
 # Roadmap
 
-> [Docs home](./README.md) � Roadmap
+> [Docs home](./README.md) › Roadmap
 
 [← Docs](./README.md) · [Feature status](./features.md) · [Changelog](./changelog.md)
 
@@ -148,4 +148,4 @@ implemented without breaking consumers.
 
 ---
 
-**Docs home** � [Documentation index](./README.md) � [Summary](./SUMMARY.md)
+**Docs home** · [Documentation index](./README.md) · [Summary](./SUMMARY.md)

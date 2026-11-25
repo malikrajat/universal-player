@@ -120,7 +120,7 @@ export default defineConfig({
 
 ## Angular and Svelte
 
-Angular uses a controller you wrap in your own standalone component; Svelte uses the shipped source component. Full patterns: [Frameworks](./frameworks.md).
+Angular uses a controller you wrap in your own standalone component; Svelte uses the shipped source component. Full patterns: [Frameworks](../frameworks.md).
 
 ## What to do next
 

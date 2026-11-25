@@ -1,6 +1,6 @@
 # Performance optimization
 
-> [Docs home](./README.md) � Performance optimization
+> [Docs home](./README.md) › Performance optimization
 
 [← Docs](./README.md) · [Best practices](./best-practices.md) · [Architecture](./architecture.md)
 
@@ -224,4 +224,4 @@ enforced yet (see [Roadmap](./roadmap.md)).
 
 ---
 
-**Docs home** � [Documentation index](./README.md) � [Summary](./SUMMARY.md)
+**Docs home** · [Documentation index](./README.md) · [Summary](./SUMMARY.md)

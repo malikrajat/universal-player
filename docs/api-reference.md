@@ -1,6 +1,6 @@
 # API reference
 
-> [Docs home](./README.md) � API reference
+> [Docs home](./README.md) › API reference
 
 [← Docs](./README.md) · [Options cheatsheet](./options-cheatsheet.md) · [Defaults](./defaults.md) · [Source reference](./api-source-reference.md)
 
@@ -988,4 +988,4 @@ Ads, Chromecast and VR are **contract/stub** surfaces in `0.0.1`. See
 
 ---
 
-**Docs home** � [Documentation index](./README.md) � [Summary](./SUMMARY.md)
+**Docs home** · [Documentation index](./README.md) · [Summary](./SUMMARY.md)

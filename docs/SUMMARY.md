@@ -119,6 +119,22 @@
 - [Contributing](maintainers/contributing.md)
 - [Release process](maintainers/release.md)
 
+
+## Feature guides
+
+- [Playlists](playlists.md)
+- [Captions](captions.md)
+- [Surveys](surveys.md)
+- [Analytics](analytics.md)
+- [Resume](resume.md)
+- [Live](live.md)
+- [Images](images.md)
+- [Service worker](service-worker.md)
+
+## Additional root pages
+
+- [Examples](examples.md)
+
 ## Root reference pages
 
 - [Installation](installation.md)
@@ -136,12 +152,14 @@
 - [Frameworks](frameworks.md)
 - [Peer dependencies](peer-dependencies.md)
 - [Peer dependency (compatibility alias)](peer-dependency.md)
+- [Best practices](best-practices.md)
 - [Performance optimization](performance-optimization.md)
 - [Security](security.md)
 - [Privacy and GDPR](privacy-gdpr.md)
 - [Errors vs logs](errors-vs-logs.md)
 - [REST contract](rest-contract.md)
 - [Testing](testing.md)
+- [Troubleshooting](troubleshooting.md)
 - [Extending](extending.md)
 - [Extending the project](extending-the-project.md)
 - [Migration](migration.md)

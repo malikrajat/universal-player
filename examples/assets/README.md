@@ -76,4 +76,4 @@ Do not copy commercial media into the repo. Do not put analytics endpoints or to
 
 ---
 
-**Docs home** · [Documentation index](../docs/README.md) · [Summary](../docs/SUMMARY.md)
+**Docs home** · [Documentation index](../../docs/README.md) · [Summary](../../docs/SUMMARY.md)

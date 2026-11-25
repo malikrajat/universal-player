@@ -1,6 +1,6 @@
 # Captions
 
-> [Docs home](./README.md) › Captions
+> [Docs home](./README.md) â€º Captions
 
 [â† Docs](./README.md) Â· [API reference](./api-reference.md#captionsoptions)
 
@@ -148,4 +148,4 @@ player.state.textTracks; // available tracks
 
 ---
 
-**Docs home** · [Documentation index](./README.md) · [Summary](./SUMMARY.md)
+**Docs home** Â· [Documentation index](./README.md) Â· [Summary](./SUMMARY.md)

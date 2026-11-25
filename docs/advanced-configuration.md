@@ -1,6 +1,6 @@
 # Advanced configuration
 
-> [Docs home](./README.md) � Advanced configuration
+> [Docs home](./README.md) › Advanced configuration
 
 [← Docs](./README.md) · [Configuration](./configuration.md) · [Theming](./theming.md)
 
@@ -443,4 +443,4 @@ player.on("error", ({ error }) => report(error));
 
 ---
 
-**Docs home** � [Documentation index](./README.md) � [Summary](./SUMMARY.md)
+**Docs home** · [Documentation index](./README.md) · [Summary](./SUMMARY.md)

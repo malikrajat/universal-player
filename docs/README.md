@@ -151,9 +151,23 @@ player.destroy();
 
 [Documentation audit](./maintainers/documentation-audit.md) · [Source docs mapping](./maintainers/source-docs-mapping.md) · [Contributing](./maintainers/contributing.md) · [Release](./maintainers/release.md)
 
+### Feature guides
+
+| Page | Contents |
+| --- | --- |
+| [Playlists](./playlists.md) | Queues, auto-advance, completion gating, image slideshows. |
+| [Captions](./captions.md) | WebVTT tracks, default selection, persistence, styling. |
+| [Surveys](./surveys.md) | Feedback, NPS, reviews, quizzes, triggers and presets. |
+| [Analytics](./analytics.md) | Six vendor-neutral event types and a sink. |
+| [Resume](./resume.md) | localStorage position restore, min duration, keys. |
+| [Live](./live.md) | Live state, edge helpers and the missing DVR UI. |
+| [Images](./images.md) | Still image engine, zoom/rotate, galleries. |
+| [Service worker](./service-worker.md) | Caching and range-request guidance. |
+| [Examples](./examples.md) | Runnable demo apps and the example book. |
+
 ### Task-oriented root pages
 
-[Installation](./installation.md) · [Quick start](./quick-start.md) · [Usage](./usage.md) · [Configuration](./configuration.md) · [Advanced configuration](./advanced-configuration.md) · [API reference](./api-reference.md) · [API source reference](./api-source-reference.md) · [Defaults](./defaults.md) · [Options cheatsheet](./options-cheatsheet.md) · [Features](./features.md) · [Keyboard shortcuts](./keyboard-shortcuts.md) · [Theming](./theming.md) · [Frameworks](./frameworks.md) · [Performance](./performance-optimization.md) · [Security](./security.md) · [Privacy & GDPR](./privacy-gdpr.md) · [Errors vs logs](./errors-vs-logs.md) · [REST contract](./rest-contract.md) · [Testing](./testing.md) · [Extending](./extending.md) · [Extending the project](./extending-the-project.md) · [Migration](./migration.md) · [FAQ](./faq.md) · [Roadmap](./roadmap.md) · [Changelog](./changelog.md) · [Contributing](./contributing.md) · [Versioning](./versioning-and-breaking-changes.md) · [Breaking-change policy](./breaking-change-policy.md) · [License](./license.md) · [Decisions](./decisions.md) · [Why this library](./why-this-library.md) · [Architecture](./architecture.md) · [Core concepts](./core-concepts.md) · [Project structure](./project-structure.md) · [Prerequisites](./prerequisites.md) · [Setup](./setup.md) · [Browser support](./browser-support.md) · [Accessibility](./accessibility.md) · [Peer dependencies](./peer-dependencies.md)
+[Installation](./installation.md) · [Quick start](./quick-start.md) · [Usage](./usage.md) · [Configuration](./configuration.md) · [Advanced configuration](./advanced-configuration.md) · [Best practices](./best-practices.md) · [Troubleshooting](./troubleshooting.md) · [API reference](./api-reference.md) · [API source reference](./api-source-reference.md) · [Defaults](./defaults.md) · [Options cheatsheet](./options-cheatsheet.md) · [Features](./features.md) · [Keyboard shortcuts](./keyboard-shortcuts.md) · [Theming](./theming.md) · [Frameworks](./frameworks.md) · [Performance](./performance-optimization.md) · [Security](./security.md) · [Privacy & GDPR](./privacy-gdpr.md) · [Errors vs logs](./errors-vs-logs.md) · [REST contract](./rest-contract.md) · [Testing](./testing.md) · [Extending](./extending.md) · [Extending the project](./extending-the-project.md) · [Migration](./migration.md) · [FAQ](./faq.md) · [Roadmap](./roadmap.md) · [Changelog](./changelog.md) · [Contributing](./contributing.md) · [Versioning](./versioning-and-breaking-changes.md) · [Breaking-change policy](./breaking-change-policy.md) · [License](./license.md) · [Decisions](./decisions.md) · [Why this library](./why-this-library.md) · [Architecture](./architecture.md) · [Core concepts](./core-concepts.md) · [Project structure](./project-structure.md) · [Prerequisites](./prerequisites.md) · [Setup](./setup.md) · [Browser support](./browser-support.md) · [Accessibility](./accessibility.md) · [Peer dependencies](./peer-dependencies.md)
 
 ---
 

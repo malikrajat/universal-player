@@ -1,6 +1,6 @@
 # Resume
 
-> [Docs home](./README.md) › Resume
+> [Docs home](./README.md) â€º Resume
 
 [â† Docs](./README.md) Â· [API reference](./api-reference.md#resumeoptions)
 
@@ -122,4 +122,4 @@ expect(store.read("a")).toBeNull();
 
 ---
 
-**Docs home** · [Documentation index](./README.md) · [Summary](./SUMMARY.md)
+**Docs home** Â· [Documentation index](./README.md) Â· [Summary](./SUMMARY.md)

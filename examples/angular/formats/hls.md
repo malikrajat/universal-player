@@ -10,7 +10,7 @@ HLS is selected by the `.m3u8` extension. The engine imports `hls.js` lazily, ex
 | --- | --- |
 | Entry | /angular (controller) or /ui (custom element) |
 | Adapter id | `hls` |
-| Factory | `createHlsEngine` (internal) (internal, not exported) |
+| Factory | `createHlsEngine` (internal; not exported) |
 | Extensions / input | .m3u8 |
 | MIME | application/vnd.apple.mpegurl |
 | Unit | `<video>` + hls.js or native HLS |
@@ -49,9 +49,11 @@ import { FullPlayerComponent } from "./full-player.component";
   selector: "app-root",
   standalone: true,
   imports: [FullPlayerComponent],
-  template: `<app-full-player [source]=""/media/master.m3u8""></app-full-player>`,
+  template: `<app-full-player [source]="source"></app-full-player>`,
 })
-export class AppComponent {}
+export class AppComponent {
+  readonly source = "/media/master.m3u8";
+}
 ```
 
 ### Headless (native controls)
@@ -168,3 +170,7 @@ player.on("error", ({ error }) => console.error((error as { code?: string }).cod
 [Angular basic](../basic-usage.md) · [Angular advanced](../advanced-usage.md) · [Adapter setup](../../shared/adapter-setup.md) · [Format matrix](../../format-matrix.md) · [API matrix](../../api-matrix.md) · [Errors](../../errors.md)
 
 All formats: [MP4 / M4V](./mp4.md) · [WebM](./webm.md) · [QuickTime MOV](./mov.md) · [Matroska MKV](./mkv.md) · [HLS (.m3u8)](./hls.md) · [MPEG-DASH (.mpd)](./dash.md) · [MP3](./mp3.md) · [M4A / AAC audio](./m4a.md) · [WAV](./wav.md) · [FLAC](./flac.md) · [Ogg / Oga](./ogg.md) · [AAC (raw)](./aac.md) · [JPEG](./jpg.md) · [GIF](./gif.md) · [PNG](./png.md) · [WebP](./webp.md) · [SVG](./svg.md) · [AVIF](./avif.md) · [YouTube](./youtube.md) · [Vimeo](./vimeo.md) · [Generic iframe embed](./embed.md) · [Chunked / streamed media](./chunked.md) · [Blob and File](./blob.md)
+
+---
+
+**Docs home** · [Documentation index](../../../docs/README.md) · [Summary](../../../docs/SUMMARY.md)

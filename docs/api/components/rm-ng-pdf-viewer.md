@@ -45,7 +45,7 @@ defineUniversalPlayerElement("my-player"); // custom tag
 
 ---
 
-← Previous: [Concepts: performance model](../concepts/performance-model.md) · Next: [Events](./viewer-events.md) →
+← Previous: [Concepts: performance model](../../concepts/performance-model.md) · Next: [Events](../events/viewer-events.md) →
 
 ---
 

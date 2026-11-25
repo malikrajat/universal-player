@@ -1,6 +1,6 @@
 # Configuration
 
-> [Docs home](./README.md) � Configuration
+> [Docs home](./README.md) › Configuration
 
 [← Docs](./README.md) · [Advanced configuration](./advanced-configuration.md) · [Defaults →](./defaults.md)
 
@@ -71,7 +71,7 @@ interface PlayerOptions {
 ```
 
 Anything not listed is not a supported option. See
-[_API facts § 8](./_api-facts.md#8-apis-and-claims-that-do-not-exist).
+[_API facts § 8](./_api-facts.md#8-implemented-conditional-and-absent).
 
 ---
 
@@ -373,4 +373,4 @@ More: [Options cheatsheet](./options-cheatsheet.md) and
 
 ---
 
-**Docs home** � [Documentation index](./README.md) � [Summary](./SUMMARY.md)
+**Docs home** · [Documentation index](./README.md) · [Summary](./SUMMARY.md)

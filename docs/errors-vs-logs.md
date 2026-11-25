@@ -1,6 +1,6 @@
 # Errors vs. logs
 
-> [Docs home](./README.md) � Errors vs. logs
+> [Docs home](./README.md) › Errors vs. logs
 
 [← Docs](./README.md) · [Troubleshooting](./troubleshooting.md) · [REST contract](./rest-contract.md)
 
@@ -198,4 +198,4 @@ Open DevTools → Network for media, and Console for the event trail. Use
 
 ---
 
-**Docs home** � [Documentation index](./README.md) � [Summary](./SUMMARY.md)
+**Docs home** · [Documentation index](./README.md) · [Summary](./SUMMARY.md)

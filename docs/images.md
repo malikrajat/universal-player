@@ -1,6 +1,6 @@
 # Images
 
-> [Docs home](./README.md) � Images
+> [Docs home](./README.md) › Images
 
 [← Docs](./README.md) · [Usage → Images](./usage.md#images-and-slideshows)
 
@@ -126,4 +126,4 @@ chunk.
 
 ---
 
-**Docs home** � [Documentation index](./README.md) � [Summary](./SUMMARY.md)
+**Docs home** · [Documentation index](./README.md) · [Summary](./SUMMARY.md)

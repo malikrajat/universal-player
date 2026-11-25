@@ -6,6 +6,12 @@
 
 Capture a note at the current time and seek back.
 
+## Setup
+
+```ts
+// `player` and `notes` are yours; see the chapters feature page.
+```
+
 ## Copy-paste code
 
 ```ts

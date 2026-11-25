@@ -1,6 +1,6 @@
 # Versioning and breaking changes
 
-> [Docs home](./README.md) � Versioning and breaking changes
+> [Docs home](./README.md) › Versioning and breaking changes
 
 [← Docs](./README.md) · [Breaking change policy](./breaking-change-policy.md) · [Changelog](./changelog.md)
 
@@ -152,4 +152,4 @@ Future releases follow the policy above.
 
 ---
 
-**Docs home** � [Documentation index](./README.md) � [Summary](./SUMMARY.md)
+**Docs home** · [Documentation index](./README.md) · [Summary](./SUMMARY.md)

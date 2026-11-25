@@ -1,6 +1,6 @@
 # Best practices
 
-> [Docs home](./README.md) � Best practices
+> [Docs home](./README.md) › Best practices
 
 [← Docs](./README.md) · [Performance](./performance-optimization.md) · [Troubleshooting](./troubleshooting.md)
 
@@ -269,4 +269,4 @@ state. Do not share one `UniversalPlayer` across two containers.
 
 ---
 
-**Docs home** � [Documentation index](./README.md) � [Summary](./SUMMARY.md)
+**Docs home** · [Documentation index](./README.md) · [Summary](./SUMMARY.md)

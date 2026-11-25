@@ -6,6 +6,12 @@
 
 Load a File and show a preview with the right kind.
 
+## Setup
+
+```ts
+import { createPlayer } from "@codewithrajat/universal-player/core";
+```
+
 ## Copy-paste code
 
 ```ts

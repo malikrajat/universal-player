@@ -6,6 +6,12 @@
 
 Mount client-side and clean up on route change.
 
+## Setup
+
+```ts
+import { createPlayer } from "@codewithrajat/universal-player/core";
+```
+
 ## Copy-paste code
 
 ```ts

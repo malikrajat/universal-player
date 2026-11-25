@@ -1,6 +1,6 @@
 # Accessibility
 
-> [Docs home](./README.md) � Accessibility
+> [Docs home](./README.md) › Accessibility
 
 [← Docs](./README.md) · [Keyboard shortcuts](./keyboard-shortcuts.md) · [Theming](./theming.md)
 
@@ -179,4 +179,4 @@ sensitive reports.
 
 ---
 
-**Docs home** � [Documentation index](./README.md) � [Summary](./SUMMARY.md)
+**Docs home** · [Documentation index](./README.md) · [Summary](./SUMMARY.md)

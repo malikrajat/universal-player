@@ -101,7 +101,7 @@ The built-in UI has an error overlay with retry.
 
 ## Lazy loading
 
-Import the UI or framework adapter only when the player is needed. See [lazy loading](../docs/guides/lazy-loading.md).
+Import the UI or framework adapter only when the player is needed. See [lazy loading](../../docs/guides/lazy-loading.md).
 
 ## Layout and accessibility
 

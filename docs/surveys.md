@@ -1,6 +1,6 @@
 # Surveys
 
-> [Docs home](./README.md) › Surveys
+> [Docs home](./README.md) â€º Surveys
 
 [â† Docs](./README.md) Â· [API reference](./api-reference.md#survey-api)
 
@@ -220,4 +220,4 @@ Payload and server rules: [REST contract](./rest-contract.md). Privacy:
 
 ---
 
-**Docs home** · [Documentation index](./README.md) · [Summary](./SUMMARY.md)
+**Docs home** Â· [Documentation index](./README.md) Â· [Summary](./SUMMARY.md)

@@ -1,6 +1,6 @@
 # Extending the project
 
-> [Docs home](./README.md) � Extending the project
+> [Docs home](./README.md) › Extending the project
 
 [← Docs](./README.md) · [Extending](./extending.md) · [Project structure](./project-structure.md)
 
@@ -206,4 +206,4 @@ If the change affects architecture, also update
 
 ---
 
-**Docs home** � [Documentation index](./README.md) � [Summary](./SUMMARY.md)
+**Docs home** · [Documentation index](./README.md) · [Summary](./SUMMARY.md)

@@ -1,6 +1,6 @@
 # FAQ
 
-> [Docs home](./README.md) � FAQ
+> [Docs home](./README.md) › FAQ
 
 [← Docs](./README.md) · [Troubleshooting](./troubleshooting.md) · [Why this library](./why-this-library.md)
 
@@ -381,4 +381,4 @@ Bugs: GitHub issues. Security: follow [SECURITY.md](../SECURITY.md) and
 
 ---
 
-**Docs home** � [Documentation index](./README.md) � [Summary](./SUMMARY.md)
+**Docs home** · [Documentation index](./README.md) · [Summary](./SUMMARY.md)

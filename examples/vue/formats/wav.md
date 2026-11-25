@@ -10,7 +10,7 @@ WAV is classified as audio and routed to the native engine. It is useful for sho
 | --- | --- |
 | Entry | /vue (component + composable) or /ui (custom element) |
 | Adapter id | `native` |
-| Factory | `createNativeEngine` (internal) (internal, not exported) |
+| Factory | `createNativeEngine` (internal; not exported) |
 | Extensions / input | .wav |
 | MIME | audio/wav |
 | Unit | `<audio>` |
@@ -45,10 +45,11 @@ There is no adapter to select. `native` is chosen from the extension, MIME type 
 ```vue
 <script setup lang="ts">
 import PlayerElement from "./PlayerElement.vue";
+const source = "/media/sample.wav";
 </script>
 
 <template>
-  <PlayerElement :source=""/media/sample.wav"" />
+  <PlayerElement :source="source" />
 </template>
 ```
 
@@ -57,10 +58,11 @@ import PlayerElement from "./PlayerElement.vue";
 ```vue
 <script setup lang="ts">
 import { UniversalPlayer } from "@codewithrajat/universal-player/vue";
+const source = "/media/sample.wav";
 </script>
 
 <template>
-  <UniversalPlayer :src=""/media/sample.wav"" controls="native" />
+  <UniversalPlayer :src="source" controls="native" />
 </template>
 ```
 
@@ -145,3 +147,7 @@ player.on("error", ({ error }) => console.error((error as { code?: string }).cod
 [Vue basic](../basic-usage.md) · [Vue advanced](../advanced-usage.md) · [Adapter setup](../../shared/adapter-setup.md) · [Format matrix](../../format-matrix.md) · [API matrix](../../api-matrix.md) · [Errors](../../errors.md)
 
 All formats: [MP4 / M4V](./mp4.md) · [WebM](./webm.md) · [QuickTime MOV](./mov.md) · [Matroska MKV](./mkv.md) · [HLS (.m3u8)](./hls.md) · [MPEG-DASH (.mpd)](./dash.md) · [MP3](./mp3.md) · [M4A / AAC audio](./m4a.md) · [WAV](./wav.md) · [FLAC](./flac.md) · [Ogg / Oga](./ogg.md) · [AAC (raw)](./aac.md) · [JPEG](./jpg.md) · [GIF](./gif.md) · [PNG](./png.md) · [WebP](./webp.md) · [SVG](./svg.md) · [AVIF](./avif.md) · [YouTube](./youtube.md) · [Vimeo](./vimeo.md) · [Generic iframe embed](./embed.md) · [Chunked / streamed media](./chunked.md) · [Blob and File](./blob.md)
+
+---
+
+**Docs home** · [Documentation index](../../../docs/README.md) · [Summary](../../../docs/SUMMARY.md)

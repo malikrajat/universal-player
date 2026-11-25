@@ -1,6 +1,6 @@
 # Troubleshooting
 
-> [Docs home](./README.md) � Troubleshooting
+> [Docs home](./README.md) › Troubleshooting
 
 [← Docs](./README.md) · [Errors vs logs](./errors-vs-logs.md) · [FAQ](./faq.md)
 
@@ -383,4 +383,4 @@ Open an issue with the template in `.github/`. See [Contributing](./contributing
 
 ---
 
-**Docs home** � [Documentation index](./README.md) � [Summary](./SUMMARY.md)
+**Docs home** · [Documentation index](./README.md) · [Summary](./SUMMARY.md)

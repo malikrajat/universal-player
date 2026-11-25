@@ -1,6 +1,6 @@
 # Prerequisites
 
-> [Docs home](./README.md) � Prerequisites
+> [Docs home](./README.md) › Prerequisites
 
 [← Docs](./README.md) · [Installation →](./installation.md)
 
@@ -121,4 +121,4 @@ See [Security](./security.md) for the full threat model.
 
 **Next:** [Installation](./installation.md) · [Quick start](./quick-start.md)
 
-**Docs home** � [Documentation index](./README.md) � [Summary](./SUMMARY.md)
+**Docs home** · [Documentation index](./README.md) · [Summary](./SUMMARY.md)

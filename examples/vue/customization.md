@@ -74,10 +74,11 @@ Use the headless surface:
 ```vue
 <script setup lang="ts">
 import { UniversalPlayer } from "@codewithrajat/universal-player/vue";
+const source = "/media/sample.mp4";
 </script>
 
 <template>
-  <UniversalPlayer :src=""/media/sample.mp4"" controls="native" />
+  <UniversalPlayer :src="source" controls="native" />
 </template>
 ```
 
@@ -100,7 +101,7 @@ The built-in UI has an error overlay with retry.
 
 ## Lazy loading
 
-Import the UI or framework adapter only when the player is needed. See [lazy loading](../docs/guides/lazy-loading.md).
+Import the UI or framework adapter only when the player is needed. See [lazy loading](../../docs/guides/lazy-loading.md).
 
 ## Layout and accessibility
 

@@ -1,6 +1,6 @@
 # License
 
-> [Docs home](./README.md) › License
+> [Docs home](./README.md) â€º License
 
 [â† Docs](./README.md) Â· [Contributing](./contributing.md)
 
@@ -66,4 +66,4 @@ MIT terms. See [Contributing](./contributing.md).
 
 ---
 
-**Docs home** · [Documentation index](./README.md) · [Summary](./SUMMARY.md)
+**Docs home** Â· [Documentation index](./README.md) Â· [Summary](./SUMMARY.md)

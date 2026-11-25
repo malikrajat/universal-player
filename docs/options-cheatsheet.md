@@ -1,6 +1,6 @@
 # Options cheatsheet
 
-> [Docs home](./README.md) � Options cheatsheet
+> [Docs home](./README.md) › Options cheatsheet
 
 [← Docs](./README.md) · [Defaults](./defaults.md) · [API reference](./api-reference.md)
 
@@ -756,4 +756,4 @@ Called for every event, including `timeupdate` and `progress`. Keep it cheap.
 
 ---
 
-**Docs home** � [Documentation index](./README.md) � [Summary](./SUMMARY.md)
+**Docs home** · [Documentation index](./README.md) · [Summary](./SUMMARY.md)

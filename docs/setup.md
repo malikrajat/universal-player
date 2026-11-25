@@ -1,6 +1,6 @@
 # Setup
 
-> [Docs home](./README.md) � Setup
+> [Docs home](./README.md) › Setup
 
 [← Docs](./README.md) · [Installation](./installation.md) · [Quick start →](./quick-start.md)
 
@@ -191,4 +191,4 @@ When adding a feature:
 
 **Next:** [Quick start](./quick-start.md) · [Configuration](./configuration.md)
 
-**Docs home** � [Documentation index](./README.md) � [Summary](./SUMMARY.md)
+**Docs home** · [Documentation index](./README.md) · [Summary](./SUMMARY.md)

@@ -1,6 +1,6 @@
 # Browser support
 
-> [Docs home](./README.md) � Browser support
+> [Docs home](./README.md) › Browser support
 
 [← Docs](./README.md) · [Prerequisites](./prerequisites.md) · [Troubleshooting](./troubleshooting.md)
 
@@ -178,4 +178,4 @@ PiP, fullscreen or cast.
 
 ---
 
-**Docs home** � [Documentation index](./README.md) � [Summary](./SUMMARY.md)
+**Docs home** · [Documentation index](./README.md) · [Summary](./SUMMARY.md)

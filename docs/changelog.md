@@ -1,6 +1,6 @@
 # Changelog
 
-> [Docs home](./README.md) � Changelog
+> [Docs home](./README.md) › Changelog
 
 [← Docs](./README.md) · [Versioning](./versioning-and-breaking-changes.md) · [Roadmap](./roadmap.md)
 
@@ -99,4 +99,4 @@ is a summary, not the source of truth.
 
 ---
 
-**Docs home** � [Documentation index](./README.md) � [Summary](./SUMMARY.md)
+**Docs home** · [Documentation index](./README.md) · [Summary](./SUMMARY.md)

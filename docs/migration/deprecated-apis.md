@@ -1,6 +1,6 @@
 # Deprecated APIs
 
-> [Docs home](../README.md) › [Migration](./README.md) › Deprecated APIs
+> [Docs home](../README.md) › [Migration](../migration.md) › Deprecated APIs
 
 ## Deprecated in 0.0.1
 

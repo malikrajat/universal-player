@@ -1,6 +1,6 @@
 # Playlists and chapters
 
-> [Docs home](./README.md) › Playlists and chapters
+> [Docs home](./README.md) â€º Playlists and chapters
 
 [â† Docs](./README.md) Â· [API reference](./api-reference.md#playlist-chapter-and-thumbnail-types)
 
@@ -168,4 +168,4 @@ const player = createPlayer({
 
 ---
 
-**Docs home** · [Documentation index](./README.md) · [Summary](./SUMMARY.md)
+**Docs home** Â· [Documentation index](./README.md) Â· [Summary](./SUMMARY.md)

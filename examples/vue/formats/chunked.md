@@ -10,7 +10,7 @@ A `ChunkedSource` carries an ordered `Iterable`, `AsyncIterable`, or `ReadableSt
 | --- | --- |
 | Entry | /vue (component + composable) or /ui (custom element) |
 | Adapter id | `chunked` |
-| Factory | `createChunkedMediaEngine` (internal) (internal, not exported) |
+| Factory | `createChunkedMediaEngine` (internal; not exported) |
 | Extensions / input | No extension; `ChunkedSource` |
 | MIME | Caller supplies `type` |
 | Unit | `MediaSource` + `<video>`/`<audio>`, or Blob + `<img>` |
@@ -45,10 +45,11 @@ There is no adapter to select. `chunked` is chosen from the extension, MIME type
 ```vue
 <script setup lang="ts">
 import PlayerElement from "./PlayerElement.vue";
+const source = { kind: "video", type: "video/mp4", chunks: () => iterable };
 </script>
 
 <template>
-  <PlayerElement :source="{ kind: "video", type: "video/mp4", chunks: () => iterable }" />
+  <PlayerElement :source="source" />
 </template>
 ```
 
@@ -57,10 +58,11 @@ import PlayerElement from "./PlayerElement.vue";
 ```vue
 <script setup lang="ts">
 import { UniversalPlayer } from "@codewithrajat/universal-player/vue";
+const source = { kind: "video", type: "video/mp4", chunks: () => iterable };
 </script>
 
 <template>
-  <UniversalPlayer :src="{ kind: "video", type: "video/mp4", chunks: () => iterable }" controls="native" />
+  <UniversalPlayer :src="source" controls="native" />
 </template>
 ```
 
@@ -151,3 +153,7 @@ player.on("error", ({ error }) => console.error((error as { code?: string }).cod
 [Vue basic](../basic-usage.md) · [Vue advanced](../advanced-usage.md) · [Adapter setup](../../shared/adapter-setup.md) · [Format matrix](../../format-matrix.md) · [API matrix](../../api-matrix.md) · [Errors](../../errors.md)
 
 All formats: [MP4 / M4V](./mp4.md) · [WebM](./webm.md) · [QuickTime MOV](./mov.md) · [Matroska MKV](./mkv.md) · [HLS (.m3u8)](./hls.md) · [MPEG-DASH (.mpd)](./dash.md) · [MP3](./mp3.md) · [M4A / AAC audio](./m4a.md) · [WAV](./wav.md) · [FLAC](./flac.md) · [Ogg / Oga](./ogg.md) · [AAC (raw)](./aac.md) · [JPEG](./jpg.md) · [GIF](./gif.md) · [PNG](./png.md) · [WebP](./webp.md) · [SVG](./svg.md) · [AVIF](./avif.md) · [YouTube](./youtube.md) · [Vimeo](./vimeo.md) · [Generic iframe embed](./embed.md) · [Chunked / streamed media](./chunked.md) · [Blob and File](./blob.md)
+
+---
+
+**Docs home** · [Documentation index](../../../docs/README.md) · [Summary](../../../docs/SUMMARY.md)

@@ -45,7 +45,7 @@ Do not import a decorated component from the package; it ships a controller. Dec
 
 Use `/svelte5` with Svelte 5 and `/svelte4` with Svelte 4. The components are shipped as source.
 
-**Canonical guide:** [Build issues root](../troubleshooting.md#build-issues) · [Installation](../installation.md)
+**Canonical guide:** [Build issues root](../troubleshooting.md) · [Installation](../installation.md)
 
 ---
 

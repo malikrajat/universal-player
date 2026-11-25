@@ -6,6 +6,12 @@
 
 Test routing, state and error recovery.
 
+## Setup
+
+```ts
+import { normalizeSource } from "@codewithrajat/universal-player/core";
+```
+
 ## Copy-paste code
 
 ```ts

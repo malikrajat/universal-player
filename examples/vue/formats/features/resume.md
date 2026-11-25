@@ -47,3 +47,7 @@ Full UI wrapper: see [Vue README](../../README.md). Headless: use the framework 
 ## Related
 
 [Vue formats](../README.md) · [Shared features](../../../shared/features.md) · [API matrix](../../../api-matrix.md) · [Errors](../../../errors.md)
+
+---
+
+**Docs home** · [Documentation index](../../../../docs/README.md) · [Summary](../../../../docs/SUMMARY.md)

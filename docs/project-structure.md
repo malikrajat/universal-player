@@ -1,6 +1,6 @@
 # Project structure
 
-> [Docs home](./README.md) � Project structure
+> [Docs home](./README.md) › Project structure
 
 [← Docs](./README.md) · [Architecture](./architecture.md) · [Extending](./extending.md)
 
@@ -243,4 +243,4 @@ under the git-ignored `build/` directory.
 
 ---
 
-**Docs home** � [Documentation index](./README.md) � [Summary](./SUMMARY.md)
+**Docs home** · [Documentation index](./README.md) · [Summary](./SUMMARY.md)

@@ -6,6 +6,12 @@
 
 Preview and inspect an uploaded image.
 
+## Setup
+
+```ts
+// `player` is an existing UniversalPlayer instance.
+```
+
 ## Copy-paste code
 
 ```ts

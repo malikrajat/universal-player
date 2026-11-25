@@ -45,4 +45,4 @@ PDF/Office/EPUB, DRM, OCR, transcoding, generic embeds as controllable players. 
 
 ---
 
-**Docs home** · [Documentation index](../../docs/README.md) · [Summary](../../docs/SUMMARY.md)
+**Docs home** · [Documentation index](../../../docs/README.md) · [Summary](../../../docs/SUMMARY.md)

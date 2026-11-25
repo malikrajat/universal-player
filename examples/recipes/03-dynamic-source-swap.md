@@ -6,6 +6,12 @@
 
 Replace media without recreating the player.
 
+## Setup
+
+```ts
+// `player` is an existing UniversalPlayer instance.
+```
+
 ## Copy-paste code
 
 ```ts

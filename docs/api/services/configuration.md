@@ -40,7 +40,7 @@ Do not mutate imported module state to share config.
 
 ---
 
-← Previous: [Theme config](../interfaces/rm-ng-pdf-theme-config.md) · Next: [Examples: basic](../examples/basic.md) →
+← Previous: [Theme config](../interfaces/rm-ng-pdf-theme-config.md) · Next: [Examples: basic](../../examples/basic.md) →
 
 ---
 

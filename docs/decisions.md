@@ -1,6 +1,6 @@
 # Decisions
 
-> [Docs home](./README.md) � Decisions
+> [Docs home](./README.md) › Decisions
 
 [← Docs](./README.md) · [Architecture](./architecture.md) · [Why this library](./why-this-library.md)
 
@@ -241,4 +241,4 @@ SBOM/package validation, editor configs and Changesets.
 
 ---
 
-**Docs home** � [Documentation index](./README.md) � [Summary](./SUMMARY.md)
+**Docs home** · [Documentation index](./README.md) · [Summary](./SUMMARY.md)

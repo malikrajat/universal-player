@@ -1,6 +1,6 @@
 # Feature status
 
-> [Docs home](./README.md) � Feature status
+> [Docs home](./README.md) › Feature status
 
 [← Docs](./README.md) · [Roadmap](./roadmap.md) · [Usage](./usage.md)
 
@@ -183,4 +183,4 @@ Out of scope  DRM, SSR, public plugin registry
 
 ---
 
-**Docs home** � [Documentation index](./README.md) � [Summary](./SUMMARY.md)
+**Docs home** · [Documentation index](./README.md) · [Summary](./SUMMARY.md)

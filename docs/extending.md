@@ -1,6 +1,6 @@
 # Extending
 
-> [Docs home](./README.md) � Extending
+> [Docs home](./README.md) › Extending
 
 [← Docs](./README.md) · [Architecture](./architecture.md) · [Extending the project](./extending-the-project.md)
 
@@ -256,4 +256,4 @@ path is a pull request to this repository.
 
 ---
 
-**Docs home** � [Documentation index](./README.md) � [Summary](./SUMMARY.md)
+**Docs home** · [Documentation index](./README.md) · [Summary](./SUMMARY.md)

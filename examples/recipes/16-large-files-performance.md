@@ -6,6 +6,12 @@
 
 Reduce startup cost for long media.
 
+## Setup
+
+```ts
+import { createPlayer } from "@codewithrajat/universal-player/core";
+```
+
 ## Copy-paste code
 
 ```ts

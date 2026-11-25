@@ -1,6 +1,6 @@
 # Theming
 
-> [Docs home](./README.md) � Theming
+> [Docs home](./README.md) › Theming
 
 [← Docs](./README.md) · [Advanced configuration](./advanced-configuration.md) · [Defaults](./defaults.md)
 
@@ -388,4 +388,4 @@ See [Accessibility](./accessibility.md).
 
 ---
 
-**Docs home** � [Documentation index](./README.md) � [Summary](./SUMMARY.md)
+**Docs home** · [Documentation index](./README.md) · [Summary](./SUMMARY.md)

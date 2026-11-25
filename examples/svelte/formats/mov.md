@@ -10,7 +10,7 @@ MOV is recognised by the extension/MIME table and routed to the native engine. T
 | --- | --- |
 | Entry | /svelte4 or /svelte5 (component) or /ui (custom element) |
 | Adapter id | `native` |
-| Factory | `createNativeEngine` (internal) (internal, not exported) |
+| Factory | `createNativeEngine` (internal; not exported) |
 | Extensions / input | .mov |
 | MIME | video/quicktime |
 | Unit | `<video>` |
@@ -141,3 +141,7 @@ player.on("error", ({ error }) => console.error((error as { code?: string }).cod
 [Svelte basic](../basic-usage.md) · [Svelte advanced](../advanced-usage.md) · [Adapter setup](../../shared/adapter-setup.md) · [Format matrix](../../format-matrix.md) · [API matrix](../../api-matrix.md) · [Errors](../../errors.md)
 
 All formats: [MP4 / M4V](./mp4.md) · [WebM](./webm.md) · [QuickTime MOV](./mov.md) · [Matroska MKV](./mkv.md) · [HLS (.m3u8)](./hls.md) · [MPEG-DASH (.mpd)](./dash.md) · [MP3](./mp3.md) · [M4A / AAC audio](./m4a.md) · [WAV](./wav.md) · [FLAC](./flac.md) · [Ogg / Oga](./ogg.md) · [AAC (raw)](./aac.md) · [JPEG](./jpg.md) · [GIF](./gif.md) · [PNG](./png.md) · [WebP](./webp.md) · [SVG](./svg.md) · [AVIF](./avif.md) · [YouTube](./youtube.md) · [Vimeo](./vimeo.md) · [Generic iframe embed](./embed.md) · [Chunked / streamed media](./chunked.md) · [Blob and File](./blob.md)
+
+---
+
+**Docs home** · [Documentation index](../../../docs/README.md) · [Summary](../../../docs/SUMMARY.md)

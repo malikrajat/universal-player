@@ -1,6 +1,6 @@
 # Security
 
-> [Docs home](./README.md) � Security
+> [Docs home](./README.md) › Security
 
 [← Docs](./README.md) · [Privacy & GDPR](./privacy-gdpr.md) · [Contributing](./contributing.md)
 
@@ -172,4 +172,4 @@ The maintainers will acknowledge, assess and coordinate a release.
 
 ---
 
-**Docs home** � [Documentation index](./README.md) � [Summary](./SUMMARY.md)
+**Docs home** · [Documentation index](./README.md) · [Summary](./SUMMARY.md)

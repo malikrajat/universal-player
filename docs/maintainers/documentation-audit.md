@@ -14,9 +14,9 @@
 | Original Markdown files in `docs/` | 51 |
 | Rewritten | 6 (README, _api-facts, installation, quick-start, examples, defaults) |
 | Updated | 12 (frameworks, options-cheatsheet, api-reference, peer-dependencies, accessibility, features, decisions, usage, best-practices, faq, why-this-library, configuration) |
-| Renamed to lowercase canonical | 5 (defaults, options-cheatsheet, privacy-gdpr, rest-contract, errors-vs-logs) |
-| Spot-checked and unchanged | 34 |
-| Missing inventory pages created | 80 (getting-started, guides, reference, project, maintainers, concepts, api tree, examples, theming, migration, troubleshooting, faq) |
+| Renamed to lowercase canonical | 3 remaining alias-only files (privacy-gdpr, rest-contract, errors-vs-logs); defaults and options-cheatsheet were also rewritten/updated |
+| Spot-checked and unchanged | 30 |
+| New pages created | 87 (the required trees plus `getting-started/prerequisites.md`, `getting-started/setup.md`, `API.md`, `peer-dependency.md` and `versioning-support.md`) |
 | Example book | 247 Markdown files under `examples/` |
 | Duplicate Markdown trees | **None.** `_docs/api` is generated HTML, `_examples` is runnable apps, `examples` is this Markdown book. |
 
@@ -131,7 +131,26 @@ The source repositories use uppercase names (`DEFAULTS.md`, `OPTIONS-CHEATSHEET.
 
 On Windows/macOS the uppercase name resolves to the lowercase file; on Linux, links must use the lowercase name. All internal links were rewritten to lowercase.
 
-## 7. Recommended next actions
+## 7. Verification (2026-11-06)
+
+| Check | Result |
+| --- | --- |
+| Relative links (root + docs + examples) | 391 Markdown files, **0 broken** |
+| Anchor targets | **0 broken** |
+| Code fences | **0 unbalanced** |
+| Breadcrumb (all pages except README/SUMMARY) | **0 missing** |
+| Footer (all pages except README/SUMMARY) | **0 missing** |
+| Thin files (< 200 chars) | **0** |
+| Placeholder text (TODO/lorem/coming soon) | **0** |
+| Required inventory paths | **126 / 126 present** |
+| Example coverage | 5 frameworks × 37 pages = 185; 23 formats and 6 features in every framework |
+| Error-code consistency | All 9 codes in both catalogues |
+| Defaults consistency | `preload: "metadata"`, volume 1, rate 1, resume 30 s, idle 3000 ms verified |
+| Docs-adjacent lint | No Markdown linter is configured; `lint`/`fmt` ignore `docs/` and `examples/`. The custom checkers above were used instead. |
+
+The checkers live outside the repository (temporary scripts) and are not committed; their results are recorded here.
+
+## 8. Recommended next actions
 
 1. Publish a first version or keep the unreleased warning everywhere. Do not re-enable registry-first docs before npm returns 200.
 2. Add an automated link/anchor/fence checker to CI.

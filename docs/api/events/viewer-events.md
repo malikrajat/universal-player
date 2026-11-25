@@ -47,7 +47,7 @@ Every event is available in three styles: typed subscription, observable, and DO
 
 ---
 
-← Previous: [Component](./rm-ng-pdf-viewer.md) · Next: [Viewer config](../interfaces/rm-ng-pdf-viewer-config.md) →
+← Previous: [Component](../components/rm-ng-pdf-viewer.md) · Next: [Viewer config](../interfaces/rm-ng-pdf-viewer-config.md) →
 
 ---
 

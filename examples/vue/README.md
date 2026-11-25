@@ -52,10 +52,11 @@ Configure the Vue compiler: `isCustomElement: (tag) => tag === "universal-player
 ```vue
 <script setup lang="ts">
 import PlayerElement from "./PlayerElement.vue";
+const source = "/media/sample.mp4";
 </script>
 
 <template>
-  <PlayerElement :source=""/media/sample.mp4"" />
+  <PlayerElement :source="source" />
 </template>
 ```
 
@@ -64,10 +65,11 @@ import PlayerElement from "./PlayerElement.vue";
 ```vue
 <script setup lang="ts">
 import { UniversalPlayer } from "@codewithrajat/universal-player/vue";
+const source = "/media/sample.mp4";
 </script>
 
 <template>
-  <UniversalPlayer :src=""/media/sample.mp4"" controls="native" />
+  <UniversalPlayer :src="source" controls="native" />
 </template>
 ```
 

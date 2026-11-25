@@ -4,11 +4,11 @@
 
 ## Problem
 
-Reviewers need to jump to labelled sections, leave time-coded feedback and resume later.
+Reviewers need to jump to labelled sections and leave time-coded feedback.
 
 ## What you will build
 
-A review room that loads a proxy MP4, exposes chapters, persists the position and shows a time-coded note form.
+A review room that loads a proxy MP4, exposes chapters and shows a time-coded note form.
 
 ## Recommended stack
 
@@ -16,7 +16,7 @@ A review room that loads a proxy MP4, exposes chapters, persists the position an
 | --- | --- |
 | Surface | Custom element |
 | Format | MP4 |
-| Feature | Chapters + resume |
+| Feature | Chapters + notes |
 | Storage | Your API |
 
 ## Flow
@@ -27,7 +27,7 @@ signed proxy URL → player → chapter menu → note form reads state.currentTi
 
 ## Step by step
 
-1. Create the player with chapters and resume.
+1. Create the player and set chapters on `element.player`.
 2. Render a note form next to it.
 3. Read `player.state.currentTime` when the note is saved.
 4. Seek back to a note with `player.seek(note.time)`.
@@ -69,7 +69,6 @@ Proxy URLs are signed and short-lived. Notes are untrusted text; sanitise on ren
 ## Checklist
 
 - [ ] Chapters have stable ids
-- [ ] Resume is per-asset
 - [ ] Notes include asset id + seconds
 - [ ] Destroy on unmount
 

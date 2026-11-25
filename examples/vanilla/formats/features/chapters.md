@@ -46,3 +46,7 @@ Full UI wrapper: see [Vanilla README](../../README.md). Headless: use the framew
 ## Related
 
 [Vanilla formats](../README.md) · [Shared features](../../../shared/features.md) · [API matrix](../../../api-matrix.md) · [Errors](../../../errors.md)
+
+---
+
+**Docs home** · [Documentation index](../../../../docs/README.md) · [Summary](../../../../docs/SUMMARY.md)

@@ -1,6 +1,6 @@
 # Contributing
 
-> [Docs home](./README.md) � Contributing
+> [Docs home](./README.md) › Contributing
 
 [← Docs](./README.md) · [Project structure](./project-structure.md) · [Testing](./testing.md)
 
@@ -185,4 +185,4 @@ By participating you agree to the
 
 ---
 
-**Docs home** � [Documentation index](./README.md) � [Summary](./SUMMARY.md)
+**Docs home** · [Documentation index](./README.md) · [Summary](./SUMMARY.md)

@@ -32,10 +32,10 @@ Root filenames in `docs/` are kept for compatibility with the author's other doc
 Every new page:
 
 1. `# Title`
-2. Breadcrumb: `> [Docs home](path) › Category › Page`
+2. Breadcrumb line: Docs home → Category → Page, each segment linked.
 3. One-paragraph purpose.
 4. Real content: tables, code fences with a language, and specific values.
-5. `**Docs home** · [Documentation index](path) · [Summary](path)` footer.
+5. Footer line: Docs home · Documentation index · Summary, with relative links.
 6. Previous/next links for canonical pages.
 
 Compatibility pages must contain a genuine summary plus a "Canonical guide" link — never a bare "see other file".

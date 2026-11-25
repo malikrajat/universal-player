@@ -81,7 +81,7 @@ Helpers: `isChoiceQuestion`, `isRequiredQuestion`, `surveyId`, `normalizeSurvey`
 resume: { enabled: true, key: "my-app:resume", storage: sessionStorage, minDuration: 30 }
 ```
 
-The core reads/writes `<key>:<url>`? No — the core key is `resume.key ?? "universal-player:<url>"`; the standalone `createResumeStore` prefixes its own key. Do not mix them.
+The core key is `resume.key ?? "universal-player:<url>"` and it reads/writes that key directly. The standalone `createResumeStore` helper applies its own prefix (`DEFAULT_RESUME_KEY_PREFIX = "universal-player:"`) to the key you pass. The two schemes are different; do not assume a value written by one will be read by the other.
 
 ## Analytics
 

@@ -1,6 +1,6 @@
 # Testing
 
-> [Docs home](./README.md) � Testing
+> [Docs home](./README.md) › Testing
 
 [← Docs](./README.md) · [Contributing](./contributing.md) · [Performance](./performance-optimization.md)
 
@@ -223,4 +223,4 @@ These catch:
 
 ---
 
-**Docs home** � [Documentation index](./README.md) � [Summary](./SUMMARY.md)
+**Docs home** · [Documentation index](./README.md) · [Summary](./SUMMARY.md)

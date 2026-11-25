@@ -1,6 +1,6 @@
 # Usage
 
-> [Docs home](./README.md) � Usage
+> [Docs home](./README.md) › Usage
 
 [← Docs](./README.md) · [Quick start](./quick-start.md) · [API reference →](./api-reference.md)
 
@@ -527,4 +527,4 @@ adapters call it on unmount.
 
 ---
 
-**Docs home** � [Documentation index](./README.md) � [Summary](./SUMMARY.md)
+**Docs home** · [Documentation index](./README.md) · [Summary](./SUMMARY.md)

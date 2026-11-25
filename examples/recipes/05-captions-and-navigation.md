@@ -6,6 +6,12 @@
 
 Provide captions and chapters, then navigate by chapter.
 
+## Setup
+
+```ts
+import { createPlayer } from "@codewithrajat/universal-player/core";
+```
+
 ## Copy-paste code
 
 ```ts

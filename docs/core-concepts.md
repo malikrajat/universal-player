@@ -1,6 +1,6 @@
 # Core concepts
 
-> [Docs home](./README.md) � Core concepts
+> [Docs home](./README.md) › Core concepts
 
 [← Docs](./README.md) · [Architecture](./architecture.md) · [Project structure](./project-structure.md)
 
@@ -290,4 +290,4 @@ change playback behaviour; it only changes who renders controls.
 
 ---
 
-**Docs home** � [Documentation index](./README.md) � [Summary](./SUMMARY.md)
+**Docs home** · [Documentation index](./README.md) · [Summary](./SUMMARY.md)

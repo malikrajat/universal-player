@@ -1,6 +1,6 @@
 # Data contract
 
-> [Docs home](./README.md) � Data contract
+> [Docs home](./README.md) › Data contract
 
 [← Docs](./README.md) · [Analytics guide](./analytics.md) · [Surveys guide](./surveys.md)
 
@@ -232,4 +232,4 @@ See [Privacy & GDPR](./privacy-gdpr.md).
 
 ---
 
-**Docs home** � [Documentation index](./README.md) � [Summary](./SUMMARY.md)
+**Docs home** · [Documentation index](./README.md) · [Summary](./SUMMARY.md)
