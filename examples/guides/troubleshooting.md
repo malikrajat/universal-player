@@ -4,7 +4,7 @@
 
 ## Diagnostic sequence
 
-1. Is the package resolved from a local path?
+1. Is the published package installed from npm?
 2. Which entry did you import?
 3. What does `normalizeSource(source)` return?
 4. What is `player.state.kind` / `provider`?
@@ -18,7 +18,7 @@
 | --- | --- |
 | No controls | Use custom element or `controls: "native"` |
 | Unstyled light DOM | Import `styles.css` or `inject-styles` |
-| Cannot resolve package | Local folder/tarball install |
+| Cannot resolve package | Install the published package from npm |
 | Missing hls.js/dashjs | Install the peer |
 | Immediately `media-error` | Remux MOV/MKV; check codec |
 | HLS `network-error` | CORS/manifest/segment |

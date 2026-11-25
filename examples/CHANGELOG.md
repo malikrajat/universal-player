@@ -13,7 +13,7 @@ Added:
 
 Corrected relative to the earlier docs:
 
-- The package is unreleased; registry installs do not resolve.
+- The package is published on npm as `@codewithrajat/universal-player@0.0.1`; registry installs resolve.
 - Only `<universal-player>` renders the built-in UI.
 - React's prop is `source`; Vue/Svelte use `src`; Angular uses `source`.
 - The engine count is 8 providers, not seven.
@@ -24,7 +24,7 @@ Corrected relative to the earlier docs:
 ## Compatibility
 
 - Library version: `0.0.1`.
-- No published release exists.
+- Published public release: `0.0.1` on npm (`npm view @codewithrajat/universal-player version` returns `0.0.1`).
 - Node `>=24` for development; browsers per the declared floor.
 - Chromium is the only executed browser test.
 

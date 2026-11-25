@@ -4,7 +4,7 @@
 
 The canonical release history is [`../CHANGELOG.md`](../CHANGELOG.md). This page records documentation-relevant changes.
 
-## 0.0.1 — initial scaffold (unreleased)
+## 0.0.1 — initial scaffold (published on npm)
 
 Added:
 
@@ -17,7 +17,7 @@ Added:
 
 Documentation changes on 2026-11-06:
 
-- Corrected the publication status: the package is **not on npm**.
+- Updated the publication status: `0.0.1` is published on npm (a past audit finding has since been corrected).
 - Corrected the UI boundary: framework wrappers and `mountUniversalPlayer()` are headless.
 - Corrected the entry count: 9 code entries, not "root + 9 subpaths".
 - Corrected the engine count: 8 providers, not seven.
@@ -26,7 +26,7 @@ Documentation changes on 2026-11-06:
 
 ## Compatibility
 
-No previous public release exists, so there are no runtime compatibility commitments yet. See [Versioning](./versioning.md).
+`0.0.1` is the initial published release, so runtime compatibility commitments begin with it. See [Versioning](./versioning.md).
 
 ## Known unverified areas
 

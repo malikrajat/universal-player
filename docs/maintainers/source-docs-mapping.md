@@ -4,6 +4,7 @@
 
 **Mapped on:** 2026-11-06
 **Method:** GitHub trees API for each repository/branch, filtered to `docs/**/*.md`. Live registry check for publication status.
+**Current status:** Published — npm registry returns `0.0.1` for `@codewithrajat/universal-player`.
 
 ## Source repositories inspected
 

@@ -14,9 +14,11 @@ This project follows [Semantic Versioning](https://semver.org/) and uses
 
 ## Current release
 
-### `0.0.1`
+Published — npm registry returns `0.0.1` for `@codewithrajat/universal-player`.
 
-Initial experience release:
+### `0.0.1` — published initial release
+
+Initial published experience release:
 
 - Headless `UniversalPlayer` core with immutable state and three event styles.
 - Native video/audio, image, HLS, DASH, YouTube, Vimeo and generic embed

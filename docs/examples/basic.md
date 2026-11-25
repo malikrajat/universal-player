@@ -37,7 +37,7 @@ const player = createPlayer({
 
 ## Checklist
 
-- [ ] Built the package and installed it locally.
+- [ ] Installed the published package from npm (`npm install @codewithrajat/universal-player`).
 - [ ] Imported the root or `/ui` for the UI.
 - [ ] Served the media with a video MIME type.
 - [ ] Sized the host.

@@ -2,6 +2,8 @@
 
 Thanks for helping improve `@codewithrajat/universal-player`.
 
+> **Consumers:** install the published package from npm with `npm install @codewithrajat/universal-player`. The steps in this file are for contributors working on the library itself.
+
 ## Requirements
 
 - Node.js **24+**

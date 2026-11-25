@@ -2,40 +2,21 @@
 
 > [Docs home](./README.md) › Installation
 
-> **Publication status (2026-11-06):** `@codewithrajat/universal-player@0.0.1` is **not published on the public npm registry**. Registry commands below are marked intended-only. Use the folder or tarball path.
+> **Published on npm:** `@codewithrajat/universal-player@0.0.1` is available from the public npm registry. Install it from the registry with any ESM-capable package manager. Verify the current version with `npm view @codewithrajat/universal-player version`.
 
-## 1. Install from the repository (real path today)
-
-```bash
-# In the library repository
-pnpm install
-pnpm build
-
-# In your application
-pnpm add file:/absolute/path/to/universal-player
-```
-
-The folder must contain `dist/` because every export points at built files. Rebuild after library changes.
-
-### Tarball variant
+## 1. Install from npm
 
 ```bash
-# In the library repository
-pnpm build
-pnpm pack --pack-destination ..
-
-# In your application — use the exact filename pnpm prints
-pnpm add ../codewithrajat-universal-player-0.0.1.tgz
-```
-
-### Registry command (intended only)
-
-```bash
-# Does not resolve today; the registry returns 404.
+npm install @codewithrajat/universal-player
+# or
 pnpm add @codewithrajat/universal-player
+# or
+yarn add @codewithrajat/universal-player
+# or
+bun add @codewithrajat/universal-player
 ```
 
-The package sets `publishConfig.access = "public"`, but no version has been published.
+The published package contains the built `dist/` files that every export points at. No build step is needed in your application. Each release is published from the repository with `publishConfig.access = "public"` and npm provenance.
 
 ## 2. Requirements
 
@@ -162,8 +143,8 @@ console.log(typeof createPlayer, typeof isPlayerError);
 
 | Symptom | Cause | Fix |
 | --- | --- | --- |
-| Cannot resolve the package | Using the registry before publication | Folder/tarball install |
-| `dist/entries/*.js` missing | Folder installed before build | `pnpm build`, reinstall |
+| Cannot resolve the package | Wrong version pin, offline/mirror, or stale cache | Check `npm view @codewithrajat/universal-player version`, pin `0.0.1`, retry with a cleared cache |
+| `dist/entries/*.js` missing | Corrupt or partially installed package | Reinstall `@codewithrajat/universal-player` and clear the package-manager cache |
 | `require() of ES Module` | CommonJS | Dynamic `import()` |
 | `<universal-player>` unknown | Imported only `/core` or an adapter | Import root or `/ui` |
 | No controls | Headless entry with `controls: "custom"` | Custom element or `controls: "native"` |

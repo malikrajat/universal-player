@@ -10,18 +10,15 @@
 4. **A player owns state and events.** `UniversalPlayer` exposes an immutable `PlayerState` and 29 events.
 5. **A UI is optional.** `<universal-player>` is the only surface that draws the built-in control bar.
 
-## Install (real path)
+## Install
 
 ```bash
-# in the library repository
-pnpm install
-pnpm build
-
-# in your app
-pnpm add file:/absolute/path/to/universal-player
+npm install @codewithrajat/universal-player
 ```
 
-The registry command `pnpm add @codewithrajat/universal-player` is intended-only: the package is unreleased at `0.0.1`.
+Equivalents: `pnpm add @codewithrajat/universal-player`, `yarn add @codewithrajat/universal-player`, `bun add @codewithrajat/universal-player`.
+
+Published on npm as `@codewithrajat/universal-player@0.0.1`; `npm view @codewithrajat/universal-player version` returns `0.0.1`.
 
 ## Do I create an adapter or engine?
 

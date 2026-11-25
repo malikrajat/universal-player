@@ -50,7 +50,7 @@ Compatibility pages must contain a genuine summary plus a "Canonical guide" link
 
 ## Accuracy checklist
 
-- [ ] Package name/version/status match `package.json` and the registry check.
+- [ ] Package name/version/status match `package.json` and the published npm version (`0.0.1`).
 - [ ] Entry count and subpaths match the export map.
 - [ ] Every option has type, required/optional, default, enforcement layer (core vs UI), related error and a short example.
 - [ ] Defaults match source (not the README prose).

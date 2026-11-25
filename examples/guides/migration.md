@@ -22,7 +22,7 @@
 
 ## From an earlier copy of this docs set
 
-- Install from folder/tarball, not registry.
+- Install the published package from npm: `npm install @codewithrajat/universal-player`.
 - Framework wrappers are headless.
 - React prop is `source`.
 - Entry count is 9 code entries.

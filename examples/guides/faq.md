@@ -2,7 +2,7 @@
 
 > [Examples home](../README.md) › [Production guides](./README.md) › FAQ
 
-**Is the package published?** No. It is unreleased at `0.0.1`; install from folder/tarball.
+**Is the package published?** Yes. It is published on npm as `@codewithrajat/universal-player@0.0.1`; install with `npm install @codewithrajat/universal-player`.
 
 **Do I need the UI entry?** Only if you want the built-in controls. Headless entries render media only.
 

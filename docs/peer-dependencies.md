@@ -2,7 +2,7 @@
 
 > [Docs home](./README.md) › Peer dependencies
 
-> **Publication status:** this package is unreleased at `0.0.1` and is not on the public npm registry. Registry install commands on this page are **intended-only**; use the folder or tarball path in [Installation](./installation.md).
+> **Published package:** `@codewithrajat/universal-player@0.0.1` is available on the public npm registry. The install commands on this page are normal registry installs for consumers; see [Installation](./installation.md).
 
 [← Docs](./README.md) · [Installation](./installation.md) · [Frameworks](./frameworks.md)
 
@@ -24,7 +24,7 @@ automatically and never required unless you use that path.
 | `@angular/core` | `>=17.0.0`           | `/angular` entry                               | You          |
 | `svelte`        | `^4.0.0 \|\| ^5.0.0` | `/svelte4`, `/svelte5`                         | You          |
 
-All seven are listed under `peerDependenciesMeta` with `optional: true`. The package is unreleased, so install the folder/tarball first; the registry commands below are shown as intended usage.
+All seven are listed under `peerDependenciesMeta` with `optional: true`. Install the package from npm first, then add only the peers your app uses. The registry commands below are ordinary installs.
 
 ---
 
@@ -47,10 +47,12 @@ no `node_modules`.
 
 ## Install recipes
 
+Use `pnpm add`, `yarn add` or `bun add` in place of `npm install` if you prefer.
+
 ### Video only (MP4/WebM/MOV)
 
 ```bash
-pnpm add @codewithrajat/universal-player
+npm install @codewithrajat/universal-player
 ```
 
 No peers needed.
@@ -58,7 +60,7 @@ No peers needed.
 ### HLS
 
 ```bash
-pnpm add @codewithrajat/universal-player hls.js
+npm install @codewithrajat/universal-player hls.js
 ```
 
 Safari can play HLS natively; the adapter prefers native support and falls back
@@ -67,31 +69,31 @@ to `hls.js` where needed.
 ### DASH
 
 ```bash
-pnpm add @codewithrajat/universal-player dashjs
+npm install @codewithrajat/universal-player dashjs
 ```
 
 ### React
 
 ```bash
-pnpm add @codewithrajat/universal-player react react-dom
+npm install @codewithrajat/universal-player react react-dom
 ```
 
 ### Vue 3
 
 ```bash
-pnpm add @codewithrajat/universal-player vue
+npm install @codewithrajat/universal-player vue
 ```
 
 ### Vue 2.7
 
 ```bash
-pnpm add @codewithrajat/universal-player vue@2.7
+npm install @codewithrajat/universal-player vue@2.7
 ```
 
 ### Angular
 
 ```bash
-pnpm add @codewithrajat/universal-player @angular/core
+npm install @codewithrajat/universal-player @angular/core
 ```
 
 `@angular/core` usually already exists in an Angular app.
@@ -99,7 +101,7 @@ pnpm add @codewithrajat/universal-player @angular/core
 ### Svelte
 
 ```bash
-pnpm add @codewithrajat/universal-player svelte
+npm install @codewithrajat/universal-player svelte
 ```
 
 Use the entry matching the installed major.
@@ -107,7 +109,7 @@ Use the entry matching the installed major.
 ### RxJS interop
 
 ```bash
-pnpm add @codewithrajat/universal-player rxjs
+npm install @codewithrajat/universal-player rxjs
 ```
 
 The native observable already works with `for await` and `subscribe()`; `rxjs`

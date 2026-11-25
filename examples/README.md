@@ -4,7 +4,7 @@
 
 A Markdown-only lab book for **`@codewithrajat/universal-player` 0.0.1**: five framework surfaces, 23 media formats/inputs, six features, 16 recipes and 13 use cases. Every page is written against the repository source, not against marketing copy.
 
-> **Status:** the package is **unreleased**. `npm view @codewithrajat/universal-player` returns 404 on 2026-11-06. Install from the repository folder or a tarball. Registry commands in these pages are intended-only.
+> **Status:** published on npm as `@codewithrajat/universal-player@0.0.1`. Install the published package with `npm install @codewithrajat/universal-player`; `npm view @codewithrajat/universal-player version` returns `0.0.1`.
 
 ## What is in this folder
 
@@ -152,7 +152,7 @@ examples/
 
 ## Version and support notes
 
-- Version `0.0.1`, unreleased, ESM only, browser-only.
+- Version `0.0.1`, published on npm, ESM only, browser-only.
 - 9 code entry points; 2 asset subpaths.
 - 8 engine providers; 9 error codes.
 - Declared browser floor: Chrome/Edge 125+, Firefox 128+, Safari 18+. Executed test: Chromium only.

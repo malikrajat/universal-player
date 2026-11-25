@@ -26,7 +26,7 @@ A source is normalised into a kind and provider. The player creates one internal
 
 ## Version and status
 
-`@codewithrajat/universal-player@0.0.1` is unreleased. Local folder/tarball install only.
+`@codewithrajat/universal-player@0.0.1` is published on npm. Install the published package with `npm install @codewithrajat/universal-player`.
 
 ---
 

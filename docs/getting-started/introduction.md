@@ -38,9 +38,9 @@ The core knows how to play media, not how to draw a control bar. The web compone
 - Not an Office/document viewer, despite some filenames inherited from the author's PDF viewer docs. The API tree under [`api/`](../api/components/rm-ng-pdf-viewer.md) is a compatibility layout; the content is rewritten for this media player.
 - Not a plugin platform: engine selection is internal and there is no `registerEngine()`.
 
-## Publication reality
+## Published on npm
 
-The package is **unreleased at 0.0.1**. The npm registry returns 404. Install from the repository folder or a packed tarball; see [Installation](./installation.md).
+`@codewithrajat/universal-player` is published at `0.0.1` on the public npm registry. Install it with `npm install @codewithrajat/universal-player`; see [Installation](./installation.md).
 
 ## The first decision
 

@@ -1,9 +1,9 @@
 # @codewithrajat/universal-player — documentation
 
-**Version:** `0.0.1` · **Status:** unreleased (not on npm) · **License:** MIT · **Runtime:** browser-only ESM
+**Version:** `0.0.1` · **Status:** published on npm · **License:** MIT · **Runtime:** browser-only ESM
 **Package identity:** `@codewithrajat/universal-player` · **Repository:** [malikrajat/universal-player](https://github.com/malikrajat/universal-player)
 
-> **Publication status (2026-11-06):** `@codewithrajat/universal-player@0.0.1` is **not published on the public npm registry**. The registry command is shown as the intended command only; use the local folder or tarball install in [Installation](./installation.md).
+> **Published on npm:** `@codewithrajat/universal-player@0.0.1` is available from the public npm registry. Install it with `npm install @codewithrajat/universal-player`; see [Installation](./installation.md). Verify with `npm view @codewithrajat/universal-player version`.
 
 Framework-agnostic media playback for **video, audio, still images and third-party embeds**. One headless TypeScript core, one `<universal-player>` web component that owns the built-in UI, and thin adapters for React, Vue, Angular and Svelte.
 
@@ -24,7 +24,7 @@ The framework wrappers and `mountUniversalPlayer()` mount the core, not the web 
 
 | If you want to… | Read |
 | --- | --- |
-| Install without a registry package | [Installation](./installation.md) · [Prerequisites](./prerequisites.md) |
+| Install the published package from npm | [Installation](./installation.md) · [Prerequisites](./prerequisites.md) |
 | Get pixels on screen in five minutes | [Quick start](./quick-start.md) · [First example](./getting-started/first-example.md) |
 | Understand the headless/full-UI split | [Core concepts](./core-concepts.md) · [Frameworks](./frameworks.md) |
 | Copy a complete option object | [Options cheatsheet](./options-cheatsheet.md) |
@@ -40,12 +40,10 @@ The framework wrappers and `mountUniversalPlayer()` mount the core, not the web 
 
 ## 30-second example (full UI)
 
-Build the package once, then point a bundler at the folder or tarball (the registry command does not resolve today):
+Install the published package from npm, then import it in your bundler or browser:
 
 ```bash
-pnpm install
-pnpm build
-pnpm add file:../universal-player
+npm install @codewithrajat/universal-player
 ```
 
 ```html
@@ -94,7 +92,7 @@ player.destroy();
 | [Introduction](./getting-started/introduction.md) | What the library is, what it is not, mental model. |
 | [Why this library](./getting-started/why-this-library.md) | Problems it solves versus a plain `<video>`. |
 | [Prerequisites](./getting-started/prerequisites.md) | Node, browser, peer and TypeScript requirements. |
-| [Installation](./getting-started/installation.md) | Local folder/tarball install, optional peers, entry points. |
+| [Installation](./getting-started/installation.md) | npm install, optional peers, entry points. |
 | [Setup](./getting-started/setup.md) | Repository setup, consumer setup, first mount. |
 | [Quick start](./getting-started/quick-start.md) | Five mount paths in one page. |
 | [First example](./getting-started/first-example.md) | A complete, explained HTML file. |
@@ -177,7 +175,7 @@ player.destroy();
 | --- | --- |
 | Package | `@codewithrajat/universal-player` |
 | Version | `0.0.1` |
-| Publication | **Unreleased**; the npm registry returns 404 for the package |
+| Publication | **Published** on npm as `@codewithrajat/universal-player@0.0.1` |
 | License | MIT |
 | Module format | ESM only (`"type": "module"`) |
 | Runtime dependencies | None |

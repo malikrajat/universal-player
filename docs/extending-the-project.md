@@ -7,6 +7,8 @@
 A maintainer-focused guide to changing the library safely. It covers the files
 to touch, the checks to run and the documentation that must move with the code.
 
+> Consumers install the published package from npm; the commands in this guide are for maintainers/contributors working on the library itself.
+
 ---
 
 ## 1. Development loop

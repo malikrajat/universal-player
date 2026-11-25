@@ -18,9 +18,13 @@
 ## Install
 
 ```bash
-pnpm add file:/absolute/path/to/universal-player
-pnpm add @angular/core
+npm install @codewithrajat/universal-player
+npm install @angular/core
 ```
+
+Equivalents: `pnpm add @codewithrajat/universal-player`, `yarn add @codewithrajat/universal-player`, `bun add @codewithrajat/universal-player`.
+
+Published on npm as `@codewithrajat/universal-player@0.0.1`; `npm view @codewithrajat/universal-player version` returns `0.0.1`.
 
 ## Quick start — full UI
 

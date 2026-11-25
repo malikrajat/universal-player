@@ -2,15 +2,15 @@
 
 > [Docs home](./README.md) › Quick start
 
-> **Publication status:** the package is unreleased at `0.0.1`. Install from a folder or tarball; registry commands are intended-only.
+> **Published package:** `@codewithrajat/universal-player@0.0.1` is available on npm. Install it with `npm install @codewithrajat/universal-player`.
 
-## 0. Build and install locally
+## 0. Install the published package from npm
 
 ```bash
-pnpm install
-pnpm build
-pnpm add file:/absolute/path/to/universal-player
+npm install @codewithrajat/universal-player
 ```
+
+Use `pnpm add`, `yarn add` or `bun add` instead if you prefer.
 
 ## 1. Full UI — custom element
 

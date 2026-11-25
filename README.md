@@ -3,7 +3,7 @@
 <p align="center">
   <img src="https://img.shields.io/badge/npm-0.0.1-blue?logo=npm&logoColor=white" alt="npm package 0.0.1">
   <img src="https://img.shields.io/badge/status-experience%20release-orange" alt="Experience release">
-  <img src="https://img.shields.io/badge/registry-unreleased-orange" alt="Not yet published">
+  <img src="https://img.shields.io/badge/npm%20registry-published-blue" alt="Published on npm">
   <img src="https://img.shields.io/badge/TypeScript-declarations-blue?logo=typescript&logoColor=white" alt="TypeScript declarations included">
   <img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="license">
   <img src="https://img.shields.io/github/issues/malikrajat/universal-player" alt="Open issues">
@@ -133,7 +133,7 @@
     <td align="center" width="50%">
       <a href="https://www.npmjs.com/package/@codewithrajat/universal-player" target="_blank"><img src="https://img.shields.io/badge/npm_Package-CB3837?style=for-the-badge&logo=npm&logoColor=white" alt="npm Package"/></a><br/><br/>
       <sub><b>npm Registry</b></sub><br/>
-      <sub>Package page — public release pending</sub>
+      <sub>Package page — published as v0.0.1</sub>
     </td>
   </tr>
   <tr>
@@ -159,20 +159,14 @@
 
 The package is ESM-only, browser-first, dependency-free at the core and validated with strict TypeScript, publint, attw, a tarball allowlist and a browser-import scan.
 
-> **Publication status:** `@codewithrajat/universal-player@0.0.1` is **not published on the public npm registry**. Registry commands below are intended-only. Build the repository and install it from the folder (`pnpm add file:/absolute/path/to/universal-player`) or a packed tarball until a release exists.
+> **Published on npm:** `@codewithrajat/universal-player@0.0.1` is available from the public npm registry. Install it with `npm install @codewithrajat/universal-player` and import from the package subpaths shown below. Verify with `npm view @codewithrajat/universal-player version`.
 
 > **Status: experience release.** Native playback, images, HLS, DASH, YouTube/Vimeo time sync, adaptive controls, chapters, playlists, thumbnails, caption menus, in-player surveys and a YouTube-style control surface are implemented. Ads, Chromecast SDK and 360/VR remain contract-only. See [docs/features.md](./docs/features.md).
 
 ### Installation
 
 ```bash
-# Intended command after a public release
 npm install @codewithrajat/universal-player
-
-# Today: install from the repository folder
-pnpm install
-pnpm build
-pnpm add file:/absolute/path/to/universal-player
 ```
 
 ### Basic Usage
@@ -235,25 +229,13 @@ The element registers the built-in UI and exposes the live core instance as `ele
 Choose your preferred package manager:
 
 ```bash
-# npm (intended-only until a public release)
 npm install @codewithrajat/universal-player
-
-# pnpm (intended-only until a public release)
+# or
 pnpm add @codewithrajat/universal-player
-
-# yarn (intended-only until a public release)
+# or
 yarn add @codewithrajat/universal-player
-
-# bun (intended-only until a public release)
+# or
 bun add @codewithrajat/universal-player
-```
-
-Install from the repository today:
-
-```bash
-pnpm install
-pnpm build
-pnpm add file:/absolute/path/to/universal-player
 ```
 
 Optional peers, installed only when you need them:
@@ -1061,7 +1043,7 @@ bandwidth matters. Use a sprite sheet for dense thumbnail previews.
 
 ```ts
 import { describe, expect, it } from "vitest";
-import { createPlayer } from "../src/entries/core.js";
+import { createPlayer } from "@codewithrajat/universal-player/core";
 
 describe("player", () => {
   it("starts idle", () => {
@@ -1404,7 +1386,7 @@ UX and on the server for trust.
 ## Documentation
 
 - **[Getting Started](./docs/getting-started/introduction.md)** - Install, first player, mental model
-- **[Installation](./docs/getting-started/installation.md)** - Local folder/tarball install, peers and entry points
+- **[Installation](./docs/getting-started/installation.md)** - npm install, optional peers and entry points
 - **[Configuration](./docs/configuration.md)** - Every setting, precedence and defaults
 - **[Options Cheatsheet](./docs/options-cheatsheet.md)** - The complete options object in one block
 - **[Architecture](./docs/architecture.md)** - Layers, data flow, engine selection and build

@@ -2,9 +2,11 @@
 
 > [Docs home](../README.md) › [Migration](./v1-to-v2.md) › v1 to v2
 
-There is no published v1, so there is no real v1 → v2 migration. This page exists to prevent a false history and to give the upgrade path for the **first public release**.
+There is no published v1, so there is no real v1 → v2 migration. `0.0.1` **is published** on npm — this page exists to prevent a false history and to give upgrade guidance for consumers starting from the published `0.0.1` package.
 
-## If you used a pre-release folder copy
+## Patterns corrected in the published `0.0.1`
+
+These are the shapes found in older drafts or folder copies. The published `0.0.1` package installed from npm already uses the right-hand column.
 
 | Old shape | New shape |
 | --- | --- |
@@ -17,9 +19,9 @@ There is no published v1, so there is no real v1 → v2 migration. This page exi
 | Importing `/styles` | Import `/styles.css` |
 | Importing `/features` | Feature helpers come from the root entry |
 
-## First-release checklist
+## Checklist for consumers on `0.0.1`
 
-- [ ] Install from folder/tarball; do not use the registry command yet.
+- [ ] Install `0.0.1` from npm (`npm install @codewithrajat/universal-player@0.0.1`).
 - [ ] Replace any custom adapter registry assumption.
 - [ ] Branch errors on `code`.
 - [ ] Use `controls: "native"` or the custom element.
@@ -28,7 +30,7 @@ There is no published v1, so there is no real v1 → v2 migration. This page exi
 
 ## Future migrations
 
-When a real major ships, this page will carry the deprecation table. Today it must not claim that a v1 exists.
+When a real major ships, this page will carry the deprecation table. Today it must not claim that a v1 exists; `0.0.1` is the published starting point.
 
 **Canonical guide:** [Migration root](../migration.md) · [Breaking changes](./breaking-changes.md)
 

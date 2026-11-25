@@ -10,7 +10,7 @@ A maintainer's fact sheet. Every value was read from `package.json`, `tsconfig.j
 | --- | --- |
 | npm package | `@codewithrajat/universal-player` |
 | Version | `0.0.1` |
-| Publication | **Unreleased** — `npm view` returns E404 on 2026-11-06 |
+| Publication | **Published — npm registry returns `0.0.1` for `@codewithrajat/universal-player`.** |
 | Description | Framework-agnostic universal media player for video, audio, images and embeds |
 | License | MIT |
 | Author | Rajat Malik |
@@ -134,7 +134,7 @@ Declared floor: Chrome/Edge 125+, Firefox 128+, Safari 18+, ES2023, ESM only. Ex
 - Unit: `tests/unit/**/*.test.ts` in jsdom, setup `tests/setup.ts`.
 - Browser: `tests/browser/smoke.browser.test.ts`, Chromium.
 - Validation: `pnpm run check`, `typecheck`, `test`, `build`, `check:pack`, `check:imports`, `check:exports`, `check:types`.
-- Release: Changesets; no public release has been published.
+- Release: `0.0.1` is published; subsequent releases use Changesets.
 - Branch model documented in [Release](./maintainers/release.md).
 
 ## 11. Documentation facts

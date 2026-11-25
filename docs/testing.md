@@ -104,7 +104,7 @@ tests/
 
 ```ts
 import { describe, expect, it, vi } from "vitest";
-import { createPlayer } from "../../src/entries/core.js";
+import { createPlayer } from "@codewithrajat/universal-player/core";
 
 describe("player", () => {
   it("starts idle", () => {

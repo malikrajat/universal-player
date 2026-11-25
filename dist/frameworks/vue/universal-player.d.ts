@@ -207,7 +207,6 @@ export declare const UniversalPlayer: import("vue").DefineComponent<import("vue"
   onError?: (...args: any[]) => any;
   onStatechange?: (...args: any[]) => any;
 }>, {
-  src: PlayerSourceInput;
   controls: ControlsMode;
   theme: ThemeMode;
   locale: string;
@@ -227,5 +226,6 @@ export declare const UniversalPlayer: import("vue").DefineComponent<import("vue"
   autoHideControls: boolean;
   seekStep: number;
   volumeStep: number;
+  src: PlayerSourceInput;
 }, {}, {}, {}, string, import("vue").ComponentProvideOptions, true, {}, any>;
 //# sourceMappingURL=universal-player.d.ts.map

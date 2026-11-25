@@ -19,7 +19,7 @@ universal-player/
 ├── coverage/                  # Generated coverage output
 ├── dist/                      # Generated build output
 ├── _docs/                     # Generated TypeDoc HTML (_docs/api, git-ignored)
-├── _examples/                 # Internal example apps (not published)
+├── _examples/                 # Internal example apps (excluded from the npm package)
 ├── CHANGELOG.md               # Canonical release history
 ├── CODE_OF_CONDUCT.md
 ├── CONTRIBUTING.md
@@ -200,6 +200,10 @@ The package `exports` map points at these paths. `check:pack` verifies that
 every target exists and that no source/test files leak into the tarball.
 
 ### Repository folder
+
+`build:repo` is a maintainer workflow for assembling a repository folder from
+source. Consumers install the published package from npm; this folder is not a
+consumer install path.
 
 ```bash
 pnpm run build:repo             # build, then assemble build/universal-player/

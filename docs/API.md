@@ -4,7 +4,7 @@
 
 This page is the exhaustive index of **public exports**. The narrative reference is [`api-reference.md`](./api-reference.md); the source-to-symbol map is [`api-source-reference.md`](./api-source-reference.md).
 
-> **Publication status:** the package is unreleased at `0.0.1`. Imports below work after a local folder/tarball install, not from the npm registry.
+> **Published package:** `@codewithrajat/universal-player@0.0.1` is installed from npm. All imports below resolve from the installed package.
 
 ## Public subpaths and exports
 

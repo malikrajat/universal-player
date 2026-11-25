@@ -2,54 +2,35 @@
 
 > [Docs home](../README.md) › [Getting started](./introduction.md) › Installation
 
-> **The package is unreleased at 0.0.1.** `npm view @codewithrajat/universal-player` returns E404 on 2026-11-06. The registry command is **intended-only**; use a local path or tarball until a release is published.
+> **`@codewithrajat/universal-player@0.0.1` is published on the public npm registry.** Install it from npm; no local build or repository copy is needed.
 
-## Option A — install from the repository folder
+## Install from npm
 
 ```bash
-# from the repository root
-pnpm install
-pnpm build
-
-# in your application
-pnpm add file:/absolute/path/to/universal-player
+npm install @codewithrajat/universal-player
 ```
 
-The folder must contain `dist/`, because the export map points at built files. Re-run `pnpm build` after changing the library.
-
-## Option B — pack a tarball
+Equivalent commands for other package managers:
 
 ```bash
-# from the repository root
-pnpm build
-pnpm pack --pack-destination ..
-
-# in your application (use the exact filename printed by pnpm pack)
-pnpm add ../codewithrajat-universal-player-0.0.1.tgz
-```
-
-A tarball is the closest equivalent to a registry install and is the right artifact for CI smoke tests.
-
-## Option C — future registry install (intended only)
-
-```bash
-# Does not resolve today.
 pnpm add @codewithrajat/universal-player
+yarn add @codewithrajat/universal-player
+bun add @codewithrajat/universal-player
 ```
 
-The package sets `publishConfig.access = "public"`, but no public version exists.
+Imports via `@codewithrajat/universal-player/...` resolve from the installed package.
 
 ## Optional peers
 
 Install only what you use. A missing optional peer fails only on the matching path.
 
 ```bash
-pnpm add hls.js    # .m3u8
-pnpm add dashjs    # .mpd
-pnpm add rxjs      # toRxjsObservable()
+npm install hls.js    # .m3u8
+npm install dashjs    # .mpd
+npm install rxjs      # toRxjsObservable()
 ```
 
-Framework peers come from the framework app itself.
+Use `pnpm add`, `yarn add` or `bun add` instead if you prefer. Framework peers come from the framework app itself.
 
 ## Entry points
 
@@ -86,8 +67,8 @@ If this resolves in a browser bundle, the export map is healthy.
 
 | Symptom | Cause | Fix |
 | --- | --- | --- |
-| `Failed to resolve @codewithrajat/universal-player` | Trying the registry before publication | Use the folder or tarball. |
-| `dist/entries/core.js` missing | Folder installed before build | Run `pnpm build` in the library. |
+| `Failed to resolve @codewithrajat/universal-player` | Installed in a different project, or a stale lockfile/cache | Run `npm install @codewithrajat/universal-player` in the app directory and refresh the lockfile. |
+| `dist/entries/core.js` missing | Stale install from an older version | Reinstall the published package (`npm install @codewithrajat/universal-player`) or clear the package-manager cache. |
 | `require() of ES Module` | CommonJS `require` | Use dynamic `import()`. |
 | `<universal-player>` unknown | Imported only `/core` or a framework adapter | Import the root or `/ui`. |
 | No controls visible | Headless entry with `controls: "custom"` | Use the custom element or `controls: "native"`. |

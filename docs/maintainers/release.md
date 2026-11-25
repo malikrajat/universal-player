@@ -4,9 +4,9 @@
 
 ## Current status
 
-`@codewithrajat/universal-player@0.0.1` is **unreleased**. `npm view` returns 404 on 2026-11-06. `publishConfig.access` is `public`, and Changesets is configured, but no publish has happened.
+Published — npm registry returns `0.0.1` for `@codewithrajat/universal-player`. `publishConfig.access` is `public` and Changesets is configured for subsequent releases.
 
-## Pre-release checklist
+## Release checklist
 
 1. `pnpm install` with the pinned `pnpm@11.5.1`.
 2. `pnpm run validate` — lint/format, typecheck, unit tests, build, pack allowlist, browser-import scan, publint, attw.
@@ -30,18 +30,18 @@ pnpm version            # consume changesets, update versions/changelog
 pnpm release            # changeset publish (requires registry auth)
 ```
 
-`pnpm release` is **intended-only** until the first publish is approved.
+`pnpm release` publishes subsequent versions; `0.0.1` is already published on npm.
 
-## First publish (when approved)
+## Subsequent releases (`0.0.1` is published)
 
 1. Authenticate to npm with an account that owns `@codewithrajat`.
 2. Run `pnpm run validate`.
-3. Run `pnpm version`.
+3. Run `pnpm version` to consume changesets and bump from `0.0.1`.
 4. Run `pnpm release`.
-5. Verify `npm view @codewithrajat/universal-player version` returns `0.0.1`.
-6. Update [Installation](../installation.md) and [`_api-facts.md`](../_api-facts.md) to remove the unreleased warning.
+5. Verify `npm view @codewithrajat/universal-player version` returns the new published version.
+6. Update [Installation](../installation.md) and [`_api-facts.md`](../_api-facts.md) with the new version.
 
-Do not publish from a dirty tree. Do not publish docs that still say "unreleased".
+Do not publish from a dirty tree. Do not publish docs that contradict the published version on npm.
 
 ## Provenance and CI
 

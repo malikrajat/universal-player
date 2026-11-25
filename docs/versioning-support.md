@@ -9,9 +9,9 @@ This page states the support envelope for `0.0.1`. It is deliberately narrower t
 | Item | Value |
 | --- | --- |
 | Version | `0.0.1` |
-| Published | **No** — npm registry returns 404; `publishConfig.access` is `public` for a future release |
-| Stability | Initial scaffold / experience release |
-| SemVer | Intended from the first public release; Changesets configured |
+| Published | **Yes — 0.0.1 on npm** |
+| Stability | Initial published scaffold / experience release |
+| SemVer | Followed from `0.0.1`; Changesets configured for subsequent releases |
 | Deprecation window | At least one minor before removal (policy, not yet exercised) |
 | Node | `>=24.0.0` for development and build tooling |
 | Browser | Declared floor Chrome/Edge 125, Firefox 128, Safari 18; executed test only Chromium |

@@ -4,7 +4,9 @@ All notable changes to `@codewithrajat/universal-player` are documented here.
 This project follows [Semantic Versioning](https://semver.org/) and uses
 [Changesets](https://github.com/changesets/changesets).
 
-## 0.0.1
+Published — npm registry returns `0.0.1` for `@codewithrajat/universal-player`.
+
+## 0.0.1 (published)
 
 ### Patch Changes
 

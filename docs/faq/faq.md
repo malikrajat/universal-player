@@ -14,7 +14,7 @@ If you use `/react`, `/vue`, `/angular`, `/svelte*`, `/vanilla` or `/core`, you 
 
 ## "Why is the npm install failing?"
 
-The package is unreleased at `0.0.1`. Install from the folder or a tarball.
+`0.0.1` is published on npm. If `npm install @codewithrajat/universal-player@0.0.1` fails, check the version pin, a registry mirror or offline setting, or a stale cache — see [Troubleshooting](../troubleshooting.md).
 
 ## "Can I use it with documents?"
 

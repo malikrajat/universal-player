@@ -4,16 +4,21 @@
 
 ## `Failed to resolve @codewithrajat/universal-player`
 
-The package is not on the registry. Install from a folder or tarball.
+`0.0.1` is published on npm. If resolution fails, the usual causes are a wrong
+version pin, a registry mirror or offline setting, or a stale cache:
 
 ```bash
-pnpm build
-pnpm add file:/absolute/path/to/universal-player
+npm view @codewithrajat/universal-player version   # expect 0.0.1
+npm cache clean --force
+npm install @codewithrajat/universal-player@0.0.1
 ```
 
 ## `dist/entries/*.js` missing
 
-Installing the source folder before building. Run `pnpm build` in the library, then reinstall/reload.
+Consumers should install `0.0.1` from npm; the published package ships `dist/`.
+
+Maintainers: this happens when installing the source folder before building. Run
+`pnpm build` in the library, then reinstall/reload.
 
 ## `require() of ES Module`
 

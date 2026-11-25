@@ -4,6 +4,8 @@
 
 [← Docs](./README.md) · [Project structure](./project-structure.md) · [Testing](./testing.md)
 
+> **Consumers:** install the published package from npm with `npm install @codewithrajat/universal-player`. The steps in this guide are for contributors working on the library itself.
+
 Thanks for contributing. This project values small, focused changes, strict
 typing, browser-first correctness and documentation that matches the code.
 

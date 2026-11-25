@@ -5,7 +5,7 @@
 ## Installation and packaging
 
 **Is the package on npm?**
-No. `npm view @codewithrajat/universal-player` returns 404 on 2026-11-06. Use a folder or tarball install. The registry command is intended-only.
+Yes. Published — npm registry returns `0.0.1` for `@codewithrajat/universal-player`. Install with `npm install @codewithrajat/universal-player@0.0.1`.
 
 **Does it work with CommonJS?**
 No. ESM only. Use dynamic `import()` from CJS.

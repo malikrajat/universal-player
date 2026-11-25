@@ -72,7 +72,7 @@ Everything that constructs a player is browser-only. `/core` is import-safe. The
 - The status vocabulary is fixed: implemented, conditional, provider-only, display-only, not decodable, scaffolded, absent.
 - Format pages state codec/container limits instead of promising playback.
 - No WCAG conformance, DRM, OCR or browser-matrix claims.
-- The unreleased status is repeated wherever installation matters.
+- The published npm status (`0.0.1`) is repeated wherever installation matters.
 
 ## How to add an example
 

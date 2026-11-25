@@ -4,7 +4,7 @@
 
 ## 60-second triage
 
-1. Is the package resolved from a local path? (It is not on npm.)
+1. Is `0.0.1` installed from npm (`npm ls @codewithrajat/universal-player`)?
 2. Did you import the root or `/ui` for the built-in UI?
 3. Is `normalizeSource()` returning the kind/provider you expect?
 4. Does the network panel show the media request and the right MIME type?
@@ -17,7 +17,8 @@
 | --- | --- | --- |
 | Tag renders, no controls | Headless entry with `controls: "custom"` | Import root/`/ui`; or `controls: "native"` |
 | Controls unstyled | Light DOM without CSS | Import `styles.css` or add `inject-styles` |
-| `Cannot find module .../core` | No install / stale cache | Install folder/tarball, rebuild |
+| `npm install` cannot find the package | Wrong version pin, registry mirror/offline, or stale cache | `npm view @codewithrajat/universal-player version` → `0.0.1`; clear cache; pin `0.0.1` |
+| `Cannot find module .../core` | Missing install or stale cache | Reinstall `@codewithrajat/universal-player@0.0.1` from npm; clear cache |
 | `hls.js` not found | Peer missing for `.m3u8` | `pnpm add hls.js` |
 | `dashjs` not found | Peer missing for `.mpd` | `pnpm add dashjs` |
 | `media-error` immediately | Container/codec unsupported (MOV/MKV) | Remux to MP4/WebM |

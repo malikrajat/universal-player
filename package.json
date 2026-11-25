@@ -1,6 +1,6 @@
 {
   "name": "@codewithrajat/universal-player",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Framework-agnostic universal HTML5 media player for video, audio, images, HLS, DASH and embeds. Works with React, Vue, Angular, Svelte and vanilla JavaScript.",
   "keywords": [
     "a11y",

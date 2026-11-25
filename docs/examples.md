@@ -7,7 +7,7 @@ There are two example trees:
 | Tree | What it is | Best for |
 | --- | --- | --- |
 | [`examples/`](../examples/README.md) | A Markdown-only lab book: 5 frameworks, 22 formats, 6 features, recipes and use cases | Learning and copy-paste |
-| [`_examples/`](../_examples/README.md) | Runnable Vite/Angular demo apps linked with `file:../..` | Running locally |
+| [`_examples/`](../_examples/README.md) | Runnable Vite/Angular demo apps linked with `file:../..` | Running the repository locally (maintainers) |
 
 ## Run the demo apps
 
@@ -20,7 +20,7 @@ cd _examples/svelte && pnpm install && pnpm dev
 cd _examples/angular && pnpm install && pnpm start
 ```
 
-Build the package first: the demos resolve `dist/` through the `file:` dependency.
+Consumers do **not** need these steps: install the published package from npm with `npm install @codewithrajat/universal-player`. The `file:../..` links above are workspace links for maintainers running the in-repo demos; build the library first only for those demos, which resolve `dist/` through the `file:` dependency.
 
 ## Full UI in one file
 

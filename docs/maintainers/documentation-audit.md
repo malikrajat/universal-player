@@ -10,7 +10,7 @@
 | Finding | Detail |
 | --- | --- |
 | Package | `@codewithrajat/universal-player@0.0.1` |
-| Publication | **Unreleased** — `npm view` returns E404 on 2026-11-06 |
+| Publication | **Published — npm registry returns `0.0.1` for `@codewithrajat/universal-player`.** |
 | Original Markdown files in `docs/` | 51 |
 | Rewritten | 6 (README, _api-facts, installation, quick-start, examples, defaults) |
 | Updated | 12 (frameworks, options-cheatsheet, api-reference, peer-dependencies, accessibility, features, decisions, usage, best-practices, faq, why-this-library, configuration) |
@@ -25,8 +25,8 @@
 | File | Available | Freshness | Findings | Action |
 | --- | --- | --- | --- | --- |
 | `docs/README.md` | yes | Rewritten | Stale install commands, stale entry/engine counts, no publication status, no full map | Replaced with status/version, install truth, UI boundary, complete map |
-| `docs/_api-facts.md` | yes | Rewritten | Said 'root + 9 subpaths'; counted 7 engines; omitted the headless UI boundary and unpublished status | Recomputed from package.json, exports, source; added boundary and registry 404 |
-| `docs/installation.md` | yes | Rewritten | Registry install presented as working; React/Vue examples implied built-in UI | Folder/tarball install, intended-only registry command, entry/UI table |
+| `docs/_api-facts.md` | yes | Rewritten | Said 'root + 9 subpaths'; counted 7 engines; omitted the headless UI boundary; at audit time the registry returned 404 (past finding, since fixed) | Recomputed from package.json, exports, source; added boundary; publication status now reflects `0.0.1` on npm |
+| `docs/installation.md` | yes | Rewritten | Registry install presented as working; React/Vue examples implied built-in UI | At audit time: local-file install guidance (past finding, fixed); now registry install of `0.0.1`, entry/UI table |
 | `docs/quick-start.md` | yes | Rewritten | Registry install; vanilla mount implied controls; React used `src` | Local install, UI track split, React `source`, native-controls note |
 | `docs/examples.md` | yes | Rewritten | Claimed styles.css gives the built-in surface for headless examples | Two example trees, real UI boundary, headless note |
 | `docs/frameworks.md` | yes | Updated | React example used `src`; blanket stylesheet advice implied UI in wrappers | React `source`; per-adapter headless callouts; intro rewritten |
@@ -91,7 +91,7 @@
 
 | Claim found | Reality | Where corrected |
 | --- | --- | --- |
-| `pnpm add @codewithrajat/universal-player` works | Package is unpublished; registry 404 | Root README, installation, quick-start, examples, status notes |
+| `pnpm add @codewithrajat/universal-player` works | At audit time the registry check failed (past finding, fixed); `0.0.1` is now published | Root README, installation, quick-start, examples, status notes |
 | `mountUniversalPlayer()` gives the built-in UI | It mounts the headless core; no chrome | README, installation, quick-start, frameworks, examples, guides |
 | React/Vue/Angular/Svelte adapters render controls | They render a host element; no chrome | Frameworks, best-practices, faq, usage, example book |
 | "Root + 9 subpaths" | 9 code entry points total (root + 8 subpaths) + 2 assets | _api-facts, features, decisions, project pages |
@@ -152,7 +152,7 @@ The checkers live outside the repository (temporary scripts) and are not committ
 
 ## 8. Recommended next actions
 
-1. Publish a first version or keep the unreleased warning everywhere. Do not re-enable registry-first docs before npm returns 200.
+1. `0.0.1` is published on npm; keep docs registry-first and update the published version on every subsequent release.
 2. Add an automated link/anchor/fence checker to CI.
 3. Run a real browser matrix (Firefox, Safari, iOS) before widening the support claim.
 4. Add an axe run and a keyboard/screen-reader pass; only then revisit accessibility language.

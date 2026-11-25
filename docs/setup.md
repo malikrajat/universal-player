@@ -4,12 +4,22 @@
 
 [← Docs](./README.md) · [Installation](./installation.md) · [Quick start →](./quick-start.md)
 
-This page covers both sides of setup: installing the package into an
+This page covers both sides of setup: installing the published package into an
 application, and running the library repository locally.
+
+> **Consumers:** install the published package with `npm install @codewithrajat/universal-player`. Part 2 is a maintainer/contributor workflow for working on the library itself.
 
 ---
 
 ## Part 1 — Application setup
+
+### 0. Install the published package
+
+```bash
+npm install @codewithrajat/universal-player
+```
+
+Use `pnpm add`, `yarn add` or `bun add` instead if you prefer.
 
 ### 1. Pick a rendering mode
 
@@ -121,7 +131,7 @@ router.afterEach(() => player.destroy());
 
 ---
 
-## Part 2 — Repository setup
+## Part 2 — Repository setup (maintainers and contributors)
 
 ### 1. Clone and install
 

@@ -2,7 +2,15 @@
 
 > [Docs home](../README.md) › [Getting started](./introduction.md) › Setup
 
-## Repository setup
+> **Consumers:** install the published package with `npm install @codewithrajat/universal-player` and start with the application setup below. The repository commands further down are for contributors working on the library itself.
+
+## Install the published package
+
+```bash
+npm install @codewithrajat/universal-player
+```
+
+## Repository setup (maintainers and contributors)
 
 ```bash
 pnpm install

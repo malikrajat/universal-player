@@ -4,12 +4,13 @@
 
 Five paths. Pick the one that matches your surface; they all use the same options and state.
 
-## 0. Build and install locally
+## 0. Install the published package from npm
 
 ```bash
-pnpm install && pnpm build
-pnpm add file:../universal-player
+npm install @codewithrajat/universal-player
 ```
+
+Use `pnpm add`, `yarn add` or `bun add` instead if you prefer.
 
 ## 1. Full UI — custom element
 

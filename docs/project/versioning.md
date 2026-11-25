@@ -4,7 +4,7 @@
 
 ## Scheme
 
-SemVer. The project uses Changesets; a release is cut from accumulated changesets. No public release exists yet.
+SemVer. `0.0.1` is published; subsequent releases use Changesets, with a release cut from accumulated changesets.
 
 | Change | Bump |
 | --- | --- |
@@ -31,7 +31,7 @@ Not public: `src/**` internals, `PlayerEngine`, adapter factories, the `.up-*` c
 
 ## Version support
 
-Only the latest published version is supported. There is no LTS. Because nothing is published, the only supported version is the repository state at `0.0.1`.
+There is no LTS. `0.0.1` is published on npm; only the latest published version is supported.
 
 ## Peer version changes
 
